@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Section Component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text-main-title: #5C4535;
+            --text-subtitle: #8E8174;
+            --text-card-title: #5C4535;
+            --text-card-desc: #8E8174;
+            --text-gold: #BA8A63;
+            --bg-card-1: #FBF8F5;
+            --bg-card-2: #F7F1EB;
+            --bg-card-3: #F8F3EE;
+            --btn-bg: #C29164;
+            --underline: #D6B499;
+        }
+
+        /* --- Base and Variables --- */
+        body {
+            background-color: #fff;
+            font-family: 'Noto Sans HK', sans-serif;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- Section Structure --- */
+        .service-section {
+            padding-top: 146px;
+            padding-bottom: 146px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- New Title Typography Specs --- */
+        .service-section .main-title-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .service-section .title-text-group {
+            display: inline-block;
+            position: relative;
+            text-align: center;
+        }
+
+        .service-section .main-title {
+            font-size: 40px;
+            line-height: 100%;
+            letter-spacing: 0.15em;
+            color: var(--text-main-title);
+            margin: 0;
+            display: inline;
+        }
+
+        .service-section .main-title .first-char {
+            font-size: 48px;
+            color: var(--text-gold);
+        }
+
+        .service-section .main-title .rest-chars {
+            font-size: 40px;
+            color: var(--text-main-title);
+        }
+
+        .service-section .main-title-english {
+            position: absolute;
+            left: calc(100% + 92px);
+            bottom: 0;
+            width: 123px;
+            height: 23px;
+        }
+
+        .service-section .title-underline {
+            width: 581px;
+            height: 0px;
+            border-bottom: 1px solid var(--underline);
+            margin-top: 20px;
+        }
+
+        .service-section .subtitle {
+            font-size: 24px;
+            line-height: 100%;
+            letter-spacing: 0.124em;
+            color: var(--text-subtitle);
+            margin-bottom: 60px;
+        }
+
+        /* --- Cards Layout --- */
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            padding: 0 50px;
+            box-sizing: border-box;
+        }
+
+        /* --- Card Specs --- */
+        .card {
+            width: 451px;
+            height: 454px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            overflow: hidden;
+        }
+
+        /* Default background colors for each card */
+        #card-1 { background-color: #F9F5F1; }
+        #card-2 { background-color: #F9F5F1; }
+        #card-3 { background-color: #F9F5F1; }
+
+        .card .card-button {
+            width: 100%;
+            height: 87px;
+            background-color: transparent; /* Initial state: transparent background */
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            line-height: 1;
+            letter-spacing: 0.10em;
+            text-decoration: none;
+            color: var(--text-gold); /* Initial text color for button */
+            position: relative;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* --- Hover States --- */
+        #card-1:hover { background-color: #fff; }
+        #card-2:hover { background-color: #fff; }
+        #card-3:hover { background-color: #fff; }
+
+        .card:hover .card-button {
+            background-color: var(--btn-bg); /* Button background appears on card hover */
+            color: #fff; /* Button text becomes white on hover */
+        }
+
+        .card .card-button::after {
+            content: '>';
+            position: absolute;
+            right: 10px;
+            font-size: 16px;
+        }
+
+        .card .card-image {
+            width: 220px;
+            height: 220px;
+            margin-top: 25px;
+            object-fit: cover;
+        }
+
+        .card .card-title {
+            font-size: 20px;
+            line-height: 100%;
+            letter-spacing: 0.10em;
+            color: var(--text-card-title);
+            margin-top: 25px;
+            margin-bottom: 30px;
+        }
+
+        .card .card-description {
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.10em;
+            color: var(--text-card-desc);
+            margin: 0;
+            padding: 0 20px;
+            flex-grow: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="service-section">
+        
+        <div class="main-title-wrapper">
+            <div class="title-text-group">
+                <h1 class="main-title"><span class="first-char">服</span><span class="rest-chars">務項目</span></h1>
+                <img src="service-pic.png" alt="SERVICE" class="main-title-english">
+            </div>
+            <div class="title-underline"></div>
+        </div>
+        
+        <p class="subtitle">像閨蜜般，溫柔陪伴妳挑婚紗</p>
+
+        <div class="cards-container">
+            
+            <!-- Card 1 -->
+            <div class="card" id="card-1">
+                <img src="Lin haute Bridal/icon/01.png" alt="白紗 & 晚禮服租借" class="card-image">
+                <h3 class="card-title">白紗 & 晚禮服租借</h3>
+                <p class="card-description">可自由選擇「單租」或是「包套」</p>
+                <a href="#" class="card-button">
+                    <span>瀏覽禮服照片</span>
+                </a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card" id="card-2">
+                <img src="Lin haute Bridal/icon/02.png" alt="婚紗攝影" class="card-image">
+                <h3 class="card-title">婚紗攝影</h3>
+                <p class="card-description">室內棚拍 / 外拍，有多位配合攝影師可以選擇</p>
+                <a href="#" class="card-button">
+                    <span>瀏覽攝影師作品</span>
+                </a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card" id="card-3">
+                <img src="Lin haute Bridal/icon/03.png" alt="婚宴當天" class="card-image">
+                <h3 class="card-title">婚宴當天</h3>
+                <p class="card-description">訂婚、結婚當天婚紗可供新人選擇</p>
+                <a href="#" class="card-button">
+                    <span>瀏覽婚禮穿搭</span>
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
