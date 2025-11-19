@@ -3,242 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'text-main-title': '#5C4535',
+              'text-subtitle': '#8E8174',
+              'text-gold': '#BA8A63',
+              'btn-bg': '#C29164',
+              'underline': '#D6B499',
+              'card-bg': '#F9F5F1',
+            }
+          }
+        }
+      }
+    </script>
     <title>Service Section Component</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --text-main-title: #5C4535;
-            --text-subtitle: #8E8174;
-            --text-card-title: #5C4535;
-            --text-card-desc: #8E8174;
-            --text-gold: #BA8A63;
-            --bg-card-1: #FBF8F5;
-            --bg-card-2: #F7F1EB;
-            --bg-card-3: #F8F3EE;
-            --btn-bg: #C29164;
-            --underline: #D6B499;
-        }
-
-        /* --- Base and Variables --- */
-        body {
-            background-color: #fff;
-            font-family: 'Noto Sans HK', sans-serif;
-            font-weight: 400;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* --- Section Structure --- */
-        .service-section {
-            padding-top: 146px;
-            padding-bottom: 146px;
-            background-color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* --- New Title Typography Specs --- */
-        .service-section .main-title-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        .service-section .title-text-group {
-            display: inline-block;
-            position: relative;
-            text-align: center;
-        }
-
-        .service-section .main-title {
-            font-size: 40px;
-            line-height: 100%;
-            letter-spacing: 0.15em;
-            color: var(--text-main-title);
-            margin: 0;
-            display: inline;
-        }
-
-        .service-section .main-title .first-char {
-            font-size: 48px;
-            color: var(--text-gold);
-        }
-
-        .service-section .main-title .rest-chars {
-            font-size: 40px;
-            color: var(--text-main-title);
-        }
-
-        .service-section .main-title-english {
-            position: absolute;
-            left: calc(100% + 92px);
-            bottom: 0;
-            width: 123px;
-            height: 23px;
-        }
-
-        .service-section .title-underline {
-            width: 581px;
-            height: 0px;
-            border-bottom: 1px solid var(--underline);
-            margin-top: 20px;
-        }
-
-        .service-section .subtitle {
-            font-size: 24px;
-            line-height: 100%;
-            letter-spacing: 0.124em;
-            color: var(--text-subtitle);
-            margin-bottom: 60px;
-        }
-
-        /* --- Cards Layout --- */
-        .cards-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            width: 100%;
-            padding: 0 50px;
-            box-sizing: border-box;
-        }
-
-        /* --- Card Specs --- */
-        .card {
-            width: 451px;
-            height: 454px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            transition: background-color 0.3s ease;
-            overflow: hidden;
-        }
-
-        /* Default background colors for each card */
-        #card-1 { background-color: #F9F5F1; }
-        #card-2 { background-color: #F9F5F1; }
-        #card-3 { background-color: #F9F5F1; }
-
-        .card .card-button {
-            width: 100%;
-            height: 87px;
-            background-color: transparent; /* Initial state: transparent background */
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 16px;
-            line-height: 1;
-            letter-spacing: 0.10em;
-            text-decoration: none;
-            color: var(--text-gold); /* Initial text color for button */
-            position: relative;
-            box-sizing: border-box;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            border-radius: 0 0 10px 10px;
-        }
-
-        /* --- Hover States --- */
-        #card-1:hover { background-color: #fff; }
-        #card-2:hover { background-color: #fff; }
-        #card-3:hover { background-color: #fff; }
-
-        .card:hover .card-button {
-            background-color: var(--btn-bg); /* Button background appears on card hover */
-            color: #fff; /* Button text becomes white on hover */
-        }
-
-        .card .card-button::after {
-            content: '>';
-            position: absolute;
-            right: 10px;
-            font-size: 16px;
-        }
-
-        .card .card-image {
-            width: 220px;
-            height: 220px;
-            margin-top: 25px;
-            object-fit: cover;
-        }
-
-        .card .card-title {
-            font-size: 20px;
-            line-height: 100%;
-            letter-spacing: 0.10em;
-            color: var(--text-card-title);
-            margin-top: 25px;
-            margin-bottom: 30px;
-        }
-
-        .card .card-description {
-            font-size: 16px;
-            line-height: 1.5;
-            letter-spacing: 0.10em;
-            color: var(--text-card-desc);
-            margin: 0;
-            padding: 0 20px;
-            flex-grow: 1;
-        }
-
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+<body class="font-['Noto_Sans_HK'] font-normal">
 
-    <section class="service-section">
-        
-        <div class="main-title-wrapper">
-            <div class="title-text-group">
-                <h1 class="main-title"><span class="first-char">服</span><span class="rest-chars">務項目</span></h1>
-                <img src="service-pic.png" alt="SERVICE" class="main-title-english">
+    <section class="bg-white pt-[125px] pb-[125px] flex flex-col items-center">
+
+        <div class="main-title-wrapper flex flex-col items-center mb-[51px] relative">
+            <div class="relative inline-block">
+                <h1 class="text-[29px] leading-none tracking-[0.15em] text-text-main-title inline">
+                    <span class="text-[35px] text-text-gold">服</span><span class="text-[29px] text-text-main-title">務項目</span>
+                </h1>
+                <img src="service-pic.png" alt="SERVICE" class="absolute left-[calc(100%+85px)] bottom-[-17px] w-[105px] h-[20px]">
             </div>
-            <div class="title-underline"></div>
+            <div class="w-[496px] border-b border-underline mt-[17px]"></div>
         </div>
-        
-        <p class="subtitle">像閨蜜般，溫柔陪伴妳挑婚紗</p>
 
-        <div class="cards-container">
-            
+        <p class="text-[20px] tracking-[0.124em] text-text-subtitle mb-[51px]">像閨蜜般，溫柔陪伴妳挑婚紗</p>
+
+        <div class="w-full max-w-[1920px] flex flex-col md:flex-row justify-center items-center md:items-stretch gap-[17px] px-4 sm:px-8 md:px-16 lg:px-[225px]">
+
             <!-- Card 1 -->
-            <div class="card" id="card-1">
-                <img src="Lin haute Bridal/icon/01.png" alt="白紗 & 晚禮服租借" class="card-image">
-                <h3 class="card-title">白紗 & 晚禮服租借</h3>
-                <p class="card-description">可自由選擇「單租」或是「包套」</p>
-                <a href="#" class="card-button">
-                    <span>瀏覽禮服照片</span>
+            <div class="group w-full max-w-[385px] md:w-[385px] h-[387px] shrink-0 rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col items-center text-center transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                <img src="Lin haute Bridal/icon/01.png" alt="白紗 & 晚禮服租借" class="w-[188px] h-[188px] mt-[21px] object-cover">
+                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px]">白紗 & 晚禮服租借</h3>
+                <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[17px] grow">可自由選擇「單租」或是「包套」</p>
+                <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[14px] tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white">
+                    <span>瀏覽禮服照片</span> <i class="fas fa-chevron-right ml-2.5"></i>
                 </a>
             </div>
 
             <!-- Card 2 -->
-            <div class="card" id="card-2">
-                <img src="Lin haute Bridal/icon/02.png" alt="婚紗攝影" class="card-image">
-                <h3 class="card-title">婚紗攝影</h3>
-                <p class="card-description">室內棚拍 / 外拍，有多位配合攝影師可以選擇</p>
-                <a href="#" class="card-button">
-                    <span>瀏覽攝影師作品</span>
+            <div class="group w-full max-w-[385px] md:w-[385px] h-[387px] shrink-0 rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col items-center text-center transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                <img src="Lin haute Bridal/icon/02.png" alt="婚紗攝影" class="w-[188px] h-[188px] mt-[21px] object-cover">
+                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px]">婚紗攝影</h3>
+                <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[17px] grow">室內棚拍 / 外拍，有多位配合攝影師可以選擇</p>
+                <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[14px] tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white">
+                    <span>瀏覽攝影師作品</span> <i class="fas fa-chevron-right ml-2.5"></i>
                 </a>
             </div>
 
             <!-- Card 3 -->
-            <div class="card" id="card-3">
-                <img src="Lin haute Bridal/icon/03.png" alt="婚宴當天" class="card-image">
-                <h3 class="card-title">婚宴當天</h3>
-                <p class="card-description">訂婚、結婚當天婚紗可供新人選擇</p>
-                <a href="#" class="card-button">
-                    <span>瀏覽婚禮穿搭</span>
+            <div class="group w-full max-w-[385px] md:w-[385px] h-[387px] shrink-0 rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col items-center text-center transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                <img src="Lin haute Bridal/icon/03.png" alt="婚宴當天" class="w-[188px] h-[188px] mt-[21px] object-cover">
+                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px]">婚宴當天</h3>
+                <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[17px] grow">訂婚、結婚當天婚紗可供新人選擇</p>
+                <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[14px] tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white">
+                    <span>瀏覽婚禮穿搭</span> <i class="fas fa-chevron-right ml-2.5"></i>
                 </a>
             </div>
 
         </div>
 
+    </section>
+
+    <section class="w-full bg-cover bg-center bg-no-repeat pt-[80px] pb-[80px] md:pt-[125px] md:pb-[125px]" style="background-image: url('Lin haute Bridal/index/bridal_bg.jpg')">
+        <div class="max-w-[1920px] mx-auto px-5 sm:px-10 md:px-20 lg:px-[225px] flex flex-col lg:flex-row items-center gap-10 lg:gap-[98px]">
+            
+            <!-- 左側區塊 -->
+            <div class="flex-1 flex flex-col items-center text-center">
+                
+                <div class="flex flex-col items-center mb-[51px] relative">
+                    <div class="relative inline-block">
+                        <h2 class="text-[29px] leading-none tracking-[0.15em] text-text-main-title inline">
+                            <span class="text-[35px] text-text-gold">婚</span><span class="text-[29px] text-text-main-title">紗禮服</span>
+                        </h2>
+                        <span class="font-['Cormorant_Garamond'] text-[20px] font-medium tracking-[0.15em] text-text-gold absolute left-[calc(100%+25px)] md:left-[calc(100%+85px)] bottom-[-17px]">BRIDAL</span>
+                    </div>
+                    <div class="w-full max-w-[496px] border-b border-underline mt-[17px]"></div>
+                </div>
+            
+                <p class="text-[20px] tracking-[0.124em] text-text-subtitle mb-[51px]">高級訂製・遇見妳的命定白紗</p>
+            
+                <a href="#" class="inline-flex items-center justify-center w-[122px] h-[36px] bg-transparent border border-btn-bg text-btn-bg text-[14px] tracking-[0.10em] no-underline rounded-md cursor-pointer transition-colors duration-300 hover:bg-btn-bg hover:text-white">
+                    瀏覽更多 <span class="ml-2">&gt;</span>
+                </a>
+
+            </div>
+
+            <!-- 右側區塊 (UNTOUCHED) -->
+            <div class="flex flex-col items-center">
+                <div class="flex flex-col sm:flex-row gap-4 mb-[17px]">
+                    <img src="bridal-01.jpg" alt="婚紗禮服" class="w-full max-w-[320px] sm:w-[280px] md:w-[240px] lg:w-[293px] h-auto object-cover rounded-md">
+                    <img src="bridal-02.jpg" alt="婚紗禮服" class="w-full max-w-[320px] sm:w-[280px] md:w-[240px] lg:w-[293px] h-auto object-cover rounded-md">
+                </div>
+                <div class="flex gap-[9px]">
+                    <button class="w-[43px] h-[43px] border border-text-gold bg-transparent text-text-gold text-base cursor-pointer rounded-md transition-all duration-300 flex items-center justify-center hover:bg-text-gold hover:text-white">&lt;</button>
+                    <button class="w-[43px] h-[43px] border border-text-gold bg-transparent text-text-gold text-base cursor-pointer rounded-md transition-all duration-300 flex items-center justify-center hover:bg-text-gold hover:text-white">&gt;</button>
+                </div>
+            </div>
+            
+        </div>
     </section>
 
 </body>
