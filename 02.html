@@ -20,6 +20,8 @@
               'blog-gold': '#C8A37C',
               'blog-line': '#CBB59A',
               'blog-gold-hover': '#B69272',
+              'footer-bg': '#C8A882',
+              'footer-copyright': '#F5EDE4',
             }
           }
         }
@@ -32,6 +34,151 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom Form Styles for Reservation Form */
+
+        /* Custom checkbox styling */
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #D6B499;
+            border-radius: 3px;
+            background-color: white;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: #C29164;
+            border-color: #C29164;
+        }
+
+        input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 2px;
+            width: 5px;
+            height: 9px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        input[type="checkbox"]:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(194, 145, 100, 0.2);
+        }
+
+        /* Custom radio button styling */
+        input[type="radio"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #D6B499;
+            border-radius: 50%;
+            background-color: white;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        input[type="radio"]:checked {
+            border-color: #C29164;
+        }
+
+        input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #C29164;
+        }
+
+        input[type="radio"]:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(194, 145, 100, 0.2);
+        }
+
+        /* Form validation error styles */
+        .form-error {
+            border-color: #EF4444 !important;
+        }
+
+        .error-message {
+            color: #EF4444;
+            font-size: 12px;
+            margin-top: 4px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Success overlay styles */
+        .success-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .success-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .success-modal {
+            background: white;
+            padding: 40px;
+            border-radius: 9px;
+            text-align: center;
+            max-width: 400px;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .success-overlay.show .success-modal {
+            transform: scale(1);
+        }
+
+        /* Date input styling */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(60%) sepia(20%) saturate(500%) hue-rotate(350deg);
+            cursor: pointer;
+        }
+
+        /* Number input spinner removal */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
 </head>
 <body class="font-['Noto_Sans_HK'] font-normal">
 
@@ -376,361 +523,317 @@
     </section>
 
     <!-- 預約諮詢 Reservation Section -->
-    <section id="reservation" class="bg-[#F9F5F1] pt-[125px] pb-[125px] flex flex-col items-center">
+    <section id="reservation" class="bg-white pt-[125px] pb-[125px] flex flex-col items-center">
 
-        <!-- Section Title -->
-        <div class="main-title-wrapper flex flex-col items-center mb-[51px] relative">
-            <div class="relative inline-block">
-                <h2 class="text-[29px] leading-none tracking-[0.15em] text-text-main-title inline">
-                    <span class="text-[35px] text-text-gold">預</span><span class="text-[29px] text-text-main-title">約諮詢</span>
-                </h2>
-                <span class="absolute left-[calc(100%+85px)] bottom-[-17px] text-[17px] tracking-[0.15em] text-text-gold font-['Cormorant_Garamond'] font-semibold">RESERVATION</span>
+        <!-- Section Title with full-width underline -->
+        <div class="w-full">
+            <div class="main-title-wrapper flex flex-col items-center mb-[26px] relative">
+                <h1 class="text-[35px] leading-none tracking-[0.15em] text-text-main-title font-['Noto_Serif_TC'] font-medium">
+                    填寫預約表單
+                </h1>
+                <p class="text-[14px] tracking-[0.15em] text-text-gold font-['Cormorant_Garamond'] mt-[9px]">Reserve Now</p>
             </div>
-            <div class="w-[496px] border-b border-underline mt-[17px]"></div>
+            <!-- Full-width underline -->
+            <div class="w-full border-b border-underline"></div>
         </div>
 
-        <p class="text-[20px] tracking-[0.124em] text-text-subtitle mb-[51px]">填寫表單，讓我們為您安排專屬服務</p>
+        <!-- Single line description text -->
+        <div class="container mx-auto px-4">
+            <p class="text-[14px] tracking-[0.10em] text-text-subtitle mt-[35px] mb-[51px] text-center whitespace-nowrap overflow-x-auto">
+                非常感謝您前來 LinHaute Bridal 挑選禮服，為了更加瞭解您的需求，請您撥冗完整填寫以下資訊，我們將盡速回覆您近期尚可預約的時段，謝謝！
+            </p>
+        </div>
 
-        <!-- Reservation Form -->
-        <form id="reservation-form" class="w-full max-w-[900px] px-4 sm:px-8 md:px-16" novalidate>
+        <!-- Reservation Form - aligned with container -->
+        <form id="reservation-form" class="container mx-auto px-4 max-w-[900px]" novalidate>
 
-            <!-- Section 1: 預約聯絡 -->
-            <fieldset class="mb-[51px] border-0 p-0">
-                <legend class="flex items-center mb-[26px] w-full">
-                    <span class="text-[20px] tracking-[0.15em] text-text-main-title font-medium">預約聯絡</span>
-                    <span class="flex-1 h-[1px] bg-underline ml-4"></span>
+            <!-- Section 1: 預約聯絡 - 置中區塊 -->
+            <fieldset class="mb-[51px] border-0 p-0 max-w-[700px] mx-auto">
+                <!-- 標題列：淺卡其色背景（統一顏色） -->
+                <legend class="w-full mb-0">
+                    <div class="bg-[#D6B499] py-4 px-6 rounded-t-[9px] text-center">
+                        <span class="text-[20px] tracking-[0.15em] text-white font-medium">預約聯絡</span>
+                    </div>
                 </legend>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[26px] gap-y-[21px]">
-                    <!-- 姓名 -->
-                    <div class="flex flex-col">
-                        <label for="contact-name" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
-                            姓名 <span class="text-red-500" aria-hidden="true">*</span>
-                            <span class="sr-only">(必填)</span>
-                        </label>
-                        <input
-                            type="text"
-                            id="contact-name"
-                            name="contact-name"
-                            required
-                            aria-required="true"
-                            placeholder="請輸入您的姓名"
-                            class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
-                        >
-                    </div>
+                <!-- 內容區：白底、圓角、陰影 -->
+                <div class="bg-white px-8 py-8 rounded-b-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)]">
+                    <ol class="list-decimal list-inside space-y-4 text-[14px] leading-[24px] tracking-[0.10em] text-text-main-title">
+                        <li>為了提供給新人完整的服務，採取線上預約制。</li>
+                        <li>只要填寫預約單，我們將在 2 日內與您連絡，若沒有連絡上您，可能是您的預約單沒有發送成功哦！</li>
+                        <li>我們的人力有限，為了保障您的權益，如不克前來請提前通知，以便另外為您安排參觀時間。</li>
+                        <li>貼心提醒：預約試衣的新人請記得攜帶 bra 以及絲襪</li>
+                        <li>如 2 日內未收到聯繫，請撥打：07-2372269 請珍惜每次的預約機會，感謝大家的體諒及配合。</li>
+                    </ol>
+                </div>
+            </fieldset>
 
-                    <!-- 電話 -->
-                    <div class="flex flex-col">
-                        <label for="contact-phone" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
-                            電話 <span class="text-red-500" aria-hidden="true">*</span>
-                            <span class="sr-only">(必填)</span>
-                        </label>
-                        <input
-                            type="tel"
-                            id="contact-phone"
-                            name="contact-phone"
-                            required
-                            aria-required="true"
-                            placeholder="請輸入您的聯絡電話"
-                            pattern="[0-9]{10}"
-                            class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
-                        >
+            <!-- Section 2: 基本資訊 - 置中區塊 -->
+            <fieldset class="mb-[51px] border-0 p-0 max-w-[700px] mx-auto">
+                <!-- 標題列：淺卡其色背景（統一顏色） -->
+                <legend class="w-full mb-0">
+                    <div class="bg-[#D6B499] py-4 px-6 rounded-t-[9px] text-center">
+                        <span class="text-[20px] tracking-[0.15em] text-white font-medium">基本資訊</span>
                     </div>
+                </legend>
 
-                    <!-- Email -->
-                    <div class="flex flex-col">
-                        <label for="contact-email" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
-                            Email <span class="text-red-500" aria-hidden="true">*</span>
-                            <span class="sr-only">(必填)</span>
-                        </label>
-                        <input
-                            type="email"
-                            id="contact-email"
-                            name="contact-email"
-                            required
-                            aria-required="true"
-                            placeholder="請輸入您的 Email"
-                            class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
-                        >
-                    </div>
+                <!-- 白底表單區塊 -->
+                <div class="bg-white px-8 md:px-16 py-8 rounded-b-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)]">
+                    <div class="grid grid-cols-1 gap-y-[21px]">
+                        <!-- 聯絡姓名 -->
+                        <div class="flex flex-col">
+                            <label for="contact-name-basic" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
+                                <span class="text-red-500" aria-hidden="true">*</span> 聯絡姓名
+                                <span class="sr-only">(必填)</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="contact-name-basic"
+                                name="contact-name-basic"
+                                required
+                                aria-required="true"
+                                class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                            >
+                        </div>
 
-                    <!-- LINE ID -->
-                    <div class="flex flex-col">
-                        <label for="contact-line" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
-                            LINE ID
-                        </label>
-                        <input
-                            type="text"
-                            id="contact-line"
-                            name="contact-line"
-                            placeholder="請輸入您的 LINE ID"
-                            class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
-                        >
-                    </div>
-
-                    <!-- 預約日期 -->
-                    <div class="flex flex-col">
-                        <label for="reservation-date" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
-                            預約日期 <span class="text-red-500" aria-hidden="true">*</span>
-                            <span class="sr-only">(必填)</span>
-                        </label>
-                        <input
-                            type="date"
-                            id="reservation-date"
-                            name="reservation-date"
-                            required
-                            aria-required="true"
-                            class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
-                        >
-                    </div>
-
-                    <!-- 預約時段 -->
-                    <div class="flex flex-col">
-                        <label for="reservation-time" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
-                            預約時段 <span class="text-red-500" aria-hidden="true">*</span>
-                            <span class="sr-only">(必填)</span>
-                        </label>
-                        <select
-                            id="reservation-time"
-                            name="reservation-time"
-                            required
-                            aria-required="true"
-                            class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300 appearance-none cursor-pointer"
-                            style="background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23C29164%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1em;"
-                        >
-                            <option value="" disabled selected>請選擇時段</option>
-                            <option value="10:00">10:00 - 12:00</option>
-                            <option value="13:00">13:00 - 15:00</option>
-                            <option value="15:00">15:00 - 17:00</option>
-                            <option value="17:00">17:00 - 19:00</option>
-                        </select>
+                        <!-- 希望來店諮詢日期？ -->
+                        <div class="flex flex-col">
+                            <label for="consultation-date" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
+                                <span class="text-red-500" aria-hidden="true">*</span> 希望來店諮詢日期？
+                                <span class="sr-only">(必填)</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="consultation-date"
+                                name="consultation-date"
+                                required
+                                aria-required="true"
+                                placeholder="DD / MM / YY"
+                                class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                            >
+                        </div>
                     </div>
                 </div>
             </fieldset>
 
-            <!-- Section 2: 基本資訊 -->
-            <fieldset class="mb-[51px] border-0 p-0">
-                <legend class="flex items-center mb-[26px] w-full">
-                    <span class="text-[20px] tracking-[0.15em] text-text-main-title font-medium">基本資訊</span>
-                    <span class="flex-1 h-[1px] bg-underline ml-4"></span>
+            <!-- Section 3: 方案選擇 - 置中區塊 -->
+            <fieldset class="mb-[51px] border-0 p-0 max-w-[700px] mx-auto">
+                <!-- 標題列：淺卡其色背景（與上面統一） -->
+                <legend class="w-full mb-0">
+                    <div class="bg-[#D6B499] py-4 px-6 rounded-t-[9px] text-center">
+                        <span class="text-[20px] tracking-[0.15em] text-white font-medium">方案選擇</span>
+                    </div>
                 </legend>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[26px] gap-y-[21px]">
-                    <!-- 新娘身高 -->
-                    <div class="flex flex-col">
-                        <label for="bride-height" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
-                            新娘身高 (cm)
-                        </label>
-                        <input
-                            type="number"
-                            id="bride-height"
-                            name="bride-height"
-                            placeholder="例：165"
-                            min="100"
-                            max="200"
-                            class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
-                        >
-                    </div>
-
-                    <!-- 新娘體重 -->
-                    <div class="flex flex-col">
-                        <label for="bride-weight" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
-                            新娘體重 (kg)
-                        </label>
-                        <input
-                            type="number"
-                            id="bride-weight"
-                            name="bride-weight"
-                            placeholder="例：50"
-                            min="30"
-                            max="150"
-                            class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
-                        >
-                    </div>
-
-                    <!-- 婚期 -->
-                    <div class="flex flex-col">
-                        <label for="wedding-date" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
-                            婚期
-                        </label>
-                        <input
-                            type="date"
-                            id="wedding-date"
-                            name="wedding-date"
-                            class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
-                        >
-                    </div>
-
-                    <!-- 宴客場地 -->
-                    <div class="flex flex-col">
-                        <label for="venue" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
-                            宴客場地
-                        </label>
-                        <input
-                            type="text"
-                            id="venue"
-                            name="venue"
-                            placeholder="請輸入宴客場地名稱"
-                            class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
-                        >
-                    </div>
-
-                    <!-- 如何得知我們 -->
-                    <div class="flex flex-col md:col-span-2">
-                        <label for="how-know" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
-                            如何得知我們
-                        </label>
-                        <select
-                            id="how-know"
-                            name="how-know"
-                            class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300 appearance-none cursor-pointer"
-                            style="background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23C29164%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1em;"
-                        >
-                            <option value="" disabled selected>請選擇</option>
-                            <option value="google">Google 搜尋</option>
-                            <option value="facebook">Facebook</option>
-                            <option value="instagram">Instagram</option>
-                            <option value="friend">親友介紹</option>
-                            <option value="wedding-show">婚紗展</option>
-                            <option value="other">其他</option>
-                        </select>
-                    </div>
-                </div>
-            </fieldset>
-
-            <!-- Section 3: 方案選擇 -->
-            <fieldset class="mb-[51px] border-0 p-0">
-                <legend class="flex items-center mb-[26px] w-full">
-                    <span class="text-[20px] tracking-[0.15em] text-text-main-title font-medium">方案選擇</span>
-                    <span class="flex-1 h-[1px] bg-underline ml-4"></span>
-                </legend>
-
-                <!-- 諮詢項目 (Checkboxes) -->
+                <!-- 內容區：白底、圓角、陰影 -->
+                <div class="bg-white px-8 py-8 rounded-b-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)]">
+                <!-- 婚紗拍攝方案 與 婚宴方案推薦 (Checkboxes) -->
                 <div class="mb-[26px]">
                     <p class="text-[14px] tracking-[0.10em] text-text-main-title mb-[17px]">
-                        諮詢項目 <span class="text-red-500" aria-hidden="true">*</span>
-                        <span class="sr-only">(必填，請至少選擇一項)</span>
+                        婚紗拍攝方案 與 婚宴方案推薦
                     </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[17px]" role="group" aria-labelledby="consultation-items">
+                    <div class="flex flex-col gap-[17px]" role="group" aria-labelledby="wedding-photo-plans">
                         <label class="flex items-center cursor-pointer group">
                             <input
                                 type="checkbox"
-                                name="consultation-items"
-                                value="dress-rental"
+                                name="wedding-photo-plans"
+                                value="package-51800"
+                                checked
                                 class="w-[18px] h-[18px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
                             >
-                            <span class="ml-[9px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">白紗 & 晚禮服租借</span>
+                            <span class="ml-[9px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">婚紗拍攝 3 套方案與婚宴當日禮服 3 套方案 $51,800</span>
                         </label>
                         <label class="flex items-center cursor-pointer group">
                             <input
                                 type="checkbox"
-                                name="consultation-items"
-                                value="photography"
+                                name="wedding-photo-plans"
+                                value="package-35800"
+                                checked
                                 class="w-[18px] h-[18px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
                             >
-                            <span class="ml-[9px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">婚紗攝影</span>
-                        </label>
-                        <label class="flex items-center cursor-pointer group">
-                            <input
-                                type="checkbox"
-                                name="consultation-items"
-                                value="wedding-day"
-                                class="w-[18px] h-[18px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
-                            >
-                            <span class="ml-[9px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">婚宴當天</span>
-                        </label>
-                        <label class="flex items-center cursor-pointer group">
-                            <input
-                                type="checkbox"
-                                name="consultation-items"
-                                value="package"
-                                class="w-[18px] h-[18px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
-                            >
-                            <span class="ml-[9px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">整套包套</span>
-                        </label>
-                        <label class="flex items-center cursor-pointer group">
-                            <input
-                                type="checkbox"
-                                name="consultation-items"
-                                value="other"
-                                class="w-[18px] h-[18px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
-                            >
-                            <span class="ml-[9px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">其他</span>
+                            <span class="ml-[9px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">婚紗拍攝 3 套方案 $35,800 up</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- 預算範圍 -->
+                <!-- 租賃禮服方案 (Checkboxes) -->
                 <div class="mb-[26px]">
-                    <p class="text-[14px] tracking-[0.10em] text-text-main-title mb-[17px]">預算範圍</p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[17px]" role="radiogroup" aria-labelledby="budget-range">
+                    <p class="text-[14px] tracking-[0.10em] text-text-main-title mb-[17px]">
+                        租賃禮服方案
+                    </p>
+                    <div class="flex flex-col gap-[17px]" role="group" aria-labelledby="rental-plans">
                         <label class="flex items-center cursor-pointer group">
                             <input
-                                type="radio"
-                                name="budget"
-                                value="under-50000"
-                                class="w-[18px] h-[18px] border border-[#D6B499] text-btn-bg focus:ring-btn-bg cursor-pointer"
+                                type="checkbox"
+                                name="rental-plans"
+                                value="white-dress-8000"
+                                class="w-[18px] h-[18px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
                             >
-                            <span class="ml-[9px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">5 萬以下</span>
+                            <span class="ml-[9px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">單租 1 套白紗 $8,000 up</span>
                         </label>
                         <label class="flex items-center cursor-pointer group">
                             <input
-                                type="radio"
-                                name="budget"
-                                value="50000-100000"
-                                class="w-[18px] h-[18px] border border-[#D6B499] text-btn-bg focus:ring-btn-bg cursor-pointer"
+                                type="checkbox"
+                                name="rental-plans"
+                                value="evening-dress-6000"
+                                class="w-[18px] h-[18px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
                             >
-                            <span class="ml-[9px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">5 - 10 萬</span>
-                        </label>
-                        <label class="flex items-center cursor-pointer group">
-                            <input
-                                type="radio"
-                                name="budget"
-                                value="100000-150000"
-                                class="w-[18px] h-[18px] border border-[#D6B499] text-btn-bg focus:ring-btn-bg cursor-pointer"
-                            >
-                            <span class="ml-[9px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">10 - 15 萬</span>
-                        </label>
-                        <label class="flex items-center cursor-pointer group">
-                            <input
-                                type="radio"
-                                name="budget"
-                                value="over-150000"
-                                class="w-[18px] h-[18px] border border-[#D6B499] text-btn-bg focus:ring-btn-bg cursor-pointer"
-                            >
-                            <span class="ml-[9px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">15 萬以上</span>
+                            <span class="ml-[9px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">單租 1 套 晚宴禮服 $6,000 up</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- 備註說明 -->
+                <!-- 是經由什麼方式得知 LIN 禮服館呢？ -->
+                <div class="mb-[26px]">
+                    <label for="how-know" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px] block">
+                        是經由什麼方式得知 LIN 禮服館呢？
+                    </label>
+                    <select
+                        id="how-know"
+                        name="how-know"
+                        class="w-full h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                        onchange="toggleReferralInput(this)"
+                    >
+                        <option value="">請選擇</option>
+                        <option value="facebook">LIN 粉絲團照片很吸引妳</option>
+                        <option value="friend">親友介紹</option>
+                        <option value="photographer">攝影師或造型師轉介紹</option>
+                    </select>
+                    <!-- 親友介紹額外輸入框 -->
+                    <div id="referral-input" class="hidden mt-[9px]">
+                        <input
+                            type="text"
+                            name="referral-name"
+                            placeholder="請輸入介紹人姓名"
+                            class="w-full h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                        >
+                    </div>
+                </div>
+
+                <!-- 其他備註 -->
                 <div class="flex flex-col">
                     <label for="remarks" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
-                        備註說明
+                        其他備註
                     </label>
                     <textarea
                         id="remarks"
                         name="remarks"
                         rows="5"
-                        placeholder="如有其他需求或問題，請在此說明..."
                         class="px-4 py-3 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300 resize-none"
                     ></textarea>
                 </div>
+                </div> <!-- 關閉白底容器 -->
             </fieldset>
 
-            <!-- Submit Button -->
-            <div class="flex justify-center">
+            <!-- Buttons -->
+            <div class="flex justify-center gap-4">
+                <button
+                    type="button"
+                    onclick="document.getElementById('reservation-form').reset()"
+                    class="inline-flex items-center justify-center w-[122px] h-[48px] bg-transparent border border-btn-bg text-btn-bg text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-btn-bg hover:text-white focus:outline-none focus:ring-2 focus:ring-btn-bg focus:ring-offset-2"
+                >
+                    重新填寫
+                </button>
                 <button
                     type="submit"
-                    class="inline-flex items-center justify-center w-[180px] h-[48px] bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-text-gold hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-btn-bg focus:ring-offset-2"
+                    class="inline-flex items-center justify-center w-[122px] h-[48px] bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-text-gold hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-btn-bg focus:ring-offset-2"
                 >
-                    送出預約 <i class="fas fa-paper-plane ml-2.5"></i>
+                    確認送出
                 </button>
             </div>
 
         </form>
 
+        <!-- Success Modal -->
+        <div id="success-overlay" class="success-overlay">
+            <div class="success-modal">
+                <div class="text-[48px] text-text-gold mb-4">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3 class="text-[20px] tracking-[0.15em] text-text-main-title mb-4">預約成功！</h3>
+                <p class="text-[14px] tracking-[0.10em] text-text-subtitle mb-6">
+                    感謝您的預約，我們將盡快與您聯繫確認詳情。
+                </p>
+                <button id="close-modal" class="inline-flex items-center justify-center w-[120px] h-[40px] bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-text-gold">
+                    確定
+                </button>
+            </div>
+        </div>
+
     </section>
+
+    <!-- Footer Section -->
+    <footer class="w-full">
+        <!-- Main Footer Area -->
+        <div class="bg-footer-bg">
+            <div class="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-16 lg:px-[225px] py-[60px]">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-0 items-start">
+
+                    <!-- Left Section - Contact Information -->
+                    <div class="flex flex-col items-center lg:items-start text-white">
+                        <div class="space-y-[14px]">
+                            <p class="text-[14px] leading-[22px] tracking-[0.10em]">
+                                服務時間｜10:00-18:00
+                            </p>
+                            <p class="text-[14px] leading-[22px] tracking-[0.10em]">
+                                固定公休｜每週三
+                            </p>
+                            <p class="text-[14px] leading-[22px] tracking-[0.10em]">
+                                聯絡電話｜07-2372269
+                            </p>
+                            <p class="text-[14px] leading-[22px] tracking-[0.10em]">
+                                門市地址｜高雄市林森一路189號8樓
+                                <a href="https://maps.google.com" target="_blank" class="inline text-[14px] tracking-[0.10em] text-white hover:text-[#d3b599] transition-colors duration-300 underline ml-2">
+                                    立即導航
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Center Section - Logo -->
+                    <div class="flex flex-col items-center justify-center">
+                        <!-- Logo Badge/Icon -->
+                        <img src="Lin haute Bridal/logo/logo-white.svg" alt="LinHaute Bridal Logo" class="w-[120px] h-auto">
+                    </div>
+
+                    <!-- Right Section - Social Media -->
+                    <div class="flex flex-col items-center lg:items-end text-white">
+                        <!-- Social Media Icons -->
+                        <div class="flex items-center gap-4 mb-4">
+                            <!-- Instagram -->
+                            <a href="#" class="w-[40px] h-[40px] rounded-full bg-white flex items-center justify-center hover:bg-white/80 transition-colors duration-300" aria-label="Instagram">
+                                <i class="fab fa-instagram text-footer-bg text-lg"></i>
+                            </a>
+                            <!-- Facebook -->
+                            <a href="#" class="w-[40px] h-[40px] rounded-full bg-white flex items-center justify-center hover:bg-white/80 transition-colors duration-300" aria-label="Facebook">
+                                <i class="fab fa-facebook-f text-footer-bg text-lg"></i>
+                            </a>
+                            <!-- YouTube -->
+                            <a href="#" class="w-[40px] h-[40px] rounded-full bg-white flex items-center justify-center hover:bg-white/80 transition-colors duration-300" aria-label="YouTube">
+                                <i class="fab fa-youtube text-footer-bg text-lg"></i>
+                            </a>
+                            <!-- Email -->
+                            <a href="mailto:info@linhaute.com" class="w-[40px] h-[40px] rounded-full bg-white flex items-center justify-center hover:bg-white/80 transition-colors duration-300" aria-label="Email">
+                                <i class="fas fa-envelope text-footer-bg text-lg"></i>
+                            </a>
+                        </div>
+                        <!-- Labels -->
+                        <p class="text-[14px] tracking-[0.10em] text-center lg:text-right">高級定制禮服．採預約制</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="bg-footer-copyright">
+            <div class="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-16 lg:px-[225px] py-4">
+                <p class="text-[12px] tracking-[0.05em] text-text-subtitle text-center">
+                    Copyright &copy; Linhaute Bridal 2025. All Rights Reserved. Design by 漢羽網路
+                </p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Mobile Menu Toggle Script -->
     <script>
@@ -763,6 +866,207 @@
                     hamburgerLines[0].style.transform = 'none';
                     hamburgerLines[1].style.opacity = '1';
                     hamburgerLines[2].style.transform = 'none';
+                });
+            });
+        });
+    </script>
+
+    <!-- Form Validation Script -->
+    <script>
+        // Toggle referral input based on dropdown selection
+        function toggleReferralInput(select) {
+            const referralInput = document.getElementById('referral-input');
+            if (select.value === 'friend') {
+                referralInput.classList.remove('hidden');
+            } else {
+                referralInput.classList.add('hidden');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('reservation-form');
+            const successOverlay = document.getElementById('success-overlay');
+            const closeModalBtn = document.getElementById('close-modal');
+
+            // Form submission handler
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                let isValid = true;
+
+                // Clear previous errors
+                form.querySelectorAll('.error-message').forEach(el => el.remove());
+                form.querySelectorAll('.form-error').forEach(el => {
+                    el.classList.remove('form-error');
+                });
+
+                // Validate required fields
+                const requiredFields = [
+                    { id: 'contact-name', message: '請輸入您的姓名' },
+                    { id: 'contact-phone', message: '請輸入您的電話號碼' },
+                    { id: 'contact-email', message: '請輸入您的 Email' },
+                    { id: 'reservation-date', message: '請選擇預約日期' },
+                    { id: 'reservation-time', message: '請選擇預約時段' }
+                ];
+
+                requiredFields.forEach(field => {
+                    const input = document.getElementById(field.id);
+                    if (!input.value.trim()) {
+                        isValid = false;
+                        showError(input, field.message);
+                    }
+                });
+
+                // Email validation
+                const email = document.getElementById('contact-email');
+                if (email.value && !isValidEmail(email.value)) {
+                    isValid = false;
+                    showError(email, '請輸入有效的 Email 格式');
+                }
+
+                // Phone validation
+                const phone = document.getElementById('contact-phone');
+                if (phone.value && !isValidPhone(phone.value)) {
+                    isValid = false;
+                    showError(phone, '請輸入有效的電話號碼（9-10位數字）');
+                }
+
+                // Checkbox group validation (at least one required)
+                const checkboxes = document.querySelectorAll('input[name="consultation-items"]:checked');
+                if (checkboxes.length === 0) {
+                    isValid = false;
+                    const checkboxContainer = document.querySelector('input[name="consultation-items"]').closest('.mb-\\[26px\\]');
+                    showGroupError(checkboxContainer, '請至少選擇一項諮詢項目');
+                }
+
+                if (isValid) {
+                    // Show success modal
+                    successOverlay.classList.add('show');
+
+                    // Collect form data (for debugging/future implementation)
+                    const formData = new FormData(form);
+                    const data = {};
+                    formData.forEach((value, key) => {
+                        if (data[key]) {
+                            if (Array.isArray(data[key])) {
+                                data[key].push(value);
+                            } else {
+                                data[key] = [data[key], value];
+                            }
+                        } else {
+                            data[key] = value;
+                        }
+                    });
+                    console.log('Form submitted:', data);
+
+                    // Reset form
+                    form.reset();
+                } else {
+                    // Scroll to first error
+                    const firstError = form.querySelector('.error-message');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            });
+
+            // Helper function to show field error
+            function showError(input, message) {
+                input.classList.add('form-error');
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                errorDiv.textContent = message;
+                input.parentElement.appendChild(errorDiv);
+            }
+
+            // Helper function to show group error
+            function showGroupError(container, message) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                errorDiv.textContent = message;
+                container.appendChild(errorDiv);
+            }
+
+            // Email validation
+            function isValidEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+
+            // Phone validation (allows 9-10 digits with optional dashes/spaces)
+            function isValidPhone(phone) {
+                const cleaned = phone.replace(/[\s\-]/g, '');
+                return /^[0-9]{9,10}$/.test(cleaned);
+            }
+
+            // Close modal handlers
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', function() {
+                    successOverlay.classList.remove('show');
+                });
+            }
+
+            // Close modal on overlay click
+            successOverlay.addEventListener('click', function(e) {
+                if (e.target === successOverlay) {
+                    successOverlay.classList.remove('show');
+                }
+            });
+
+            // Close modal on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && successOverlay.classList.contains('show')) {
+                    successOverlay.classList.remove('show');
+                }
+            });
+
+            // Set minimum date for reservation date (today)
+            const reservationDate = document.getElementById('reservation-date');
+            if (reservationDate) {
+                const today = new Date().toISOString().split('T')[0];
+                reservationDate.setAttribute('min', today);
+            }
+
+            // Set minimum date for wedding date (1 month from today)
+            const weddingDate = document.getElementById('wedding-date');
+            if (weddingDate) {
+                const nextMonth = new Date();
+                nextMonth.setMonth(nextMonth.getMonth() + 1);
+                weddingDate.setAttribute('min', nextMonth.toISOString().split('T')[0]);
+            }
+
+            // Real-time validation on blur
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    // Clear existing error for this field
+                    this.classList.remove('form-error');
+                    const existingError = this.parentElement.querySelector('.error-message');
+                    if (existingError) existingError.remove();
+
+                    // Validate if empty
+                    if (!this.value.trim()) {
+                        let fieldName = this.previousElementSibling ?
+                            this.previousElementSibling.textContent.replace('*', '').trim() :
+                            '此欄位';
+                        showError(this, fieldName + '為必填欄位');
+                    }
+
+                    // Special validation for email
+                    if (this.type === 'email' && this.value && !isValidEmail(this.value)) {
+                        showError(this, '請輸入有效的 Email 格式');
+                    }
+
+                    // Special validation for phone
+                    if (this.type === 'tel' && this.value && !isValidPhone(this.value)) {
+                        showError(this, '請輸入有效的電話號碼（9-10位數字）');
+                    }
+                });
+
+                // Clear error on input
+                input.addEventListener('input', function() {
+                    this.classList.remove('form-error');
+                    const existingError = this.parentElement.querySelector('.error-message');
+                    if (existingError) existingError.remove();
                 });
             });
         });
