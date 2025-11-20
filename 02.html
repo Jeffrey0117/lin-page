@@ -214,11 +214,11 @@
 
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-        <nav class="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-16 lg:px-[115px]">
+        <nav class="max-w-[1920px] mx-auto px-8 sm:px-10 md:px-16 lg:px-[115px]">
             <div class="flex items-center justify-between h-[80px]">
 
                 <!-- Logo -->
-                <div class="flex-shrink-0">
+                <div class="flex-shrink-0 pl-2 sm:pl-0">
                     <a href="#" class="flex items-center">
                         <img src="images/logo/logo.svg" alt="LinHaute Bridal Logo" class="w-[200px] md:w-[280px] lg:w-[320px] xl:w-[361px] h-auto">
                     </a>
@@ -277,7 +277,7 @@
     <div class="h-[80px]"></div>
 
     <!-- Mobile banner (< 768px) -->
-    <section class="md:hidden w-full h-[60vh] sm:h-[70vh] bg-cover bg-center bg-no-repeat relative flex items-center" style="background-image: url('images/banner/banner_mobile.jpg');">
+    <section class="md:hidden w-full h-[60vh] sm:h-[70vh] bg-cover bg-top bg-no-repeat relative flex items-center" style="background-image: url('images/banner/banner_mobile.jpg');">
         <!-- Banner for Brand Introduction -->
         <div class="absolute right-4 sm:right-8 top-1/2 transform -translate-y-1/2 z-10 flex flex-col items-center">
             <img src="images/logo/logo-white.svg" alt="LinHaute Bridal" class="w-[120px] h-auto sm:w-[151px]">
@@ -291,7 +291,7 @@
     </section>
 
     <!-- Desktop banner (≥ 768px) -->
-    <section class="hidden md:flex w-full h-[880px] bg-cover bg-center bg-no-repeat relative items-center" style="background-image: url('images/banner/banner_windows.jpg');">
+    <section class="hidden md:flex w-full h-[880px] bg-cover bg-top bg-no-repeat relative items-center" style="background-image: url('images/banner/banner_windows.jpg');">
         <!-- Banner for Brand Introduction -->
         <div class="absolute right-[219px] top-1/2 transform -translate-y-1/2 z-10 flex flex-col items-center">
             <img src="images/logo/logo-white.svg" alt="LinHaute Bridal" class="w-[151px] h-[108px]">
@@ -313,7 +313,7 @@
         </div>
 
         <!-- Content Layer -->
-        <div class="relative max-w-[1920px] mx-auto px-4 sm:px-8 md:px-16 lg:px-[225px] py-20 lg:py-[135px]">
+        <div class="relative max-w-[1920px] mx-auto px-8 sm:px-12 md:px-16 lg:px-[225px] py-20 lg:py-[135px]">
             <div class="flex flex-col xl:flex-row items-center gap-10 lg:gap-[98px]">
 
                 <!-- Left Content Block (圖片區域) -->
@@ -322,36 +322,34 @@
                 </div>
 
                 <!-- Right Content Block (內容區域) -->
-                <div class="xl:w-[calc(50%-100px)] flex flex-col items-center pl-4 lg:pl-[22px]">
+                <div class="xl:w-[calc(50%-100px)] flex flex-col items-center px-6 sm:px-10 md:px-16 lg:px-20 xl:pl-[22px] xl:pr-8">
                     <!-- 品牌介紹標題區塊 -->
                     <div class="flex flex-col items-center mb-[51px] relative">
                         <div class="relative inline-block">
                             <h2 class="text-[29px] leading-none tracking-[0.15em] text-text-main-title inline">
                                 <span class="text-[35px] text-text-gold">品</span><span class="text-[29px] text-text-main-title">牌介紹</span>
                             </h2>
-                            <img src="images/text/section-about.png" alt="ABOUTS" class="absolute left-[calc(100%+85px)] bottom-[-17px] h-[17px]">
+                            <img src="images/text/section-about.png" alt="ABOUTS" class="hidden md:block absolute left-[calc(100%+85px)] bottom-[-17px] h-[17px]">
                         </div>
-                        <div class="w-[496px] border-b border-underline mt-[17px]"></div>
+                        <div class="w-full md:w-[496px] border-b border-underline mt-[17px]"></div>
                     </div>
 
                     <!-- 副標題 -->
                     <p class="font-['Noto_Sans_HK'] text-[20px] tracking-[0.124em] text-text-subtitle mb-[21px] w-full text-center">LinHaute Bridal — 您好禮服</p>
 
                     <!-- 主標題一 -->
-                    <h2 class="font-['Noto_Sans_HK'] font-light text-[17px] leading-[21px] tracking-[0.10em] text-[#D3B599] mb-[26px] w-full text-left">
+                    <h2 class="font-['Noto_Sans_HK'] font-light text-[17px] leading-[21px] tracking-[0.10em] text-[#D3B599] mb-[26px] w-full text-left lg:whitespace-nowrap">
                         婚紗，不只是禮服，更是女孩一生一次的夢想與儀式感
                     </h2>
 
                     <!-- 段落一 -->
                     <p class="font-['Noto_Sans_HK'] font-normal text-[12px] leading-[20px] tracking-[0.095em] text-[#868686] mb-[17px] w-full text-left">
                         每一件都像在等待，等一個屬於它的故事，可等一個屬於妳的時刻。<br>
-                        我們將高級訂製與手工溫度交織在一起，為妳描繪修身的線條、輕盈的垂墜與<br>
-                        微醺的性感，把婚紗融入時裝的靈魂，那一刻穿上的，不只是「好看」，而是<br>
-                        「比妳想像中更美」。
+                        我們將高級訂製與手工溫度交織在一起，為妳描繪修身的線條、輕盈的垂墜與微醺的性感，把婚紗融入時裝的靈魂，那一刻穿上的，不只是「好看」，而是「比妳想像中更美」。
                     </p>
 
                     <!-- 主標題二 -->
-                    <h2 class="font-['Noto_Sans_HK'] font-light text-[17px] leading-[21px] tracking-[0.10em] text-[#D3B599] mb-[26px] w-full text-left">
+                    <h2 class="font-['Noto_Sans_HK'] font-light text-[17px] leading-[21px] tracking-[0.10em] text-[#D3B599] mb-[26px] w-full text-left xl:whitespace-nowrap">
                         妳會覺得，看起來都好美；我們覺得，妳穿起來更美。
                     </h2>
 
@@ -577,7 +575,7 @@
                     <h1 class="text-[29px] leading-none tracking-[0.15em] text-text-main-title inline">
                         <span class="text-[35px] text-text-gold">填</span><span class="text-[29px] text-text-main-title">寫預約表單</span>
                     </h1>
-                    <img src="images/text/section-reserve.png" alt="Reserve Now" class="absolute left-[calc(100%+35px)] bottom-0 h-[20px]">
+                    <img src="images/text/section-reserve.png" alt="Reserve Now" class="hidden md:block absolute left-[calc(100%+35px)] bottom-0 h-[20px]">
                 </div>
             </div>
             <!-- Full-width underline -->
@@ -836,7 +834,7 @@
                     <select
                         id="how-know"
                         name="how-know"
-                        class="w-[330px] h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300"
+                        class="w-full max-w-[330px] h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300"
                         onchange="toggleReferralInput(this)"
                     >
                         <option value="">請選擇</option>
@@ -850,7 +848,7 @@
                             type="text"
                             name="referral-name"
                             placeholder="請輸入介紹人姓名"
-                            class="w-[330px] h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300"
+                            class="w-full max-w-[330px] h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300"
                         >
                     </div>
                 </div>
