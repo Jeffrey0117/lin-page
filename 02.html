@@ -905,7 +905,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
 
                 <!-- Left Column: Contact Information (scaled text) -->
-                <div class="text-white text-center lg:text-left">
+                <div class="text-white text-center lg:text-left lg:justify-self-start">
                     <p class="font-['Noto_Sans_HK'] font-light text-[13.5px] leading-[12px] mb-[12px]" style="letter-spacing: 1.5px;">
                         服務時間｜10:00-18:00
                     </p>
@@ -924,16 +924,16 @@
                 </div>
 
                 <!-- Center Column: Logo (scaled from 221px × 157.62px) -->
-                <div class="flex items-center justify-center py-[15px]">
+                <div class="flex items-center justify-center py-[15px] lg:justify-self-center">
                     <img src="Lin haute Bridal/logo/logo-white.svg"
                          alt="Lin Haute Bridal Logo"
                          class="w-[195px] h-[139px] object-contain">
                 </div>
 
                 <!-- Right Column: Social Media Icons & Labels (scaled text) -->
-                <div class="text-white text-center lg:text-right flex flex-col items-center lg:items-end w-full lg:w-auto">
-                    <!-- Social Media Icons Row -->
-                    <div class="flex justify-end gap-[25px] mb-[25px] w-[285px]">
+                <div class="text-white text-center lg:text-right flex flex-col items-center lg:items-end lg:justify-self-end">
+                    <!-- Social Media Icons Row - 使用 inline-flex 并移除固定宽度 -->
+                    <div class="inline-flex gap-[25px] mb-[25px]">
                         <a href="#" target="_blank" rel="noopener noreferrer" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity duration-300" aria-label="Line">
                             <img src="icon-line.svg" alt="Line" class="w-[18px] h-[18px] object-contain">
                         </a>
@@ -951,8 +951,8 @@
                         </a>
                     </div>
 
-                    <!-- Text Content -->
-                    <p class="font-['Noto_Sans_HK'] font-normal text-[14px] leading-[18px] text-justify w-[285px]" style="letter-spacing: 11px;">
+                    <!-- Text Content - 文字对齐 icons 右边界 -->
+                    <p class="font-['Noto_Sans_HK'] font-normal text-[14px] leading-[18px] text-right" style="letter-spacing: 11px;">
                         高級定制禮服．採預約制
                     </p>
                 </div>
