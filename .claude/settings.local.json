@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(git remote add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git mv:*)",
+      "Bash(ls:*)",
+      "Bash(node cleanup-old-images.js:*)",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__evaluate_script",
+      "mcp__chrome-devtools__resize_page"
     ],
     "deny": [],
     "ask": []
