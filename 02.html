@@ -558,13 +558,15 @@
         <!-- Section Title with full-width underline -->
         <div class="w-full">
             <div class="main-title-wrapper flex flex-col items-center mb-[26px] relative">
-                <h1 class="text-[35px] leading-none tracking-[0.15em] text-text-main-title font-['Noto_Serif_TC'] font-medium">
-                    填寫預約表單
-                </h1>
-                <p class="text-[14px] tracking-[0.15em] text-text-gold font-['Cormorant_Garamond'] mt-[9px]">Reserve Now</p>
+                <div class="relative inline-block">
+                    <h1 class="text-[29px] leading-none tracking-[0.15em] text-text-main-title inline">
+                        <span class="text-[35px] text-text-gold">填</span><span class="text-[29px] text-text-main-title">寫預約表單</span>
+                    </h1>
+                    <img src="reserve-now.png" alt="Reserve Now" class="absolute left-[calc(100%+35px)] bottom-0 h-[20px]">
+                </div>
             </div>
             <!-- Full-width underline -->
-            <div class="w-full border-b border-underline"></div>
+            <div class="w-full border-b border-underline mt-[17px]"></div>
         </div>
 
         <!-- Single line description text -->
@@ -588,7 +590,7 @@
                 </legend>
 
                 <!-- 內容區：#F9F5F1底、圓角、陰影 -->
-                <div class="bg-[#F9F5F1] px-[270px] py-[43px] rounded-b-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)]">
+                <div class="bg-[#F9F5F1] px-[240px] py-[43px] rounded-b-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)]">
                     <ol class="list-decimal list-inside space-y-2 font-['Noto_Sans_HK'] font-normal text-[12px] leading-[18px] tracking-[0.10em] text-[#868686]" style="color: #868686;">
                         <li>為了提供給新人完整的服務，採取線上預約制。</li>
                         <li>只要填寫預約單，我們將在 2 日內與您連絡，若沒有連絡上您，可能是您的預約單沒有發送成功哦！</li>
@@ -609,7 +611,7 @@
                 </legend>
 
                 <!-- #F9F5F1底表單區塊 -->
-                <div class="bg-[#F9F5F1] px-[270px] py-7 rounded-b-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)]">
+                <div class="bg-[#F9F5F1] px-[240px] py-7 rounded-b-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)]">
                     <!-- 兩欄 Grid 布局 -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[51px] gap-y-[18px]">
 
@@ -618,7 +620,7 @@
 
                             <!-- 聯絡姓名 -->
                             <div class="flex flex-col">
-                                <label for="contact-name" class="text-[12px] tracking-[0.10em] text-[#67534D] mb-[8px]">
+                                <label for="contact-name" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
                                     <span class="text-red-500" aria-hidden="true">*</span> 聯絡姓名
                                     <span class="sr-only">(必填)</span>
                                 </label>
@@ -628,26 +630,26 @@
                                     name="contact-name"
                                     required
                                     aria-required="true"
-                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[12px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
                                 >
                             </div>
 
                             <!-- E-mail -->
                             <div class="flex flex-col">
-                                <label for="contact-email" class="text-[12px] tracking-[0.10em] text-[#67534D] mb-[8px]">
+                                <label for="contact-email" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
                                     E-mail
                                 </label>
                                 <input
                                     type="email"
                                     id="contact-email"
                                     name="contact-email"
-                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[12px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
                                 >
                             </div>
 
                             <!-- 聯絡電話 -->
                             <div class="flex flex-col">
-                                <label for="contact-phone" class="text-[12px] tracking-[0.10em] text-[#67534D] mb-[8px]">
+                                <label for="contact-phone" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
                                     <span class="text-red-500" aria-hidden="true">*</span> 聯絡電話
                                     <span class="sr-only">(必填)</span>
                                 </label>
@@ -657,13 +659,13 @@
                                     name="contact-phone"
                                     required
                                     aria-required="true"
-                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[12px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
                                 >
                             </div>
 
                             <!-- 方便聯絡時段 -->
                             <div class="flex flex-col">
-                                <label for="convenient-time" class="text-[12px] tracking-[0.10em] text-[#67534D] mb-[8px]">
+                                <label for="convenient-time" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
                                     <span class="text-red-500" aria-hidden="true">*</span> 方便聯絡時段
                                     <span class="sr-only">(必填)</span>
                                 </label>
@@ -672,7 +674,7 @@
                                     name="convenient-time"
                                     required
                                     aria-required="true"
-                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[12px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
                                 >
                                     <option value="">請選擇</option>
                                     <option value="morning">早上 (09:00-12:00)</option>
@@ -761,7 +763,7 @@
                 </legend>
 
                 <!-- 內容區：#F9F5F1底、圓角、陰影 -->
-                <div class="bg-[#F9F5F1] px-[270px] py-7 rounded-b-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)]">
+                <div class="bg-[#F9F5F1] px-[240px] py-7 rounded-b-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)]">
                     <div class="w-full">
                 <!-- 婚紗拍攝方案 與 婚宴方案推薦 (Checkboxes) -->
                 <div class="mb-[22px]">
