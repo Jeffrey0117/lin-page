@@ -582,14 +582,14 @@
             <fieldset class="mb-[51px] border-0 p-0">
                 <!-- 標題列：淺卡其色背景（統一顏色） -->
                 <legend class="w-full mb-0">
-                    <div class="bg-[#D6B499] py-4 px-6 rounded-t-[9px] flex items-center justify-center">
-                        <span class="font-['Noto_Sans_HK'] font-normal text-[20px] tracking-[0.15em] text-white text-center">預約聯絡</span>
+                    <div class="bg-[#67534D] h-[42px] px-6 rounded-t-[9px] flex items-center justify-center">
+                        <span class="font-['Noto_Sans_HK'] font-normal text-[20px] tracking-[0.15em] text-white">預約聯絡</span>
                     </div>
                 </legend>
 
-                <!-- 內容區：白底、圓角、陰影 -->
-                <div class="bg-white px-8 py-8 rounded-b-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex justify-center">
-                    <ol class="list-decimal list-inside space-y-4 font-['Noto_Sans_HK'] font-normal text-[14px] leading-[24px] tracking-[0.10em] text-[#868686] max-w-[600px]" style="color: #868686;">
+                <!-- 內容區：#F9F5F1底、圓角、陰影 -->
+                <div class="bg-[#F9F5F1] px-[270px] py-8 rounded-b-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)]">
+                    <ol class="list-decimal list-inside space-y-4 font-['Noto_Sans_HK'] font-normal text-[14px] leading-[24px] tracking-[0.10em] text-[#868686]" style="color: #868686;">
                         <li>為了提供給新人完整的服務，採取線上預約制。</li>
                         <li>只要填寫預約單，我們將在 2 日內與您連絡，若沒有連絡上您，可能是您的預約單沒有發送成功哦！</li>
                         <li>我們的人力有限，為了保障您的權益，如不克前來請提前通知，以便另外為您安排參觀時間。</li>
@@ -603,46 +603,150 @@
             <fieldset class="mb-[51px] border-0 p-0">
                 <!-- 標題列：淺卡其色背景（統一顏色） -->
                 <legend class="w-full mb-0">
-                    <div class="bg-[#D6B499] py-4 px-6 rounded-t-[9px] flex items-center justify-center">
-                        <span class="font-['Noto_Sans_HK'] font-normal text-[20px] tracking-[0.15em] text-white text-center">基本資訊</span>
+                    <div class="bg-[#D6B499] h-[42px] px-6 rounded-t-[9px] flex items-center justify-center">
+                        <span class="font-['Noto_Sans_HK'] font-normal text-[20px] tracking-[0.15em] text-white">基本資訊</span>
                     </div>
                 </legend>
 
-                <!-- 白底表單區塊 -->
-                <div class="bg-white px-8 md:px-16 py-8 rounded-b-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex justify-center">
-                    <div class="grid grid-cols-1 gap-y-[21px] w-full max-w-[500px]">
-                        <!-- 聯絡姓名 -->
-                        <div class="flex flex-col">
-                            <label for="contact-name-basic" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
-                                <span class="text-red-500" aria-hidden="true">*</span> 聯絡姓名
-                                <span class="sr-only">(必填)</span>
-                            </label>
-                            <input
-                                type="text"
-                                id="contact-name-basic"
-                                name="contact-name-basic"
-                                required
-                                aria-required="true"
-                                class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300"
-                            >
+                <!-- #F9F5F1底表單區塊 -->
+                <div class="bg-[#F9F5F1] px-[270px] py-8 rounded-b-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)]">
+                    <!-- 兩欄 Grid 布局 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[60px] gap-y-[21px]">
+
+                        <!-- 左欄 -->
+                        <div class="flex flex-col space-y-[21px]">
+
+                            <!-- 聯絡姓名 -->
+                            <div class="flex flex-col">
+                                <label for="contact-name" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[9px]">
+                                    <span class="text-red-500" aria-hidden="true">*</span> 聯絡姓名
+                                    <span class="sr-only">(必填)</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="contact-name"
+                                    name="contact-name"
+                                    required
+                                    aria-required="true"
+                                    class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                >
+                            </div>
+
+                            <!-- E-mail -->
+                            <div class="flex flex-col">
+                                <label for="contact-email" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[9px]">
+                                    E-mail
+                                </label>
+                                <input
+                                    type="email"
+                                    id="contact-email"
+                                    name="contact-email"
+                                    class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                >
+                            </div>
+
+                            <!-- 聯絡電話 -->
+                            <div class="flex flex-col">
+                                <label for="contact-phone" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[9px]">
+                                    <span class="text-red-500" aria-hidden="true">*</span> 聯絡電話
+                                    <span class="sr-only">(必填)</span>
+                                </label>
+                                <input
+                                    type="tel"
+                                    id="contact-phone"
+                                    name="contact-phone"
+                                    required
+                                    aria-required="true"
+                                    class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                >
+                            </div>
+
+                            <!-- 方便聯絡時段 -->
+                            <div class="flex flex-col">
+                                <label for="convenient-time" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[9px]">
+                                    <span class="text-red-500" aria-hidden="true">*</span> 方便聯絡時段
+                                    <span class="sr-only">(必填)</span>
+                                </label>
+                                <select
+                                    id="convenient-time"
+                                    name="convenient-time"
+                                    required
+                                    aria-required="true"
+                                    class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                >
+                                    <option value="">請選擇</option>
+                                    <option value="morning">早上 (09:00-12:00)</option>
+                                    <option value="afternoon">下午 (12:00-17:00)</option>
+                                    <option value="evening">晚上 (17:00-20:00)</option>
+                                </select>
+                            </div>
+
                         </div>
 
-                        <!-- 希望來店諮詢日期？ -->
-                        <div class="flex flex-col">
-                            <label for="consultation-date" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
-                                <span class="text-red-500" aria-hidden="true">*</span> 希望來店諮詢日期？
-                                <span class="sr-only">(必填)</span>
-                            </label>
-                            <input
-                                type="text"
-                                id="consultation-date"
-                                name="consultation-date"
-                                required
-                                aria-required="true"
-                                placeholder="DD / MM / YY"
-                                class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300"
-                            >
+                        <!-- 右欄 -->
+                        <div class="flex flex-col space-y-[21px]">
+
+                            <!-- 希望來店諮詢日期 -->
+                            <div class="flex flex-col">
+                                <label for="consultation-date" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[9px]">
+                                    <span class="text-red-500" aria-hidden="true">*</span> 希望來店諮詢日期？
+                                    <span class="sr-only">(必填)</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="consultation-date"
+                                    name="consultation-date"
+                                    required
+                                    aria-required="true"
+                                    placeholder="DD / MM / YY"
+                                    class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                >
+                            </div>
+
+                            <!-- 結婚日期 -->
+                            <div class="flex flex-col">
+                                <label for="wedding-date" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[9px]">
+                                    結婚日期
+                                </label>
+                                <input
+                                    type="text"
+                                    id="wedding-date"
+                                    name="wedding-date"
+                                    placeholder="DD / MM / YY"
+                                    class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                >
+                            </div>
+
+                            <!-- 拍攝日期 -->
+                            <div class="flex flex-col">
+                                <label for="shooting-date" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[9px]">
+                                    拍攝日期
+                                </label>
+                                <input
+                                    type="text"
+                                    id="shooting-date"
+                                    name="shooting-date"
+                                    placeholder="DD / MM / YY"
+                                    class="h-[43px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                >
+                            </div>
+
+                            <!-- 若有確定拍攝時間可填寫 -->
+                            <div class="flex flex-col">
+                                <label for="shooting-time-notes" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[9px]">
+                                    若有確定拍攝時間可填寫
+                                </label>
+                                <textarea
+                                    id="shooting-time-notes"
+                                    name="shooting-time-notes"
+                                    rows="2"
+                                    placeholder="請輸入拍攝時間備註"
+                                    class="px-4 py-3 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300 resize-none"
+                                ></textarea>
+                            </div>
+
                         </div>
+
                     </div>
                 </div>
             </fieldset>
@@ -651,14 +755,14 @@
             <fieldset class="mb-[51px] border-0 p-0">
                 <!-- 標題列：淺卡其色背景（與上面統一） -->
                 <legend class="w-full mb-0">
-                    <div class="bg-[#D6B499] py-4 px-6 rounded-t-[9px] flex items-center justify-center">
-                        <span class="font-['Noto_Sans_HK'] font-normal text-[20px] tracking-[0.15em] text-white text-center">方案選擇</span>
+                    <div class="bg-[#D6B499] h-[42px] px-6 rounded-t-[9px] flex items-center justify-center">
+                        <span class="font-['Noto_Sans_HK'] font-normal text-[20px] tracking-[0.15em] text-white">方案選擇</span>
                     </div>
                 </legend>
 
-                <!-- 內容區：白底、圓角、陰影 -->
-                <div class="bg-white px-8 py-8 rounded-b-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex justify-center">
-                    <div class="w-full max-w-[600px]">
+                <!-- 內容區：#F9F5F1底、圓角、陰影 -->
+                <div class="bg-[#F9F5F1] px-[270px] py-8 rounded-b-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)]">
+                    <div class="w-full">
                 <!-- 婚紗拍攝方案 與 婚宴方案推薦 (Checkboxes) -->
                 <div class="mb-[26px]">
                     <p class="text-[14px] tracking-[0.10em] text-text-main-title mb-[17px]">
@@ -754,26 +858,27 @@
                         class="w-full px-4 py-3 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300 resize-none"
                     ></textarea>
                 </div>
-                    </div> <!-- 關閉max-w容器 -->
-                </div> <!-- 關閉白底容器 -->
-            </fieldset>
 
-            <!-- Buttons -->
-            <div class="flex justify-center gap-4">
-                <button
-                    type="button"
-                    onclick="document.getElementById('reservation-form').reset()"
-                    class="inline-flex items-center justify-center w-[122px] h-[48px] bg-transparent border border-btn-bg text-btn-bg text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-btn-bg hover:text-white focus:outline-none focus:ring-2 focus:ring-btn-bg focus:ring-offset-2"
-                >
-                    重新填寫
-                </button>
-                <button
-                    type="submit"
-                    class="inline-flex items-center justify-center w-[122px] h-[48px] bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-text-gold hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-btn-bg focus:ring-offset-2"
-                >
-                    確認送出
-                </button>
-            </div>
+                    <!-- Buttons (移至方案選擇區塊內) -->
+                    <div class="flex justify-center gap-4 mt-8">
+                        <button
+                            type="button"
+                            onclick="document.getElementById('reservation-form').reset()"
+                            class="inline-flex items-center justify-center w-[122px] h-[48px] bg-transparent border border-btn-bg text-btn-bg text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-btn-bg hover:text-white focus:outline-none focus:ring-2 focus:ring-btn-bg focus:ring-offset-2"
+                        >
+                            重新填寫
+                        </button>
+                        <button
+                            type="submit"
+                            class="inline-flex items-center justify-center w-[122px] h-[48px] bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-text-gold hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-btn-bg focus:ring-offset-2"
+                        >
+                            確認送出
+                        </button>
+                    </div>
+
+                    </div> <!-- 關閉w-full容器 -->
+                </div> <!-- 關閉#F9F5F1背景容器 -->
+            </fieldset>
 
             </div>
         </form>
@@ -796,48 +901,48 @@
 
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer Section (Scaled by 120/136 ratio = 0.882353) -->
     <footer class="w-full bg-footer-bg relative">
-        <!-- White divider lines - 23px from top and bottom -->
-        <div class="absolute top-[23px] left-0 right-0 h-[1px] bg-white z-10"></div>
-        <div class="absolute bottom-[23px] left-0 right-0 h-[1px] bg-white z-10"></div>
+        <!-- White divider lines - 20px from top and bottom (scaled from 23px) -->
+        <div class="absolute top-[20px] left-0 right-0 h-[1px] bg-white z-10"></div>
+        <div class="absolute bottom-[20px] left-0 right-0 h-[1px] bg-white z-10"></div>
 
         <!-- Main footer content area with proper container alignment -->
-        <div class="container mx-auto px-4 max-w-[1200px] py-[60px]">
+        <div class="container mx-auto px-4 max-w-[1200px] py-[53px]">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
 
-                <!-- Left Column: Contact Information -->
+                <!-- Left Column: Contact Information (scaled text) -->
                 <div class="text-white text-center lg:text-left">
-                    <p class="font-['Noto_Sans_HK'] font-normal text-[16px] leading-[20px] mb-[10px]">
+                    <p class="font-['Noto_Sans_HK'] font-normal text-[14px] leading-[18px] mb-[9px]">
                         服務時間｜10:00-18:00
                     </p>
-                    <p class="font-['Noto_Sans_HK'] font-normal text-[16px] leading-[20px] mb-[10px]">
+                    <p class="font-['Noto_Sans_HK'] font-normal text-[14px] leading-[18px] mb-[9px]">
                         固定公休｜每週三
                     </p>
-                    <p class="font-['Noto_Sans_HK'] font-normal text-[16px] leading-[20px] mb-[10px]">
+                    <p class="font-['Noto_Sans_HK'] font-normal text-[14px] leading-[18px] mb-[9px]">
                         聯絡電話｜07-2372269
                     </p>
-                    <p class="font-['Noto_Sans_HK'] font-normal text-[16px] leading-[20px]">
+                    <p class="font-['Noto_Sans_HK'] font-normal text-[14px] leading-[18px]">
                         門市地址｜高雄市林森一路189號8樓
-                        <a href="https://maps.google.com" target="_blank" class="inline text-[16px] font-['Noto_Sans_HK'] font-normal leading-[20px] text-white hover:opacity-80 transition-opacity duration-300 underline ml-2">
+                        <a href="https://maps.google.com" target="_blank" class="inline text-[14px] font-['Noto_Sans_HK'] font-normal leading-[18px] text-white hover:opacity-80 transition-opacity duration-300 underline ml-2">
                             立即導航
                         </a>
                     </p>
                 </div>
 
-                <!-- Center Column: Logo -->
+                <!-- Center Column: Logo (scaled from 221px × 157.62px) -->
                 <div class="flex items-center justify-center">
                     <img src="Lin haute Bridal/logo/logo-white.svg"
                          alt="Lin Haute Bridal Logo"
-                         class="w-[221px] h-[157.62px] object-contain">
+                         class="w-[195px] h-[139px] object-contain">
                 </div>
 
-                <!-- Right Column: Navigation/Labels -->
+                <!-- Right Column: Navigation/Labels (scaled text) -->
                 <div class="text-white text-center lg:text-right">
-                    <p class="font-['Noto_Sans_HK'] font-normal text-[16px] leading-[20px] mb-[10px]">
+                    <p class="font-['Noto_Sans_HK'] font-normal text-[14px] leading-[18px] mb-[9px]">
                         高級定制禮服．採預約制
                     </p>
-                    <p class="font-['Noto_Sans_HK'] font-normal text-[16px] leading-[20px]">
+                    <p class="font-['Noto_Sans_HK'] font-normal text-[14px] leading-[18px]">
                         預約約制
                     </p>
                 </div>
@@ -846,10 +951,10 @@
         </div>
     </footer>
 
-    <!-- Copyright Section - Separate with white background -->
+    <!-- Copyright Section - Separate with white background (scaled text) -->
     <div class="w-full bg-white py-4">
         <div class="container mx-auto px-4 max-w-[1200px]">
-            <p class="font-['Noto_Sans_HK'] font-normal text-[12px] leading-[30px] tracking-[1.2px] text-footer-copyright text-center">
+            <p class="font-['Noto_Sans_HK'] font-normal text-[11px] leading-[26px] tracking-[1.06px] text-footer-copyright text-center">
                 Copyright © Linhaute Bridal 2025. All Rights Reserved. Design by 漢羽網路
             </p>
         </div>
