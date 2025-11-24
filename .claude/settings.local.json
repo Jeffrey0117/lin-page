@@ -8,7 +8,8 @@
       "Bash(node cleanup-old-images.js:*)",
       "mcp__chrome-devtools__take_screenshot",
       "mcp__chrome-devtools__evaluate_script",
-      "mcp__chrome-devtools__resize_page"
+      "mcp__chrome-devtools__resize_page",
+      "mcp__chrome-devtools__navigate_page"
     ],
     "deny": [],
     "ask": []
