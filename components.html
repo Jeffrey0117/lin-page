@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinHaute Bridal - 元件庫 Component Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'text-main-title': '#5C4535',
+              'text-subtitle': '#8E8174',
+              'text-gold': '#BA8A63',
+              'btn-bg': '#C29164',
+              'underline': '#D6B499',
+              'card-bg': '#F9F5F1',
+              'blog-title': '#5A4631',
+              'blog-text': '#6B645E',
+              'blog-gold': '#C8A37C',
+              'blog-line': '#CBB59A',
+              'blog-gold-hover': '#B69272',
+              'footer-bg': '#D3B599',
+              'footer-copyright': '#C09771',
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .font-serifEng { font-family: 'Cormorant Garamond', serif; }
+
+        /* Component Section Styling */
+        .component-section {
+            border-bottom: 1px solid #e5e5e5;
+            padding: 60px 0;
+        }
+        .component-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .component-desc {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+        .component-box {
+            background: #fafafa;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 32px;
+            margin-bottom: 16px;
+        }
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 16px;
+            border-radius: 6px;
+            font-family: 'Consolas', monospace;
+            font-size: 12px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        .prop-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        .prop-table th, .prop-table td {
+            border: 1px solid #e5e5e5;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .prop-table th {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+        .color-swatch {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* Custom checkbox styling */
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border: 1px solid #D6B499;
+            border-radius: 3px;
+            background-color: white;
+            cursor: pointer;
+            position: relative;
+        }
+        input[type="checkbox"]:checked {
+            background-color: #C29164;
+            border-color: #C29164;
+        }
+        input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 2px;
+            width: 4px;
+            height: 7px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        /* Custom radio styling */
+        input[type="radio"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border: 1px solid #D6B499;
+            border-radius: 50%;
+            background-color: white;
+            cursor: pointer;
+            position: relative;
+        }
+        input[type="radio"]:checked {
+            border-color: #C29164;
+        }
+        input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #C29164;
+        }
+    </style>
+</head>
+<body class="font-['Noto_Sans_HK'] font-normal bg-white">
+
+    <!-- Header -->
+    <header class="sticky top-0 bg-white border-b border-gray-200 z-50">
+        <div class="max-w-[1400px] mx-auto px-8 py-4 flex items-center justify-between">
+            <h1 class="text-xl font-semibold text-gray-800">LinHaute Bridal 元件庫</h1>
+            <nav class="flex gap-6 text-sm">
+                <a href="#colors" class="text-gray-600 hover:text-btn-bg">色彩</a>
+                <a href="#typography" class="text-gray-600 hover:text-btn-bg">字體</a>
+                <a href="#section-title" class="text-gray-600 hover:text-btn-bg">區塊標題</a>
+                <a href="#buttons" class="text-gray-600 hover:text-btn-bg">按鈕</a>
+                <a href="#cards" class="text-gray-600 hover:text-btn-bg">卡片</a>
+                <a href="#forms" class="text-gray-600 hover:text-btn-bg">表單</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-[1400px] mx-auto px-8">
+
+        <!-- ==================== 1. COLORS ==================== -->
+        <section id="colors" class="component-section">
+            <h2 class="component-title">1. 色彩系統 Colors</h2>
+            <p class="component-desc">品牌核心色彩，用於全站統一視覺風格</p>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">主要色彩 Primary Colors</h3>
+                <div class="flex flex-wrap gap-6">
+                    <div class="text-center">
+                        <div class="color-swatch bg-[#C29164] shadow-md"></div>
+                        <p class="text-xs mt-2 font-medium">btn-bg</p>
+                        <p class="text-xs text-gray-500">#C29164</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-[#C09771] shadow-md"></div>
+                        <p class="text-xs mt-2 font-medium">金色強調</p>
+                        <p class="text-xs text-gray-500">#C09771</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-[#c9a782] shadow-md"></div>
+                        <p class="text-xs mt-2 font-medium">線條/英文</p>
+                        <p class="text-xs text-gray-500">#c9a782</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-[#D6B499] shadow-md"></div>
+                        <p class="text-xs mt-2 font-medium">underline</p>
+                        <p class="text-xs text-gray-500">#D6B499</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">文字色彩 Text Colors</h3>
+                <div class="flex flex-wrap gap-6">
+                    <div class="text-center">
+                        <div class="color-swatch bg-[#5C4535] shadow-md"></div>
+                        <p class="text-xs mt-2 font-medium">text-main-title</p>
+                        <p class="text-xs text-gray-500">#5C4535</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-[#67534D] shadow-md"></div>
+                        <p class="text-xs mt-2 font-medium">副標題</p>
+                        <p class="text-xs text-gray-500">#67534D</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-[#8E8174] shadow-md"></div>
+                        <p class="text-xs mt-2 font-medium">text-subtitle</p>
+                        <p class="text-xs text-gray-500">#8E8174</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-[#868686] shadow-md"></div>
+                        <p class="text-xs mt-2 font-medium">內文灰</p>
+                        <p class="text-xs text-gray-500">#868686</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">背景色彩 Background Colors</h3>
+                <div class="flex flex-wrap gap-6">
+                    <div class="text-center">
+                        <div class="color-swatch bg-[#F9F5F1] shadow-md border"></div>
+                        <p class="text-xs mt-2 font-medium">card-bg</p>
+                        <p class="text-xs text-gray-500">#F9F5F1</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-[#D3B599] shadow-md"></div>
+                        <p class="text-xs mt-2 font-medium">footer-bg</p>
+                        <p class="text-xs text-gray-500">#D3B599</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-white shadow-md border"></div>
+                        <p class="text-xs mt-2 font-medium">白色背景</p>
+                        <p class="text-xs text-gray-500">#FFFFFF</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 2. TYPOGRAPHY ==================== -->
+        <section id="typography" class="component-section">
+            <h2 class="component-title">2. 字體系統 Typography</h2>
+            <p class="component-desc">全站使用的字體家族與樣式</p>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">字體家族 Font Families</h3>
+                <table class="prop-table">
+                    <tr>
+                        <th>用途</th>
+                        <th>字體</th>
+                        <th>Class</th>
+                        <th>範例</th>
+                    </tr>
+                    <tr>
+                        <td>中文主要</td>
+                        <td>Noto Sans HK</td>
+                        <td>font-['Noto_Sans_HK']</td>
+                        <td class="font-['Noto_Sans_HK']">您好禮服 LinHaute Bridal</td>
+                    </tr>
+                    <tr>
+                        <td>英文標題</td>
+                        <td>Cormorant Garamond</td>
+                        <td>font-serifEng</td>
+                        <td class="font-serifEng text-lg">ABOUTS / BRIDAL / SERVICE</td>
+                    </tr>
+                    <tr>
+                        <td>中文襯線</td>
+                        <td>Noto Serif TC</td>
+                        <td>font-['Noto_Serif_TC']</td>
+                        <td class="font-['Noto_Serif_TC']">高級訂製婚紗</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">文字大小 Font Sizes</h3>
+                <div class="space-y-4">
+                    <div class="flex items-baseline gap-4">
+                        <span class="text-[32px] text-[#C09771]">品</span>
+                        <span class="text-sm text-gray-500">32px - 區塊標題首字 (桌面)</span>
+                    </div>
+                    <div class="flex items-baseline gap-4">
+                        <span class="text-[26px] text-[#67534D]">牌介紹</span>
+                        <span class="text-sm text-gray-500">26px - 區塊標題 (桌面)</span>
+                    </div>
+                    <div class="flex items-baseline gap-4">
+                        <span class="text-[20px] text-[#67534D]">高級訂製・遇見妳的命定白紗</span>
+                        <span class="text-sm text-gray-500">20px - 副標題</span>
+                    </div>
+                    <div class="flex items-baseline gap-4">
+                        <span class="text-[17px] text-text-main-title">卡片標題文字</span>
+                        <span class="text-sm text-gray-500">17px - 卡片標題</span>
+                    </div>
+                    <div class="flex items-baseline gap-4">
+                        <span class="text-[14px] text-text-subtitle">一般內文與按鈕文字</span>
+                        <span class="text-sm text-gray-500">14px - 內文/按鈕</span>
+                    </div>
+                    <div class="flex items-baseline gap-4">
+                        <span class="text-[12px] text-[#868686]">說明文字與小字</span>
+                        <span class="text-sm text-gray-500">12px - 說明文字</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 3. SECTION TITLE ==================== -->
+        <section id="section-title" class="component-section">
+            <h2 class="component-title">3. 區塊標題 Section Title</h2>
+            <p class="component-desc">各區塊的中英文標題組合，包含裝飾線條</p>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">標準樣式 (496px 容器)</h3>
+                <div class="flex justify-center py-8 bg-white">
+                    <!-- Section Title Component -->
+                    <div class="w-full max-w-[496px]">
+                        <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
+                            <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">品</span>
+                            <span class="tracking-[0.15em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">牌介紹</span>
+                        </div>
+                        <div class="w-full flex justify-end relative">
+                            <div class="flex items-end leading-[0.6] tracking-[0.25em]">
+                                <span class="text-[24px] sm:text-[31px] font-serifEng font-[300] text-[#c9a782]">A</span>
+                                <span class="text-[11px] sm:text-[18px] font-serifEng font-[400] text-[#c9a782]">BOUTS</span>
+                            </div>
+                        </div>
+                        <div class="w-full border-b border-[#c9a782] mt-1"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">使用範例</h3>
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-8 py-4">
+                    <!-- 服務項目 -->
+                    <div class="text-center">
+                        <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
+                            <span class="text-[20px] text-[#C09771]">服</span>
+                            <span class="tracking-[0.15em] text-[16px] text-[#67534D]">務項目</span>
+                        </div>
+                        <div class="flex justify-end leading-[0.6] tracking-[0.25em]">
+                            <span class="text-[18px] font-serifEng font-[300] text-[#c9a782]">S</span>
+                            <span class="text-[10px] font-serifEng text-[#c9a782]">ERVICE</span>
+                        </div>
+                        <div class="border-b border-[#c9a782]"></div>
+                    </div>
+                    <!-- 婚紗禮服 -->
+                    <div class="text-center">
+                        <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
+                            <span class="text-[20px] text-[#C09771]">婚</span>
+                            <span class="tracking-[0.15em] text-[16px] text-[#67534D]">紗禮服</span>
+                        </div>
+                        <div class="flex justify-end leading-[0.6] tracking-[0.25em]">
+                            <span class="text-[18px] font-serifEng font-[300] text-[#c9a782]">B</span>
+                            <span class="text-[10px] font-serifEng text-[#c9a782]">RIDAL</span>
+                        </div>
+                        <div class="border-b border-[#c9a782]"></div>
+                    </div>
+                    <!-- 禮服知識家 -->
+                    <div class="text-center">
+                        <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
+                            <span class="text-[20px] text-[#C09771]">禮</span>
+                            <span class="tracking-[0.15em] text-[16px] text-[#67534D]">服知識家</span>
+                        </div>
+                        <div class="flex justify-end leading-[0.6] tracking-[0.25em]">
+                            <span class="text-[18px] font-serifEng font-[300] text-[#c9a782]">B</span>
+                            <span class="text-[10px] font-serifEng text-[#c9a782]">LOG</span>
+                        </div>
+                        <div class="border-b border-[#c9a782]"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">結構說明</h3>
+                <table class="prop-table">
+                    <tr>
+                        <th>元素</th>
+                        <th>樣式</th>
+                        <th>說明</th>
+                    </tr>
+                    <tr>
+                        <td>首字 (金色)</td>
+                        <td>text-[32px] text-[#C09771]</td>
+                        <td>中文標題第一個字，金色強調</td>
+                    </tr>
+                    <tr>
+                        <td>標題文字</td>
+                        <td>text-[26px] text-[#67534D] tracking-[0.15em]</td>
+                        <td>中文標題其餘文字，棕色</td>
+                    </tr>
+                    <tr>
+                        <td>英文首字母</td>
+                        <td>text-[31px] font-serifEng font-[300] text-[#c9a782]</td>
+                        <td>英文大寫首字，Cormorant Garamond 字體</td>
+                    </tr>
+                    <tr>
+                        <td>英文其餘</td>
+                        <td>text-[18px] font-serifEng font-[400] text-[#c9a782]</td>
+                        <td>英文小寫字母</td>
+                    </tr>
+                    <tr>
+                        <td>底線</td>
+                        <td>border-b border-[#c9a782]</td>
+                        <td>金色裝飾線</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- ==================== 4. BUTTONS ==================== -->
+        <section id="buttons" class="component-section">
+            <h2 class="component-title">4. 按鈕 Buttons</h2>
+            <p class="component-desc">各種按鈕樣式與狀態</p>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">主要按鈕 Primary Button</h3>
+                <div class="flex flex-wrap gap-4 items-center mb-4">
+                    <a href="#" class="inline-flex items-center justify-center gap-2 px-7 py-1.5 bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">
+                        <img src="images/icon/reserve-button_icon.svg" alt="" class="w-[10px] h-auto">
+                        預約試穿
+                    </a>
+                    <span class="text-sm text-gray-500">Header CTA 按鈕</span>
+                </div>
+                <div class="code-block">bg-btn-bg text-white rounded-full px-7 py-1.5 text-[14px] tracking-[0.10em]
+hover:bg-text-gold transition-colors duration-300</div>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">瀏覽更多按鈕 (實心白底)</h3>
+                <div class="flex flex-wrap gap-4 items-center mb-4 p-4 bg-[#F9F5F1]">
+                    <a href="#" class="inline-flex items-center justify-center w-[135px] h-[36px] bg-white text-btn-bg border-0 text-[14px] tracking-[0.10em] no-underline rounded-full cursor-pointer transition-colors duration-300 hover:bg-btn-bg hover:text-white">
+                        瀏覽更多 <svg viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[12px] ml-4"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
+                    </a>
+                </div>
+                <div class="code-block">bg-white text-btn-bg rounded-full w-[135px] h-[36px]
+hover:bg-btn-bg hover:text-white</div>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">瀏覽更多按鈕 (外框)</h3>
+                <div class="flex flex-wrap gap-4 items-center mb-4">
+                    <a href="#" class="inline-flex items-center justify-center w-[130px] h-[36px] bg-transparent border border-btn-bg text-btn-bg text-[14px] tracking-[0.10em] no-underline rounded-full cursor-pointer transition-colors duration-300 hover:bg-btn-bg hover:text-white">
+                        瀏覽更多 <svg viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[12px] ml-2"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
+                    </a>
+                </div>
+                <div class="code-block">bg-transparent border border-btn-bg text-btn-bg rounded-full
+hover:bg-btn-bg hover:text-white</div>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">表單按鈕</h3>
+                <div class="flex flex-wrap gap-4 items-center mb-4">
+                    <button class="w-[155px] h-[38px] bg-white border border-[#D6B499] text-[#67534D] text-[14px] tracking-[0.10em] rounded-[5px] hover:bg-card-bg transition-colors">
+                        重新填寫
+                    </button>
+                    <button class="w-[155px] h-[38px] bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-[5px] hover:bg-text-gold transition-colors">
+                        確認送出
+                    </button>
+                </div>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">圓形箭頭按鈕</h3>
+                <div class="flex flex-wrap gap-4 items-center mb-4">
+                    <button class="w-[38px] h-[38px] bg-[#c09771] border-0 cursor-pointer rounded-full transition-all duration-300 flex items-center justify-center hover:bg-text-gold">
+                        <svg viewBox="0 0 9 15" fill="none" class="w-4 h-4 text-white rotate-180"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
+                    </button>
+                    <button class="w-[38px] h-[38px] bg-white border border-[#c09771] cursor-pointer rounded-full transition-all duration-300 flex items-center justify-center hover:bg-card-bg">
+                        <svg viewBox="0 0 9 15" fill="none" class="w-4 h-4 text-[#c09771]"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
+                    </button>
+                    <span class="text-sm text-gray-500">輪播控制按鈕</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 5. CARDS ==================== -->
+        <section id="cards" class="component-section">
+            <h2 class="component-title">5. 卡片 Cards</h2>
+            <p class="component-desc">服務卡片與文章卡片</p>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">服務卡片 Service Card</h3>
+                <div class="flex justify-center py-4">
+                    <div class="group w-full max-w-[385px] h-auto rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col items-center text-center transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                        <div class="w-[188px] h-[188px] mt-[21px] bg-gray-200 rounded flex items-center justify-center text-gray-400">
+                            Icon 188x188
+                        </div>
+                        <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px]">白紗 & 晚禮服租借</h3>
+                        <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[17px] grow">可自由選擇「單租」或是「包套」</p>
+                        <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[14px] tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white">
+                            <span>瀏覽禮服照片</span>
+                            <svg viewBox="0 0 9 15" fill="none" class="w-[8px] h-[12px] ml-4"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
+                        </a>
+                    </div>
+                </div>
+                <table class="prop-table mt-4">
+                    <tr>
+                        <th>屬性</th>
+                        <th>值</th>
+                    </tr>
+                    <tr><td>最大寬度</td><td>max-w-[385px]</td></tr>
+                    <tr><td>桌面高度</td><td>md:h-[387px]</td></tr>
+                    <tr><td>圓角</td><td>rounded-[9px]</td></tr>
+                    <tr><td>陰影</td><td>shadow-[0_2px_7px_rgba(0,0,0,0.08)]</td></tr>
+                    <tr><td>背景</td><td>bg-card-bg → hover:bg-white</td></tr>
+                </table>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">文章卡片 Blog Card</h3>
+                <div class="flex justify-center py-4">
+                    <div class="group w-full max-w-[420px] rounded-[9px] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                        <div class="pt-[17px] px-[17px]">
+                            <div class="w-full h-[264px] bg-gray-200 flex items-center justify-center text-gray-400">
+                                Image 264px height
+                            </div>
+                        </div>
+                        <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[15px] px-[17px]">主分類一</p>
+                        <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[12px] mb-[16px] px-[17px] min-h-[52px]">高雄設計婚禮禮服推薦｜聚會場合不可少的晚禮服</h3>
+                        <p class="text-[12px] leading-5 tracking-[0.10em] text-[#868686] px-[17px] mb-[20px] line-clamp-2">晚禮服是晚上20點以後穿用的正式禮服，是女士禮服中最高檔次...</p>
+                        <a href="#" class="w-full h-[64px] mt-auto flex justify-center items-center text-[14px] font-normal tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white font-serifEng">
+                            <span>READ MORE</span>
+                            <svg viewBox="0 0 9 15" fill="none" class="w-[8px] h-[12px] ml-4"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
+                        </a>
+                    </div>
+                </div>
+                <table class="prop-table mt-4">
+                    <tr>
+                        <th>屬性</th>
+                        <th>值</th>
+                    </tr>
+                    <tr><td>最大寬度</td><td>max-w-[420px]</td></tr>
+                    <tr><td>圖片高度</td><td>h-[264px]</td></tr>
+                    <tr><td>底部連結高度</td><td>h-[64px]</td></tr>
+                    <tr><td>內容 padding</td><td>px-[17px]</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- ==================== 6. FORMS ==================== -->
+        <section id="forms" class="component-section">
+            <h2 class="component-title">6. 表單元件 Form Elements</h2>
+            <p class="component-desc">輸入框、下拉選單、核取方塊等表單元件</p>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">文字輸入框 Text Input</h3>
+                <div class="max-w-[400px] mb-4">
+                    <label class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px] block">
+                        <span class="text-[#D3B599]">*</span> 姓名
+                    </label>
+                    <input
+                        type="text"
+                        placeholder="請輸入姓名"
+                        class="w-full h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                    >
+                </div>
+                <div class="code-block">h-[37px] px-4 border border-[#D6B499] rounded-[5px]
+text-[14px] tracking-[0.10em]
+focus:border-btn-bg focus:ring-1 focus:ring-btn-bg</div>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">文字區域 Textarea</h3>
+                <div class="max-w-[400px] mb-4">
+                    <label class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px] block">
+                        備註說明
+                    </label>
+                    <textarea
+                        rows="4"
+                        placeholder="請輸入備註內容..."
+                        class="w-full px-4 py-3 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300 resize-none"
+                    ></textarea>
+                </div>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">核取方塊 Checkbox</h3>
+                <div class="flex flex-col gap-3 mb-4">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" checked>
+                        <span class="text-[14px] text-[#67534D]">白紗 & 晚禮服租借</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox">
+                        <span class="text-[14px] text-[#67534D]">婚紗攝影</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox">
+                        <span class="text-[14px] text-[#67534D]">婚宴當天</span>
+                    </label>
+                </div>
+                <div class="code-block">/* Checkbox 樣式 (CSS) */
+width: 15px; height: 15px;
+border: 1px solid #D6B499;
+border-radius: 3px;
+checked: background-color: #C29164;</div>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">單選按鈕 Radio</h3>
+                <div class="flex flex-col gap-3 mb-4">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="time" checked>
+                        <span class="text-[14px] text-[#67534D]">早上 (09:00-12:00)</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="time">
+                        <span class="text-[14px] text-[#67534D]">下午 (12:00-17:00)</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="time">
+                        <span class="text-[14px] text-[#67534D]">晚上 (17:00-20:00)</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">表單區塊標題</h3>
+                <div class="mb-4">
+                    <div class="bg-[#67534D] h-[36px] px-6 rounded-t-[9px] flex items-center justify-center">
+                        <span class="font-['Noto_Sans_HK'] font-normal text-[17px] tracking-[0.15em] text-white">預約聯絡</span>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-b-[9px]">
+                        <p class="text-[14px] text-gray-500">表單內容區域...</p>
+                    </div>
+                </div>
+                <div class="code-block">/* 標題列 */
+bg-[#67534D] h-[36px] rounded-t-[9px]
+text-[17px] tracking-[0.15em] text-white
+
+/* 內容區 */
+bg-card-bg rounded-b-[9px]</div>
+            </div>
+        </section>
+
+        <!-- ==================== 7. SPACING ==================== -->
+        <section id="spacing" class="component-section">
+            <h2 class="component-title">7. 間距規範 Spacing</h2>
+            <p class="component-desc">常用的間距數值</p>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">區塊間距</h3>
+                <table class="prop-table">
+                    <tr>
+                        <th>用途</th>
+                        <th>值</th>
+                        <th>Tailwind Class</th>
+                    </tr>
+                    <tr><td>區塊上下間距 (桌面)</td><td>125px</td><td>pt-[125px] pb-[125px]</td></tr>
+                    <tr><td>區塊上下間距 (手機)</td><td>60-80px</td><td>py-10 md:py-20</td></tr>
+                    <tr><td>標題與內容間距</td><td>51px</td><td>mb-[51px]</td></tr>
+                    <tr><td>卡片間距</td><td>17px</td><td>gap-[17px]</td></tr>
+                    <tr><td>表單欄位間距</td><td>18px</td><td>space-y-[18px]</td></tr>
+                </table>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">容器 Padding</h3>
+                <table class="prop-table">
+                    <tr>
+                        <th>斷點</th>
+                        <th>左右 Padding</th>
+                    </tr>
+                    <tr><td>Mobile (default)</td><td>px-4 (16px) 或 px-8 (32px)</td></tr>
+                    <tr><td>sm (640px+)</td><td>sm:px-8 或 sm:px-12</td></tr>
+                    <tr><td>md (768px+)</td><td>md:px-16</td></tr>
+                    <tr><td>lg (1024px+)</td><td>lg:px-[225px]</td></tr>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-8 mt-16">
+        <div class="max-w-[1400px] mx-auto px-8 text-center text-sm text-gray-500">
+            <p>LinHaute Bridal 元件庫 - 用於統一各頁面的設計元素</p>
+            <p class="mt-2">最後更新：2024</p>
+        </div>
+    </footer>
+
+</body>
+</html>
