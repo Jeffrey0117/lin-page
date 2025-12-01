@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'text-main-title': '#5C4535',
+              'text-subtitle': '#8E8174',
+              'text-gold': '#BA8A63',
+              'btn-bg': '#C29164',
+              'underline': '#D6B499',
+              'card-bg': '#F9F5F1',
+              'blog-title': '#5A4631',
+              'blog-text': '#6B645E',
+              'blog-gold': '#C8A37C',
+              'blog-line': '#CBB59A',
+              'blog-gold-hover': '#B69272',
+              'footer-bg': '#D3B599',
+              'footer-copyright': '#C09771',
+            }
+          }
+        }
+      }
+    </script>
+    <title>攝影作品 - YY美學 - LinHaute Bridal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .font-serifEng {
+            font-family: 'Cormorant Garamond', serif;
+        }
+    </style>
+</head>
+<body class="font-['Noto_Sans_HK'] font-normal">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+        <nav class="max-w-[1920px] mx-auto px-8 sm:px-10 md:px-16 lg:px-[115px]">
+            <div class="flex items-center justify-between h-[80px]">
+                <div class="flex-shrink-0 pl-2 sm:pl-0">
+                    <a href="#" class="flex items-center">
+                        <img src="images/logo/logo.svg" alt="LinHaute Bridal Logo" class="w-[200px] md:w-[280px] lg:w-[320px] xl:w-[361px] h-auto">
+                    </a>
+                </div>
+                <div class="hidden lg:flex items-center lg:space-x-1.5 xl:space-x-4 2xl:space-x-6">
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">最新活動</a>
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">品牌介紹</a>
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗禮服</a>
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗攝影</a>
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">攝影作品</a>
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">影片分享</a>
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">禮服知識家</a>
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">合作品牌</a>
+                </div>
+                <div class="hidden lg:block">
+                    <a href="#" class="inline-flex items-center justify-center px-6 py-2 bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">
+                        預約諮詢
+                    </a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none" aria-label="Toggle menu">
+                    <span class="hamburger-line w-6 h-0.5 bg-text-main-title transition-all duration-300"></span>
+                    <span class="hamburger-line w-6 h-0.5 bg-text-main-title transition-all duration-300"></span>
+                    <span class="hamburger-line w-6 h-0.5 bg-text-main-title transition-all duration-300"></span>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">最新活動</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">品牌介紹</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">婚紗禮服</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">婚紗攝影</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">攝影作品</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">影片分享</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">禮服知識家</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">合作品牌</a>
+                <div class="pt-3">
+                    <a href="#" class="inline-flex items-center justify-center w-full py-3 bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">
+                        預約諮詢
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="bg-[#ffffff] pt-[180px]">
+      <!-- ------------------------開頭標題------------------------ -->
+      <div class="w-full">
+        <div class="tracking-[-0.01em] leading-none text-center">
+          <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">攝</span>
+          <span class="tracking-[0.1em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">影作品</span>
+        </div>
+
+        <div class="mx-auto w-full xl:w-[30%] w-max-[581px] flex justify-end relative">
+          <div class="flex items-end leading-[0.6] tracking-[0.2em]">
+            <span class="text-[22px] sm:text-[29px] font-serifEng font-[500] text-[#c9a782]">P</span>
+            <span class="text-[11px] sm:text-[18px] font-serifEng font-[400] text-[#c9a782]">ORTFOLIO</span>
+          </div>
+        </div>
+
+        <div class="mx-auto w-full xl:w-[30%] w-max-[581px] border-b border-[#c9a782]"></div>
+      </div>
+      <!-- ------------------------開頭標題------------------------ -->
+
+      <!-- ------------------------內容版心（重點）------------------------ -->
+
+      <div class="w-full flex flex-col justify-center items-center py-2">
+        <div class="py-4 tracking-widest text-[#67534d] text-[20px]">YY美學</div>
+        <div class="flex-col w-[90%] lg:w-[72.5%] max-w-[1392px] rounded-xl flex bg-[#f9f5f1] py-6 pb-[74px] px-8 lg:px-40">
+          <div class="text-[12px] text-[#868686] text-center">
+            攝影師介紹攝影師介紹攝影師介紹攝影師介紹攝影師介紹攝影師介紹攝影師介紹，攝影師介紹攝影師介紹攝影師介紹攝影師介紹
+            拍照不要侷限什麼風格！拍出愛與溫度是我攝影的初衷，擅長自助婚紗、孕婦寫真、婚禮紀錄。
+          </div>
+
+          <div class="flex flex-col items-center gap-4 mt-4">
+            <div class="flex items-center gap-5">
+              <a href="https://instagram/" class="bg-white w-7 h-7 border border-white/70 rounded-full p-1 flex items-center justify-center">
+                <svg width="18" height="18" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5579 5.14179C7.56256 5.14179 5.1465 7.55785 5.1465 10.5532C5.1465 13.5486 7.56256 15.9646 10.5579 15.9646C13.5533 15.9646 15.9693 13.5486 15.9693 10.5532C15.9693 7.55785 13.5533 5.14179 10.5579 5.14179ZM10.5579 14.0713C8.62224 14.0713 7.03978 12.4936 7.03978 10.5532C7.03978 8.61282 8.61753 7.03508 10.5579 7.03508C12.4983 7.03508 14.076 8.61282 14.076 10.5532C14.076 12.4936 12.4936 14.0713 10.5579 14.0713ZM17.4529 4.92043C17.4529 5.62217 16.8877 6.18263 16.1907 6.18263C15.4889 6.18263 14.9285 5.61746 14.9285 4.92043C14.9285 4.2234 15.4937 3.65824 16.1907 3.65824C16.8877 3.65824 17.4529 4.2234 17.4529 4.92043ZM21.0369 6.20146C20.9569 4.51069 20.5707 3.01301 19.332 1.77908C18.0981 0.545145 16.6004 0.158952 14.9096 0.0741774C13.1671 -0.0247258 7.94404 -0.0247258 6.20146 0.0741774C4.5154 0.154242 3.01772 0.540435 1.77908 1.77437C0.540435 3.0083 0.158951 4.50598 0.0741774 6.19675C-0.0247258 7.93933 -0.0247258 13.1624 0.0741774 14.9049C0.154242 16.5957 0.540435 18.0934 1.77908 19.3273C3.01772 20.5613 4.51069 20.9475 6.20146 21.0322C7.94404 21.1311 13.1671 21.1311 14.9096 21.0322C16.6004 20.9522 18.0981 20.566 19.332 19.3273C20.566 18.0934 20.9522 16.5957 21.0369 14.9049C21.1358 13.1624 21.1358 7.94404 21.0369 6.20146ZM18.7857 16.7747C18.4184 17.6978 17.7072 18.4089 16.7794 18.781C15.39 19.332 12.0933 19.2049 10.5579 19.2049C9.02256 19.2049 5.72108 19.3273 4.33643 18.781C3.41334 18.4136 2.70218 17.7025 2.33011 16.7747C1.77908 15.3853 1.90624 12.0886 1.90624 10.5532C1.90624 9.01785 1.78379 5.71637 2.33011 4.33172C2.69747 3.40863 3.40863 2.69747 4.33643 2.3254C5.72579 1.77437 9.02256 1.90153 10.5579 1.90153C12.0933 1.90153 15.3947 1.77908 16.7794 2.3254C17.7025 2.69276 18.4136 3.40392 18.7857 4.33172C19.3367 5.72108 19.2096 9.01785 19.2096 10.5532C19.2096 12.0886 19.3367 15.39 18.7857 16.7747Z" fill="#D3B599"/>
+                </svg>
+              </a>
+              <a href="https://facebook/" class="bg-white w-7 h-7 border border-white/70 rounded-full p-1 flex items-center justify-center">
+                <svg width="10" height="20" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5935 11.906L11.1813 8.07542H7.50575V5.58963C7.50575 4.54165 8.0192 3.52013 9.66537 3.52013H11.3363V0.25879C11.3363 0.25879 9.81998 0 8.37018 0C5.34324 0 3.36469 1.83468 3.36469 5.15597V8.07542H0V11.906H3.36469V21.1662H7.50575V11.906H10.5935Z" fill="#D3B599"/>
+                </svg>
+              </a>
+              <a href="https://youtube/" class="bg-white w-7 h-7 border border-white/70 rounded-full p-1 flex items-center justify-center">
+                <svg width="21" height="19" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.00413477 19.7313C-0.0337855 19.3142 0.193736 18.9856 0.497099 18.6948C1.43247 17.7595 2.36783 16.8241 3.31584 15.8888C3.73296 15.4717 3.73296 15.4717 3.1768 15.1936C2.608 14.9155 2.05183 14.6248 1.48303 14.3467C1.20494 14.2077 1.01534 14.0181 1.05326 13.6894C1.09118 13.3734 1.29343 13.2091 1.59679 13.1206C4.12481 12.3749 6.64019 11.6165 9.16821 10.8707C9.45893 10.7822 9.74965 10.719 10.0151 10.9718C10.2932 11.2373 10.23 11.528 10.1415 11.844C9.40837 14.3214 8.68789 16.7989 7.9674 19.2763C7.86628 19.6176 7.72724 19.8956 7.33539 19.9462C6.91827 19.9841 6.76659 19.706 6.61491 19.39C6.33683 18.8086 6.02082 18.2398 5.75538 17.6584C5.6037 17.3297 5.48994 17.3171 5.23714 17.5699C4.23857 18.5937 3.21472 19.6049 2.19087 20.6161C1.77375 21.0332 1.28079 21.0838 0.749901 20.8942C0.256937 20.7172 0.0167749 20.3128 0.00413477 19.7313Z" fill="#D3B599"/>
+                  <path d="M22.0854 8.27958C21.2132 2.64217 15.4746 -1.12453 9.95088 0.303786C5.29932 1.50458 2.17722 5.7516 2.46794 10.5042C2.49322 10.8328 2.59434 10.8455 2.87242 10.7696C4.80636 10.2009 6.74029 9.61941 8.68687 9.10118C9.21775 8.96214 9.3568 8.70934 9.39472 8.20374C9.53376 6.50999 9.96352 4.87944 10.7978 3.38793C11.0632 2.90761 11.3792 2.45257 11.8343 2.1113C12.1882 1.8585 12.5295 1.8585 12.8707 2.12394C13.2626 2.42729 13.5659 2.80649 13.8188 3.23625C14.7668 4.87944 15.1586 6.68695 15.3608 8.55766C15.3988 8.8863 15.285 8.96214 14.9816 8.9495C13.6924 8.93686 12.3904 8.93686 11.1011 8.9495C10.9242 8.9495 10.7346 8.91158 10.4691 9.06326C11.1896 9.37926 11.6826 9.84693 11.9227 10.5295C12.0239 10.8202 12.1755 10.8708 12.441 10.8581C13.2626 10.8455 14.0842 10.8834 14.9058 10.8455C15.3356 10.8202 15.3988 10.9845 15.3608 11.3511C15.1839 12.7668 14.9311 14.1571 14.3623 15.4717C14.0589 16.1795 13.705 16.8747 13.1615 17.4309C12.5674 18.0376 12.1376 18.0376 11.5562 17.4183C11.2781 17.1275 11.0506 16.7863 10.7472 16.4197C10.4818 17.3551 10.2416 18.2398 9.95088 19.1246C9.84976 19.428 9.93824 19.4912 10.2037 19.5544C11.2655 19.8072 12.3399 19.8451 13.4016 19.7314C19.0897 19.0741 22.9702 13.9549 22.0854 8.27958ZM7.46078 8.5703C7.44814 8.83574 7.38494 8.96214 7.08158 8.9495C6.29789 8.92422 5.50156 8.93686 4.71788 8.93686C4.52828 8.93686 4.36396 8.93686 4.41452 8.65878C4.92012 5.95384 6.37373 3.95673 8.83855 2.71801C8.86383 2.70537 8.90175 2.71801 8.99023 2.71801C8.04222 4.57608 7.59982 6.53527 7.46078 8.5703ZM20.1009 7.91302C20.379 8.93686 20.3537 8.93686 19.3172 8.93686C18.799 8.93686 18.2681 8.89894 17.7625 8.9495C17.3201 8.98742 17.2316 8.79782 17.2063 8.43126C17.1178 6.85127 16.7892 5.3092 16.2077 3.83033C16.0687 3.46377 15.8917 3.12249 15.74 2.75593C18.0026 3.79241 19.4562 5.52408 20.1009 7.91302ZM20.2652 11.1236C19.7722 13.8538 18.2681 15.813 15.778 17.0391C16.1319 16.1543 16.4732 15.2947 16.7133 14.372C16.9788 13.3482 17.1557 12.3117 17.2063 11.25C17.2189 10.934 17.3201 10.7949 17.674 10.8076C18.445 10.8455 19.2161 10.8202 19.9871 10.8202C20.202 10.8328 20.3031 10.8708 20.2652 11.1236Z" fill="#D3B599"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------內容版心------------------------ -->
+      <div class="w-full flex justify-center mb-8">
+        <div class="w-[90%] lg:w-[72.5%] max-w-[1392px] rounded-xl flex flex-col gap-2">
+          <!-- ---------------------------照片瀑布-第一排------------------------- -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 w-full max-w-[1400px] mx-auto">
+            <!-- 卡片 -->
+            <div class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden">
+              <div class="absolute inset-0">
+                <img src="images/YYstudio/01.png" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105" />
+              </div>
+              <div class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"></div>
+              <div class="tracking-wider absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500">
+                <div><span class="text-sm">AMY&PETER</span><br />高雄萊特維庭</div>
+              </div>
+            </div>
+            <!-- 卡片 -->
+            <div class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden">
+              <div class="absolute inset-0">
+                <img src="images/YYstudio/02.png" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105" />
+              </div>
+              <div class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"></div>
+              <div class="tracking-wider absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500">
+                <div><span class="text-sm">AMY&PETER</span><br />高雄萊特維庭</div>
+              </div>
+            </div>
+            <!-- 卡片 -->
+            <div class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden">
+              <div class="absolute inset-0">
+                <img src="images/YYstudio/03.png" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105" />
+              </div>
+              <div class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"></div>
+              <div class="tracking-wider absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500">
+                <div><span class="text-sm">AMY&PETER</span><br />高雄萊特維庭</div>
+              </div>
+            </div>
+            <!-- 卡片 -->
+            <div class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden">
+              <div class="absolute inset-0">
+                <img src="images/YYstudio/04.png" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105" />
+              </div>
+              <div class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div class="tracking-wider absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500">
+                <div><span class="text-sm">AMY&PETER</span><br />高雄萊特維庭</div>
+              </div>
+            </div>
+            <!-- 卡片 -->
+            <div class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden">
+              <div class="absolute inset-0">
+                <img src="images/YYstudio/05.png" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105" />
+              </div>
+              <div class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div class="tracking-wider absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500">
+                <div><span class="text-sm">AMY&PETER</span><br />高雄萊特維庭</div>
+              </div>
+            </div>
+            <!-- 卡片 -->
+            <div class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden">
+              <div class="absolute inset-0">
+                <img src="images/YYstudio/06.png" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105" />
+              </div>
+              <div class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"></div>
+              <div class="tracking-wider absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500">
+                <div><span class="text-sm">AMY&PETER</span><br />高雄萊特維庭</div>
+              </div>
+            </div>
+            <!-- 卡片 -->
+            <div class="col-span-2 group relative aspect-[551/407] min-h-0 overflow-hidden">
+              <div class="absolute inset-0">
+                <img src="images/YYstudio/07.png" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105" />
+              </div>
+              <div class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div class="tracking-wider absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500">
+                <div><span class="text-sm">AMY&PETER</span><br />高雄萊特維庭</div>
+              </div>
+            </div>
+            <!-- 卡片 -->
+            <div class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden">
+              <div class="absolute inset-0">
+                <img src="images/YYstudio/08.png" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105" />
+              </div>
+              <div class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"></div>
+              <div class="tracking-wider absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500">
+                <div><span class="text-sm">AMY&PETER</span><br />高雄萊特維庭</div>
+              </div>
+            </div>
+            <!-- 卡片 -->
+            <div class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden">
+              <div class="absolute inset-0">
+                <img src="images/YYstudio/09.png" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105" />
+              </div>
+              <div class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div class="tracking-wider absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500">
+                <div><span class="text-sm">AMY&PETER</span><br />高雄萊特維庭</div>
+              </div>
+            </div>
+            <!-- 卡片 -->
+            <div class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden">
+              <div class="absolute inset-0">
+                <img src="images/YYstudio/10.png" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105" />
+              </div>
+              <div class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div class="tracking-wider absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500">
+                <div><span class="text-sm">AMY&PETER</span><br />高雄萊特維庭</div>
+              </div>
+            </div>
+            <!-- 卡片 -->
+            <div class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden">
+              <div class="absolute inset-0">
+                <img src="images/YYstudio/11.png" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105" />
+              </div>
+              <div class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"></div>
+              <div class="tracking-wider absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500">
+                <div><span class="text-sm">AMY&PETER</span><br />高雄萊特維庭</div>
+              </div>
+            </div>
+            <!-- 卡片 -->
+            <div class="col-span-2 group relative aspect-[553/407] min-h-0 overflow-hidden">
+              <div class="absolute inset-0">
+                <img src="images/YYstudio/12.png" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105" />
+              </div>
+              <div class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div class="tracking-wider absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500">
+                <div><span class="text-sm">AMY&PETER</span><br />高雄萊特維庭</div>
+              </div>
+            </div>
+            <!-- 卡片 -->
+            <div class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden">
+              <div class="absolute inset-0">
+                <img src="images/YYstudio/13.png" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105" />
+              </div>
+              <div class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"></div>
+              <div class="tracking-wider absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500">
+                <div><span class="text-sm">AMY&PETER</span><br />高雄萊特維庭</div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-7 w-full flex justify-center">
+            <button class="group w-[150px] py-1 flex items-center justify-center gap-2 border border-[#c09771] text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] hover:text-white transition">
+              <svg viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[12px] text-[#c09771] group-hover:text-white transition">
+                <path d="M7.70703 0.353516L0.707031 7.35352L7.70703 14.3535" stroke="currentColor" />
+              </svg>
+              返回作品總覽
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- 預約諮詢 Reservation Section -->
+    <section id="reservation" class="bg-white pt-[92px] pb-[126px] flex flex-col items-center">
+
+        <!-- Section Title with full-width underline -->
+        <div class="w-full">
+            <div class="main-title-wrapper flex flex-col items-center mb-[26px] relative">
+                <div class="relative inline-block">
+                    <h1 class="text-[29px] leading-none tracking-[0.15em] text-text-main-title inline">
+                        <span class="text-[35px] text-text-gold">填</span><span class="text-[29px] text-text-main-title">寫預約表單</span>
+                    </h1>
+                    <img src="images/text/section-reserve.png" alt="Reserve Now" class="hidden md:block absolute left-[calc(100%+35px)] bottom-0 h-[20px]">
+                </div>
+            </div>
+            <!-- Full-width underline -->
+            <div class="w-full border-b border-underline mt-[17px]"></div>
+        </div>
+
+        <!-- Single line description text -->
+        <div class="w-full flex justify-center px-4">
+            <p class="text-[14px] tracking-[0.10em] text-text-subtitle mt-[35px] mb-[51px] text-center max-w-[1200px]">
+                非常感謝您前來 LinHaute Bridal 挑選禮服，為了更加瞭解您的需求，請您撥冗完整填寫以下資訊，我們將盡速回覆您近期尚可預約的時段，謝謝！
+            </p>
+        </div>
+
+        <!-- Reservation Form - aligned with container -->
+        <form id="reservation-form" class="w-full flex justify-center px-4" novalidate>
+            <div class="max-w-[1200px] w-full">
+
+            <!-- Section 1: 預約聯絡 - 全寬區塊 -->
+            <fieldset class="mb-[9px] border-0 p-0">
+                <!-- 標題列：淺卡其色背景（統一顏色） -->
+                <legend class="w-full mb-0">
+                    <div class="bg-[#67534D] h-[40px] px-6 rounded-t-[9px] flex items-center justify-center">
+                        <span class="font-['Noto_Sans_HK'] font-normal text-[17px] tracking-[0.15em] text-white">預約聯絡</span>
+                    </div>
+                </legend>
+
+                <!-- 內容區：#F9F5F1底、圓角、陰影 -->
+                <div class="bg-[#F9F5F1] px-4 sm:px-8 md:px-12 lg:px-[120px] xl:px-[240px] py-8 md:py-[43px] rounded-b-[9px]">
+                    <ol class="list-decimal list-inside space-y-2 font-['Noto_Sans_HK'] font-normal text-[12px] leading-[18px] tracking-[0.10em] text-[#868686]" style="color: #868686;">
+                        <li>為了提供給新人完整的服務，採取線上預約制。</li>
+                        <li>只要填寫預約單，我們將在 2 日內與您連絡，若沒有連絡上您，可能是您的預約單沒有發送成功哦！</li>
+                        <li>我們的人力有限，為了保障您的權益，如不克前來請提前通知，以便另外為您安排參觀時間。</li>
+                        <li>貼心提醒：預約試衣的新人請記得攜帶 bra 以及絲襪</li>
+                        <li>如 2 日內未收到聯繫，請撥打：07-2372269 請珍惜每次的預約機會，感謝大家的體諒及配合。</li>
+                    </ol>
+                </div>
+            </fieldset>
+
+            <!-- Section 2: 基本資訊 - 全寬區塊 -->
+            <fieldset class="mb-[9px] border-0 p-0">
+                <!-- 標題列：淺卡其色背景（統一顏色） -->
+                <legend class="w-full mb-0">
+                    <div class="bg-[#D6B499] h-[40px] px-6 rounded-t-[9px] flex items-center justify-center">
+                        <span class="font-['Noto_Sans_HK'] font-normal text-[17px] tracking-[0.15em] text-white">基本資訊</span>
+                    </div>
+                </legend>
+
+                <!-- #F9F5F1底表單區塊 -->
+                <div class="bg-[#F9F5F1] px-4 sm:px-8 md:px-12 lg:px-[120px] xl:px-[240px] pt-8 md:pt-[51px] pb-12 md:pb-[68px] rounded-b-[9px]">
+                    <!-- 兩欄 Grid 布局 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[51px] gap-y-[18px]">
+
+                        <!-- 左欄 -->
+                        <div class="flex flex-col space-y-[18px]">
+
+                            <!-- 聯絡姓名 -->
+                            <div class="flex flex-col">
+                                <label for="contact-name" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
+                                    <span class="text-red-500" aria-hidden="true">*</span> 聯絡姓名
+                                    <span class="sr-only">(必填)</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="contact-name"
+                                    name="contact-name"
+                                    required
+                                    aria-required="true"
+                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                >
+                            </div>
+
+                            <!-- E-mail -->
+                            <div class="flex flex-col">
+                                <label for="contact-email" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
+                                    <span class="text-red-500" aria-hidden="true">*</span> E-mail
+                                    <span class="sr-only">(必填)</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    id="contact-email"
+                                    name="contact-email"
+                                    required
+                                    aria-required="true"
+                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                >
+                            </div>
+
+                            <!-- 聯絡電話 -->
+                            <div class="flex flex-col">
+                                <label for="contact-phone" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
+                                    <span class="text-red-500" aria-hidden="true">*</span> 聯絡電話
+                                    <span class="sr-only">(必填)</span>
+                                </label>
+                                <input
+                                    type="tel"
+                                    id="contact-phone"
+                                    name="contact-phone"
+                                    required
+                                    aria-required="true"
+                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                >
+                            </div>
+
+                            <!-- 方便聯絡時段 -->
+                            <div class="flex flex-col">
+                                <label for="convenient-time" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
+                                    <span class="text-red-500" aria-hidden="true">*</span> 方便聯絡時段
+                                    <span class="sr-only">(必填)</span>
+                                </label>
+                                <select
+                                    id="convenient-time"
+                                    name="convenient-time"
+                                    required
+                                    aria-required="true"
+                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                >
+                                    <option value="">請選擇</option>
+                                    <option value="morning">早上 (09:00-12:00)</option>
+                                    <option value="afternoon">下午 (12:00-17:00)</option>
+                                    <option value="evening">晚上 (17:00-20:00)</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <!-- 右欄 -->
+                        <div class="flex flex-col space-y-[18px]">
+
+                            <!-- 希望來店諮詢日期 -->
+                            <div class="flex flex-col">
+                                <label for="consultation-date" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
+                                    <span class="text-red-500" aria-hidden="true">*</span> 希望來店諮詢日期？
+                                    <span class="sr-only">(必填)</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="consultation-date"
+                                    name="consultation-date"
+                                    required
+                                    aria-required="true"
+                                    placeholder="DD / MM / YY"
+                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                >
+                            </div>
+
+                            <!-- 結婚日期 -->
+                            <div class="flex flex-col">
+                                <label for="wedding-date" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
+                                    結婚日期
+                                </label>
+                                <input
+                                    type="text"
+                                    id="wedding-date"
+                                    name="wedding-date"
+                                    placeholder="DD / MM / YY"
+                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                >
+                            </div>
+
+                            <!-- 拍攝日期 -->
+                            <div class="flex flex-col">
+                                <label for="shooting-date" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
+                                    拍攝日期
+                                </label>
+                                <input
+                                    type="text"
+                                    id="shooting-date"
+                                    name="shooting-date"
+                                    placeholder="DD / MM / YY"
+                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                                >
+                                <p class="text-[12px] tracking-[0.10em] text-[#D3B599] mt-[6px]">
+                                    若有確定拍攝時間可填寫
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Section 3: 方案選擇 - 全寬區塊 -->
+            <fieldset class="mb-[9px] border-0 p-0">
+                <!-- 標題列：淺卡其色背景（與上面統一） -->
+                <legend class="w-full mb-0">
+                    <div class="bg-[#D6B499] h-[40px] px-6 rounded-t-[9px] flex items-center justify-center">
+                        <span class="font-['Noto_Sans_HK'] font-normal text-[17px] tracking-[0.15em] text-white">方案選擇</span>
+                    </div>
+                </legend>
+
+                <!-- 內容區：#F9F5F1底、圓角、陰影 -->
+                <div class="bg-[#F9F5F1] px-4 sm:px-8 md:px-12 lg:px-[120px] xl:px-[240px] py-8 md:py-[51px] rounded-b-[9px]">
+                    <div class="w-full">
+                <!-- 婚紗拍攝方案 與 婚宴方案推薦 (Checkboxes) -->
+                <div class="mb-[22px]">
+                    <p class="text-[14px] tracking-[0.10em] text-text-main-title mb-[14px]">
+                        婚紗拍攝方案 與 婚宴方案推薦
+                    </p>
+                    <div class="flex flex-col gap-[14px]" role="group" aria-labelledby="wedding-photo-plans">
+                        <label class="flex items-center cursor-pointer group">
+                            <input
+                                type="checkbox"
+                                name="wedding-photo-plans"
+                                value="package-51800"
+                                checked
+                                class="w-[15px] h-[15px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
+                            >
+                            <span class="ml-[8px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">婚紗拍攝 3 套方案與婚宴當日禮服 3 套方案 $51,800</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer group">
+                            <input
+                                type="checkbox"
+                                name="wedding-photo-plans"
+                                value="package-35800"
+                                checked
+                                class="w-[15px] h-[15px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
+                            >
+                            <span class="ml-[8px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">婚紗拍攝 3 套方案 $35,800 up</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 租賃禮服方案 (Checkboxes) -->
+                <div class="mb-[22px]">
+                    <p class="text-[14px] tracking-[0.10em] text-text-main-title mb-[14px]">
+                        租賃禮服方案
+                    </p>
+                    <div class="flex flex-col gap-[14px]" role="group" aria-labelledby="rental-plans">
+                        <label class="flex items-center cursor-pointer group">
+                            <input
+                                type="checkbox"
+                                name="rental-plans"
+                                value="white-dress-8000"
+                                class="w-[15px] h-[15px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
+                            >
+                            <span class="ml-[8px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">單租 1 套白紗 $8,000 up</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer group">
+                            <input
+                                type="checkbox"
+                                name="rental-plans"
+                                value="evening-dress-6000"
+                                class="w-[15px] h-[15px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
+                            >
+                            <span class="ml-[8px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">單租 1 套 晚宴禮服 $6,000 up</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 是經由什麼方式得知 LIN 禮服館呢？ -->
+                <div class="mb-[22px]">
+                    <label for="how-know" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[8px] block">
+                        是經由什麼方式得知 LIN 禮服館呢？
+                    </label>
+                    <select
+                        id="how-know"
+                        name="how-know"
+                        class="w-full max-w-[330px] h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300"
+                        onchange="toggleReferralInput(this)"
+                    >
+                        <option value="">請選擇</option>
+                        <option value="facebook">LIN 粉絲團照片很吸引妳</option>
+                        <option value="friend">親友介紹</option>
+                        <option value="photographer">攝影師或造型師轉介紹</option>
+                    </select>
+                    <!-- 親友介紹額外輸入框 -->
+                    <div id="referral-input" class="hidden mt-[9px]">
+                        <input
+                            type="text"
+                            name="referral-name"
+                            placeholder="請輸入介紹人姓名"
+                            class="w-full max-w-[330px] h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300"
+                        >
+                    </div>
+                </div>
+
+                <!-- 其他備註 -->
+                <div class="flex flex-col">
+                    <label for="remarks" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px]">
+                        其他備註
+                    </label>
+                    <textarea
+                        id="remarks"
+                        name="remarks"
+                        class="w-full max-w-[855px] h-[84px] px-4 py-3 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300 resize-none"
+                    ></textarea>
+                </div>
+
+                    <!-- Buttons (移至方案選擇區塊內) -->
+                    <div class="flex justify-center gap-4 mt-8">
+                        <button
+                            type="button"
+                            onclick="document.getElementById('reservation-form').reset()"
+                            class="inline-flex items-center justify-center w-[124px] h-[41px] bg-white text-[#C09771] text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-[#F5F5F5] focus:outline-none focus:ring-2 focus:ring-[#C09771] focus:ring-offset-2"
+                        >
+                            重新填寫
+                        </button>
+                        <button
+                            type="submit"
+                            class="inline-flex items-center justify-center w-[124px] h-[41px] bg-[#F9F5F1] border border-[#C09771] text-[#C09771] text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-[#C09771] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#C09771] focus:ring-offset-2"
+                        >
+                            確認送出
+                        </button>
+                    </div>
+
+                    </div> <!-- 關閉w-full容器 -->
+                </div> <!-- 關閉#F9F5F1背景容器 -->
+            </fieldset>
+
+            </div>
+        </form>
+
+
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="w-full bg-footer-bg relative">
+        <div class="absolute top-[20px] left-0 right-0 h-[1px] bg-white z-10"></div>
+        <div class="absolute bottom-[20px] left-0 right-0 h-[1px] bg-white z-10"></div>
+        <div class="container mx-auto px-4 max-w-[1200px] py-[53px]">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <div class="text-white text-center lg:text-left lg:justify-self-start">
+                    <p class="font-['Noto_Sans_HK'] font-light text-[13.5px] leading-[12px] mb-[12px]" style="letter-spacing: 1.5px;">服務時間｜10:00-18:00</p>
+                    <p class="font-['Noto_Sans_HK'] font-light text-[13.5px] leading-[12px] mb-[12px]" style="letter-spacing: 1.5px;">固定公休｜每週三</p>
+                    <p class="font-['Noto_Sans_HK'] font-light text-[13.5px] leading-[12px] mb-[12px]" style="letter-spacing: 1.5px;">聯絡電話｜07-2372269</p>
+                    <p class="font-['Noto_Sans_HK'] font-light text-[13.5px] leading-[12px]" style="letter-spacing: 1.5px;">門市地址｜高雄市林森一路189號8樓 <a href="https://maps.google.com" target="_blank" class="inline text-[12px] font-['Noto_Sans_HK'] font-light leading-[12px] text-white hover:opacity-80 transition-opacity duration-300 underline ml-1" style="letter-spacing: 1.5px;">立即導航</a></p>
+                </div>
+                <div class="flex items-center justify-center py-[15px] lg:justify-self-center">
+                    <img src="images/logo/logo-white.svg" alt="Lin Haute Bridal Logo" class="w-[195px] h-[139px] object-contain">
+                </div>
+                <div class="text-white text-center lg:text-right flex flex-col items-center lg:items-end lg:justify-self-end">
+                    <div class="inline-flex gap-[25px] mb-[25px]">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity duration-300" aria-label="Line"><img src="images/icon/social-line.svg" alt="Line" class="w-[18px] h-[18px] object-contain"></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity duration-300" aria-label="Instagram"><img src="images/icon/social-instagram.svg" alt="Instagram" class="w-[18px] h-[18px] object-contain"></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity duration-300" aria-label="Facebook"><img src="images/icon/social-facebook.svg" alt="Facebook" class="w-[18px] h-[18px] object-contain"></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity duration-300" aria-label="YouTube"><img src="images/icon/social-youtube.svg" alt="YouTube" class="w-[18px] h-[18px] object-contain"></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity duration-300" aria-label="Email"><img src="images/icon/social-email.svg" alt="Email" class="w-[18px] h-[18px] object-contain"></a>
+                    </div>
+                    <p class="font-['Noto_Sans_HK'] font-normal text-[14px] leading-[18px] text-right" style="letter-spacing: 11px;">高級定制禮服．採預約制</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="w-full bg-white h-[30px] flex items-center">
+        <div class="container mx-auto px-4 max-w-[1200px]">
+            <p class="font-['Noto_Sans_HK'] font-normal text-[11px] leading-[1] tracking-[0.5px] text-footer-copyright text-center">
+                Copyright © Linhaute Bridal 2025. All Rights Reserved. Design by 漢羽網路
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerLines = menuBtn.querySelectorAll('.hamburger-line');
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+                    hamburgerLines[1].style.opacity = '0';
+                    hamburgerLines[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+                } else {
+                    hamburgerLines[0].style.transform = 'none';
+                    hamburgerLines[1].style.opacity = '1';
+                    hamburgerLines[2].style.transform = 'none';
+                }
+            });
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    hamburgerLines[0].style.transform = 'none';
+                    hamburgerLines[1].style.opacity = '1';
+                    hamburgerLines[2].style.transform = 'none';
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

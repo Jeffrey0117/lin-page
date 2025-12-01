@@ -35,6 +35,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        .font-serifEng { font-family: 'Cormorant Garamond', serif; }
+
+        /* Nav link hover effect */
+        .nav-link {
+            position: relative;
+            z-index: 1;
+        }
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 40px;
+            height: 36px;
+            background-color: #F9F5F1;
+            border-radius: 50%;
+            z-index: -1;
+            transition: transform 0.3s ease;
+        }
+        .nav-link:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
         /* Custom Form Styles for Reservation Form */
 
         /* Custom checkbox styling */
@@ -186,7 +216,10 @@
         input[type="date"],
         select,
         textarea {
-            border-color: #D6B499 !important;
+            border: none !important;
+            border-bottom: 1px solid #D3B599 !important;
+            border-radius: 0 !important;
+            background: #ffffff;
             transition-property: border-color, box-shadow;
             transition-duration: 300ms;
         }
@@ -205,46 +238,144 @@
         input[type="date"]:focus,
         select:focus,
         textarea:focus {
-            border-color: #C29164;
-            box-shadow: 0 0 0 3px rgba(194, 145, 100, 0.2);
+            border-bottom-color: #C29164 !important;
+            box-shadow: none;
+            outline: none;
+        }
+
+        /* Custom select dropdown arrow */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding-right: 30px !important;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.646484 1.29297L7.64648 8.29297L14.6465 1.29297' stroke='%23c09771'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 12px 8px;
+            cursor: pointer;
+        }
+
+        /* Custom Dropdown Styles */
+        .custom-dropdown {
+            position: relative;
+            width: 100%;
+            max-width: 330px;
+        }
+
+        .custom-dropdown-btn {
+            width: 100%;
+            height: 37px;
+            padding: 0 30px 0 16px;
+            background: #ffffff;
+            border: none;
+            border-bottom: 1px solid #D3B599;
+            border-radius: 0;
+            text-align: left;
+            font-size: 14px;
+            letter-spacing: 0.10em;
+            color: #67534D;
+            cursor: pointer;
+            position: relative;
+            transition: border-color 300ms;
+        }
+
+        .custom-dropdown-btn::after {
+            content: '';
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 8px;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.646484 1.29297L7.64648 8.29297L14.6465 1.29297' stroke='%23c09771'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+            transition: transform 200ms;
+        }
+
+        .custom-dropdown.open .custom-dropdown-btn::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .custom-dropdown-btn:focus {
+            outline: none;
+            border-bottom-color: #C29164;
+        }
+
+        .custom-dropdown-list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #D3B599;
+            border-top: none;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            z-index: 100;
+            transition: max-height 200ms, opacity 200ms;
+        }
+
+        .custom-dropdown.open .custom-dropdown-list {
+            max-height: 200px;
+            opacity: 1;
+        }
+
+        .custom-dropdown-item {
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 0.10em;
+            color: #868686;
+            cursor: pointer;
+            transition: background-color 150ms, color 150ms;
+        }
+
+        .custom-dropdown-item:hover,
+        .custom-dropdown-item.selected {
+            background-color: #C09771;
+            color: white;
         }
     </style>
 </head>
-<body class="font-['Noto_Sans_HK'] font-normal">
+<body class="font-['Noto_Sans_HK'] font-normal overflow-x-hidden">
 
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
         <nav class="max-w-[1920px] mx-auto px-8 sm:px-10 md:px-16 lg:px-[115px]">
-            <div class="flex items-center justify-between h-[80px]">
+            <div class="flex items-center h-[80px]">
 
                 <!-- Logo -->
-                <div class="flex-shrink-0 pl-2 sm:pl-0">
+                <div class="flex-shrink-0 pl-2 sm:pl-0 ml-[5px]">
                     <a href="#" class="flex items-center">
-                        <img src="images/logo/logo.svg" alt="LinHaute Bridal Logo" class="w-[200px] md:w-[280px] lg:w-[320px] xl:w-[361px] h-auto">
+                        <img src="images/logo/logo.svg" alt="LinHaute Bridal Logo" class="w-[180px] sm:w-[180px] md:w-[190px] lg:w-[260px] xl:w-[300px] h-auto">
                     </a>
                 </div>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center lg:space-x-1.5 xl:space-x-4 2xl:space-x-6">
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">最新活動</a>
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">品牌介紹</a>
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗禮服</a>
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗攝影</a>
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">攝影作品</a>
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">影片分享</a>
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">禮服知識家</a>
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">合作品牌</a>
+                <div class="hidden lg:flex items-center gap-[45px] xl:gap-[50px] ml-[30px] xl:ml-[50px]">
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">最新活動</a>
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">品牌介紹</a>
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">預約須知</a>
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗禮服</a>
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">攝影作品</a>
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">影片分享</a>
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">禮服知識家</a>
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">合作品牌</a>
                 </div>
 
-                <!-- CTA Button (Desktop) -->
-                <div class="hidden lg:block">
-                    <a href="#" class="inline-flex items-center justify-center px-6 py-2 bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">
-                        預約諮詢
+                <!-- CTA Button (Desktop & Tablet) -->
+                <div class="hidden md:block ml-auto">
+                    <a href="#" class="inline-flex items-center justify-center gap-2 px-5 md:px-7 py-1.5 bg-btn-bg text-white text-[13px] md:text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">
+                        <img src="images/icon/reserve-button_icon.svg" alt="" class="w-[10px] h-auto">
+                        預約試穿
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none" aria-label="Toggle menu">
+                <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-12 h-12 space-y-1.5 focus:outline-none ml-auto" aria-label="Toggle menu">
                     <span class="hamburger-line w-6 h-0.5 bg-text-main-title transition-all duration-300"></span>
                     <span class="hamburger-line w-6 h-0.5 bg-text-main-title transition-all duration-300"></span>
                     <span class="hamburger-line w-6 h-0.5 bg-text-main-title transition-all duration-300"></span>
@@ -254,19 +385,20 @@
         </nav>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100">
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100">
             <div class="px-4 py-4 space-y-3">
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">最新活動</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">品牌介紹</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">婚紗禮服</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">婚紗攝影</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">攝影作品</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">影片分享</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">禮服知識家</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">合作品牌</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">最新活動</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">品牌介紹</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">預約須知</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">婚紗禮服</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">攝影作品</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">影片分享</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">禮服知識家</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">合作品牌</a>
                 <div class="pt-3">
-                    <a href="#" class="inline-flex items-center justify-center w-full py-3 bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">
-                        預約諮詢
+                    <a href="#" class="inline-flex items-center justify-center gap-2 w-full py-3 bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">
+                        <img src="images/icon/reserve-button_icon.svg" alt="" class="w-[10px] h-auto">
+                        預約試穿
                     </a>
                 </div>
             </div>
@@ -305,7 +437,7 @@
     </section>
 
     <!-- 品牌介紹 Section -->
-    <section class="relative bg-white">
+    <section class="relative bg-white overflow-hidden">
         <!-- Backgrounds Layer -->
         <div class="absolute top-0 left-0 w-full h-full flex flex-col xl:flex-row">
             <div class="hidden xl:block xl:w-[calc(50%+100px)] h-full bg-cover bg-center bg-no-repeat" style="background-image: url('images/background/about-bg.jpg')"></div>
@@ -322,42 +454,49 @@
                 </div>
 
                 <!-- Right Content Block (內容區域) -->
-                <div class="xl:w-[calc(50%-100px)] flex flex-col items-center px-6 sm:px-10 md:px-16 lg:px-20 xl:pl-[22px] xl:pr-8">
+                <div class="xl:w-[calc(50%-100px)] flex flex-col items-center">
                     <!-- 品牌介紹標題區塊 -->
-                    <div class="flex flex-col items-center mb-[51px] relative">
-                        <div class="relative inline-block">
-                            <h2 class="text-[29px] leading-none tracking-[0.15em] text-text-main-title inline">
-                                <span class="text-[35px] text-text-gold">品</span><span class="text-[29px] text-text-main-title">牌介紹</span>
-                            </h2>
-                            <img src="images/text/section-about.png" alt="ABOUTS" class="hidden md:block absolute left-[calc(100%+85px)] bottom-[-17px] h-[17px]">
+                    <div class="w-full max-w-[496px] px-6 sm:px-10 md:px-16 lg:px-20 xl:px-0">
+                        <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
+                            <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">品</span>
+                            <span class="tracking-[0.15em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">牌介紹</span>
                         </div>
-                        <div class="w-full md:w-[496px] border-b border-underline mt-[17px]"></div>
+                        <div class="w-full flex justify-end relative">
+                            <div class="flex items-end leading-[0.6] tracking-[0.25em]">
+                                <span class="text-[24px] sm:text-[31px] font-serifEng font-[300] text-[#c9a782]">A</span>
+                                <span class="text-[11px] sm:text-[18px] font-serifEng font-[400] text-[#c9a782]">BOUTS</span>
+                            </div>
+                        </div>
                     </div>
+                    <div class="w-full border-b border-[#c9a782] mb-[41px]"></div>
 
-                    <!-- 副標題 -->
-                    <p class="font-['Noto_Sans_HK'] text-[20px] tracking-[0.124em] text-text-subtitle mb-[21px] w-full text-center">LinHaute Bridal — 您好禮服</p>
+                    <!-- 內容區 -->
+                    <div class="w-full px-6 sm:px-10 md:px-16 lg:px-20 xl:pl-[22px] xl:pr-8">
+                        <!-- 副標題 -->
+                        <p class="font-['Noto_Sans_HK'] text-[20px] tracking-[0.124em] text-[#67534D] mb-[41px] w-full text-center">LinHaute Bridal — 您好禮服</p>
 
-                    <!-- 主標題一 -->
-                    <h2 class="font-['Noto_Sans_HK'] font-light text-[17px] leading-[21px] tracking-[0.10em] text-[#D3B599] mb-[26px] w-full text-left lg:whitespace-nowrap">
-                        婚紗，不只是禮服，更是女孩一生一次的夢想與儀式感
-                    </h2>
+                        <!-- 主標題一 -->
+                        <h2 class="font-['Noto_Sans_HK'] font-light text-[17px] leading-[21px] tracking-[0.10em] text-[#D3B599] mb-[26px] w-full text-left lg:whitespace-nowrap">
+                            婚紗，不只是禮服，更是女孩一生一次的夢想與儀式感
+                        </h2>
 
-                    <!-- 段落一 -->
-                    <p class="font-['Noto_Sans_HK'] font-normal text-[12px] leading-[20px] tracking-[0.095em] text-[#868686] mb-[17px] w-full text-left">
-                        每一件都像在等待，等一個屬於它的故事，可等一個屬於妳的時刻。<br>
-                        我們將高級訂製與手工溫度交織在一起，為妳描繪修身的線條、輕盈的垂墜與微醺的性感，把婚紗融入時裝的靈魂，那一刻穿上的，不只是「好看」，而是「比妳想像中更美」。
-                    </p>
+                        <!-- 段落一 -->
+                        <p class="font-['Noto_Sans_HK'] font-normal text-[12px] leading-[20px] tracking-[0.095em] text-[#868686] mb-[17px] w-full text-left">
+                            每一件都像在等待，等一個屬於它的故事，可等一個屬於妳的時刻。<br>
+                            我們將高級訂製與手工溫度交織在一起，為妳描繪修身的線條、輕盈的垂墜與微醺的性感，把婚紗融入時裝的靈魂，那一刻穿上的，不只是「好看」，而是「比妳想像中更美」。
+                        </p>
 
-                    <!-- 主標題二 -->
-                    <h2 class="font-['Noto_Sans_HK'] font-light text-[17px] leading-[21px] tracking-[0.10em] text-[#D3B599] mb-[26px] w-full text-left xl:whitespace-nowrap">
-                        妳會覺得，看起來都好美；我們覺得，妳穿起來更美。
-                    </h2>
+                        <!-- 主標題二 -->
+                        <h2 class="font-['Noto_Sans_HK'] font-light text-[17px] leading-[21px] tracking-[0.10em] text-[#D3B599] mb-[16px] w-full text-left xl:whitespace-nowrap">
+                            妳會覺得，看起來都好美；我們覺得，妳穿起來更美。
+                        </h2>
 
-                    <!-- 段落三 -->
-                    <p class="font-['Noto_Sans_HK'] font-normal text-[12px] leading-[20px] tracking-[0.095em] text-[#868686] w-full text-left">
-                        LinHaute，在台語裡聽起來像「你好」。<br>
-                        —— 這不只是問候，更是我們對每一位新娘的溫柔迎接。
-                    </p>
+                        <!-- 段落三 -->
+                        <p class="font-['Noto_Sans_HK'] font-normal text-[12px] leading-[20px] tracking-[0.095em] text-[#868686] w-full text-left">
+                            LinHaute，在台語裡聽起來像「你好」。<br>
+                            —— 這不只是問候，更是我們對每一位新娘的溫柔迎接。
+                        </p>
+                    </div>
                 </div>
 
             </div>
@@ -370,17 +509,21 @@
 
     <section class="bg-white pt-[125px] pb-[125px] flex flex-col items-center">
 
-        <div class="main-title-wrapper flex flex-col items-center mb-[51px] relative">
-            <div class="relative inline-block">
-                <h1 class="text-[29px] leading-none tracking-[0.15em] text-text-main-title inline">
-                    <span class="text-[35px] text-text-gold">服</span><span class="text-[29px] text-text-main-title">務項目</span>
-                </h1>
-                <img src="images/text/section-service.png" alt="SERVICE" class="absolute left-[calc(100%+85px)] bottom-[-17px] w-[105px] h-[20px]">
+        <div class="w-full max-w-[496px] mb-[51px]">
+            <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
+                <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">服</span>
+                <span class="tracking-[0.15em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">務項目</span>
             </div>
-            <div class="w-[496px] border-b border-underline mt-[17px]"></div>
+            <div class="w-full flex justify-end relative">
+                <div class="flex items-end leading-[0.6] tracking-[0.25em]">
+                    <span class="text-[24px] sm:text-[31px] font-serifEng font-[300] text-[#c9a782]">S</span>
+                    <span class="text-[11px] sm:text-[18px] font-serifEng font-[400] text-[#c9a782]">ERVICE</span>
+                </div>
+            </div>
+            <div class="w-full border-b border-[#c9a782]"></div>
         </div>
 
-        <p class="text-[20px] tracking-[0.124em] text-text-subtitle mb-[51px]">像閨蜜般，溫柔陪伴妳挑婚紗</p>
+        <p class="text-[20px] tracking-[0.124em] text-[#67534D] mb-[51px]">像閨蜜般，溫柔陪伴妳挑婚紗</p>
 
         <div class="w-full max-w-[1920px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[17px] px-4 sm:px-8 md:px-16 lg:px-[225px] justify-items-center">
 
@@ -390,7 +533,7 @@
                 <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px]">白紗 & 晚禮服租借</h3>
                 <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[17px] grow">可自由選擇「單租」或是「包套」</p>
                 <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[14px] tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white">
-                    <span>瀏覽禮服照片</span> <i class="fas fa-chevron-right ml-2.5"></i>
+                    <span>瀏覽禮服照片</span> <svg viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[12px] ml-4"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
                 </a>
             </div>
 
@@ -400,7 +543,7 @@
                 <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px]">婚紗攝影</h3>
                 <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[17px] grow">室內棚拍 / 外拍，有多位配合攝影師可以選擇</p>
                 <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[14px] tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white">
-                    <span>瀏覽攝影師作品</span> <i class="fas fa-chevron-right ml-2.5"></i>
+                    <span>瀏覽攝影師作品</span> <svg viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[12px] ml-4"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
                 </a>
             </div>
 
@@ -410,7 +553,7 @@
                 <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px]">婚宴當天</h3>
                 <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[17px] grow">訂婚、結婚當天婚紗可供新人選擇</p>
                 <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[14px] tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white">
-                    <span>瀏覽婚禮穿搭</span> <i class="fas fa-chevron-right ml-2.5"></i>
+                    <span>瀏覽婚禮穿搭</span> <svg viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[12px] ml-4"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
                 </a>
             </div>
 
@@ -431,30 +574,34 @@
                 
                 <!-- Left Content Block -->
                 <div class="lg:w-1/2 flex flex-col items-center text-center">
-                    <div class="flex flex-col items-center mb-[51px] relative">
-                        <div class="relative inline-block">
-                            <h2 class="text-[29px] leading-none tracking-[0.15em] text-text-main-title inline">
-                                <span class="text-[35px] text-text-gold">婚</span><span class="text-[29px] text-text-main-title">紗禮服</span>
-                            </h2>
-                            <img src="images/text/section-bridal.png" alt="BRIDAL" class="absolute left-[calc(100%+25px)] md:left-[calc(100%+85px)] bottom-[-17px] h-[17px]">
+                    <div class="w-full max-w-[496px] mb-[46px]">
+                        <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
+                            <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">婚</span>
+                            <span class="tracking-[0.15em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">紗禮服</span>
                         </div>
-                        <div class="w-[496px] border-b border-underline mt-[17px]"></div>
+                        <div class="w-full flex justify-end relative">
+                            <div class="flex items-end leading-[0.6] tracking-[0.25em]">
+                                <span class="text-[24px] sm:text-[31px] font-serifEng font-[300] text-[#c9a782]">B</span>
+                                <span class="text-[11px] sm:text-[18px] font-serifEng font-[400] text-[#c9a782]">RIDAL</span>
+                            </div>
+                        </div>
+                        <div class="w-full border-b border-[#c9a782]"></div>
                     </div>
-                    <p class="text-[20px] tracking-[0.124em] text-text-subtitle mb-[51px]">高級訂製・遇見妳的命定白紗</p>
-                    <a href="#" class="inline-flex items-center justify-center w-[122px] h-[36px] bg-white text-btn-bg border-0 text-[14px] tracking-[0.10em] no-underline rounded-full cursor-pointer transition-colors duration-300 hover:bg-btn-bg hover:text-white">
-                        瀏覽更多 <i class="fas fa-chevron-right ml-2.5"></i>
+                    <p class="text-[20px] tracking-[0.124em] text-[#67534D] mb-[51px]">高級訂製・遇見妳的命定白紗</p>
+                    <a href="#" class="inline-flex items-center justify-center w-[135px] h-[36px] bg-white text-btn-bg border-0 text-[14px] tracking-[0.10em] no-underline rounded-full cursor-pointer transition-colors duration-300 hover:bg-btn-bg hover:text-white">
+                        瀏覽更多 <svg viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[12px] ml-4"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
                     </a>
                 </div>
 
                 <!-- Right Content Block -->
                 <div class="lg:w-1/2 flex flex-col items-center">
-                    <div class="flex flex-col sm:flex-row gap-4 mb-[17px]">
+                    <div class="flex flex-col sm:flex-row gap-2 mb-[17px]">
                         <img src="images/bridal/bridal-showcase-02.jpg" alt="婚紗禮服" class="w-full max-w-[320px] sm:w-[280px] md:w-[240px] lg:w-[293px] h-auto object-cover">
                         <img src="images/bridal/bridal-showcase-01.jpg" alt="婚紗禮服" class="w-full max-w-[320px] sm:w-[280px] md:w-[240px] lg:w-[293px] h-auto object-cover">
                     </div>
                     <div class="flex gap-[9px]">
-                        <button class="w-[43px] h-[43px] bg-[#c09771] text-white border-0 text-base cursor-pointer rounded-full transition-all duration-300 flex items-center justify-center hover:bg-text-gold hover:text-white">&lt;</button>
-                        <button class="w-[43px] h-[43px] bg-white text-text-gold border-0 text-base cursor-pointer rounded-full transition-all duration-300 flex items-center justify-center hover:bg-text-gold hover:text-white">&gt;</button>
+                        <button class="w-[38px] h-[38px] bg-[#c09771] border-0 cursor-pointer rounded-full transition-all duration-300 flex items-center justify-center hover:bg-text-gold"><img src="images/icon/chevron.png" alt="上一張" style="width: 16px; transform: scaleX(-1); filter: brightness(0) invert(1);"></button>
+                        <button class="w-[38px] h-[38px] bg-white border-0 cursor-pointer rounded-full transition-all duration-300 flex items-center justify-center"><img src="images/icon/chevron.png" alt="下一張" style="width: 16px;"></button>
                     </div>
                 </div>
 
@@ -470,36 +617,63 @@
 
         <!-- 內容 -->
         <div class="relative z-10 flex flex-col items-center pt-[227px]">
-            <!-- 標題區域（同服務項目格式） -->
-            <div class="flex flex-col items-center mb-[51px] relative">
-                <div class="relative inline-block">
-                    <h2 class="text-[29px] leading-none tracking-[0.15em] text-text-main-title inline">
-                        <span class="text-[35px] text-text-gold">婚</span>
-                        <span class="text-[29px] text-text-main-title">禮實穿</span>
-                    </h2>
-                    <img src="images/text/section-wedding.png" alt="WEDDING" class="hidden md:block absolute left-[calc(100%+85px)] bottom-[-17px] h-[17px]">
+            <!-- 標題區域 -->
+            <div class="w-full max-w-[496px] mb-[51px]">
+                <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
+                    <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">婚</span>
+                    <span class="tracking-[0.15em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">禮實穿</span>
                 </div>
-                <div class="w-full md:w-[496px] border-b border-underline mt-[17px]"></div>
+                <div class="w-full flex justify-end relative">
+                    <div class="flex items-end leading-[0.6] tracking-[0.25em]">
+                        <span class="text-[24px] sm:text-[31px] font-serifEng font-[300] text-[#c9a782]">W</span>
+                        <span class="text-[11px] sm:text-[18px] font-serifEng font-[400] text-[#c9a782]">EDDING</span>
+                    </div>
+                </div>
+                <div class="w-full border-b border-[#c9a782]"></div>
             </div>
 
             <!-- 副標題 -->
-            <p class="text-[20px] tracking-[0.124em] text-text-subtitle mb-[51px]">講究禮服與宴會氛圍的契合</p>
+            <p class="text-[20px] tracking-[0.124em] text-[#67534D] mb-[81px]">講究禮服與宴會氛圍的契合</p>
 
             <!-- 圖片區域 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-[9px] mb-8 lg:mb-[51px] px-4 lg:px-0">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px] mb-8 lg:mb-[51px] px-4 sm:px-8 md:px-16 lg:px-[210px] max-w-[1920px] -mt-[30px] items-start">
                 <!-- 左邊兩張 -->
-                <img src="images/wedding/wedding-photo-01.jpg" alt="婚禮實穿" class="w-full h-auto md:h-[278px] lg:w-[377px] lg:h-[565px] object-cover">
-                <img src="images/wedding/wedding-photo-02.jpg" alt="婚禮實穿" class="w-full h-auto md:h-[278px] lg:w-[377px] lg:h-[565px] object-cover">
+                <div class="group relative overflow-hidden w-full h-[300px] md:h-[278px] lg:h-[565px]">
+                    <img src="images/wedding/wedding-photo-01.jpg" alt="婚禮實穿" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"></div>
+                    <div class="tracking-[0.2em] absolute inset-0 flex items-center justify-center text-center text-sm text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500 leading-5 font-light">
+                        <div><span class="text-sm">AMY&PETER</span><br />高雄萊特維庭</div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden w-full h-[300px] md:h-[278px] lg:h-[565px]">
+                    <img src="images/wedding/wedding-photo-02.jpg" alt="婚禮實穿" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"></div>
+                    <div class="tracking-[0.2em] absolute inset-0 flex items-center justify-center text-center text-sm text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500 leading-5 font-light">
+                        <div><span class="text-sm">EMMA&JASON</span><br />高雄漢來大飯店</div>
+                    </div>
+                </div>
                 <!-- 右邊一上一下 -->
-                <div class="col-span-1 lg:col-span-1 flex flex-col gap-2 md:gap-[9px]">
-                    <img src="images/wedding/wedding-photo-03.jpg" alt="婚禮實穿" class="w-full h-auto object-cover lg:w-[417px] lg:h-[278px]">
-                    <img src="images/wedding/wedding-photo-04.jpg" alt="婚禮實穿" class="w-full h-auto object-cover lg:w-[417px] lg:h-[278px]">
+                <div class="col-span-1 md:col-span-2 lg:col-span-1 flex flex-col gap-[10px]">
+                    <div class="group relative overflow-hidden w-full h-[145px] md:h-[134px] lg:h-[277.5px]">
+                        <img src="images/wedding/02.jpg" alt="婚禮實穿" class="w-full h-full object-cover object-bottom transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"></div>
+                        <div class="tracking-[0.2em] absolute inset-0 flex items-center justify-center text-center text-sm text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500 leading-5 font-light">
+                            <div><span class="text-sm">LISA&DAVID</span><br />高雄國賓飯店</div>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden w-full h-[145px] md:h-[134px] lg:h-[277.5px]">
+                        <img src="images/wedding/wedding-photo-04.jpg" alt="婚禮實穿" class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"></div>
+                        <div class="tracking-[0.2em] absolute inset-0 flex items-center justify-center text-center text-sm text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500 leading-5 font-light">
+                            <div><span class="text-sm">SOPHIA&MICHAEL</span><br />高雄福華飯店</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- 按鈕 -->
             <a href="#" class="inline-flex items-center justify-center w-[122px] h-[36px] bg-transparent border border-[#C09771] text-btn-bg text-[14px] tracking-[0.10em] no-underline rounded-full cursor-pointer transition-colors duration-300 hover:bg-btn-bg hover:text-white">
-                瀏覽更多 <i class="fas fa-chevron-right ml-2.5"></i>
+                瀏覽更多 <svg viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[12px] ml-4"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
             </a>
         </div>
     </section>
@@ -507,50 +681,69 @@
     <!-- 禮服知識家 Blog Section -->
     <section class="bg-white pt-[125px] flex flex-col items-center">
 
-        <div class="main-title-wrapper flex flex-col items-center mb-[51px] relative">
-            <div class="relative inline-block">
-                <h2 class="text-[29px] leading-none tracking-[0.15em] text-text-main-title inline">
-                    <span class="text-[35px] text-text-gold">禮</span><span class="text-[29px] text-text-main-title">服知識家</span>
-                </h2>
-                <img src="images/text/section-blog.png" alt="BLOG" class="absolute left-[calc(100%+85px)] bottom-[-17px] h-[17px]">
+        <div class="w-full max-w-[496px] mb-[51px]">
+            <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
+                <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">禮</span>
+                <span class="tracking-[0.15em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">服知識家</span>
             </div>
-            <div class="w-[496px] border-b border-underline mt-[17px]"></div>
+            <div class="w-full flex justify-end relative">
+                <div class="flex items-end leading-[0.6] tracking-[0.25em]">
+                    <span class="text-[24px] sm:text-[31px] font-serifEng font-[300] text-[#c9a782]">B</span>
+                    <span class="text-[11px] sm:text-[18px] font-serifEng font-[400] text-[#c9a782]">LOG</span>
+                </div>
+            </div>
+            <div class="w-full border-b border-[#c9a782]"></div>
         </div>
 
-        <p class="text-[20px] tracking-[0.124em] text-text-subtitle mb-[51px]">真實分享，讓你挑婚紗更安心</p>
+        <p class="text-[20px] tracking-[0.124em] text-[#67534D] mb-[51px]">真實分享，讓你挑婚紗更安心</p>
 
-        <div class="w-full max-w-[1920px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[17px] px-4 sm:px-8 md:px-16 lg:px-[225px] justify-items-center">
+        <div class="w-full max-w-[1920px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[17px] px-4 sm:px-8 md:px-16 lg:px-[210px] justify-items-center">
 
             <!-- Card 1 -->
-            <div class="group w-full max-w-[385px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
-                <img src="images/blog/blog-post-01.png" alt="Blog Image" class="w-[361px] h-[234px] mt-[17px] mx-[12px] object-cover">
-                <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[17px] px-[12px]">主分類一</p>
-                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px] px-[12px]">高雄設計婚禮禮服推薦｜聚會場合不可少的晚禮服</h3>
-                <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[12px] grow">晚禮服是晚上20點以後穿用的正式禮服，是女士禮服中最高檔次，最具特色，充分展示個性的禮服樣式。又稱夜禮服、晚...</p>
-                <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[16px] font-semibold tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white" style="font-family: 'Cormorant Garamond', serif;">
-                    <span>READ MORE</span> <i class="fas fa-chevron-right ml-2.5"></i>
+            <div class="group w-full max-w-[420px] rounded-[9px] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                <div class="pt-[17px] px-[17px]">
+                    <img src="images/blog/blog-post-01.png" alt="Blog Image" class="w-full h-[264px] object-cover">
+                </div>
+                <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[15px] px-[17px]">主分類一</p>
+                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[12px] mb-[16px] px-[17px] min-h-[52px]">高雄設計婚禮禮服推薦｜聚會場合不可少的晚禮服</h3>
+                <p class="text-[12px] leading-5 tracking-[0.10em] text-[#868686] px-[17px] mb-[20px]" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">晚禮服是晚上20點以後穿用的正式禮服，是女士禮服中最高檔次，最具特色，充分展示個性的禮服樣式。又稱夜禮服、晚...</p>
+                <a href="#" class="w-full h-[64px] mt-auto flex justify-center items-center text-[14px] font-normal tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white" style="font-family: 'Cormorant Garamond', serif;">
+                    <span>READ MORE</span>
+                    <svg viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[12px] ml-4 text-[#c09771] group-hover:text-white transition">
+                      <path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" />
+                    </svg>
                 </a>
             </div>
 
             <!-- Card 2 -->
-            <div class="group w-full max-w-[385px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
-                <img src="images/blog/blog-post-02.png" alt="Blog Image" class="w-[361px] h-[234px] mt-[17px] mx-[12px] object-cover">
-                <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[17px] px-[12px]">主分類二</p>
-                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px] px-[12px]">禮服挑選不藏私技巧大公開｜從認識禮服到婚紗挑選一次完整解析</h3>
-                <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[12px] grow">婚紗風格怎麼挑？看看身邊的朋友的婚紗照，總幻想著自己穿婚紗照該是什麼樣子。希望自己喜歡，又想要適合自己與另...</p>
-                <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[16px] font-semibold tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white" style="font-family: 'Cormorant Garamond', serif;">
-                    <span>READ MORE</span> <i class="fas fa-chevron-right ml-2.5"></i>
+            <div class="group w-full max-w-[420px] rounded-[9px] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                <div class="pt-[17px] px-[17px]">
+                    <img src="images/blog/blog-post-02.png" alt="Blog Image" class="w-full h-[264px] object-cover">
+                </div>
+                <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[15px] px-[17px]">主分類二</p>
+                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[12px] mb-[16px] px-[17px] min-h-[52px]">禮服挑選不藏私技巧大公開｜從認識禮服到婚紗挑選一次完整解析</h3>
+                <p class="text-[12px] leading-5 tracking-[0.10em] text-[#868686] px-[17px] mb-[20px]" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">婚紗風格怎麼挑？看看身邊的朋友的婚紗照，總幻想著自己穿婚紗照該是什麼樣子。希望自己喜歡，又想要適合自己與另...</p>
+                <a href="#" class="w-full h-[64px] mt-auto flex justify-center items-center text-[14px] font-normal tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white" style="font-family: 'Cormorant Garamond', serif;">
+                    <span>READ MORE</span>
+                    <svg viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[12px] ml-4 text-[#c09771] group-hover:text-white transition">
+                      <path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" />
+                    </svg>
                 </a>
             </div>
 
             <!-- Card 3 -->
-            <div class="group w-full max-w-[385px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
-                <img src="images/blog/blog-post-03.png" alt="Blog Image" class="w-[361px] h-[234px] mt-[17px] mx-[12px] object-cover">
-                <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[17px] px-[12px]">主分類一</p>
-                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px] px-[12px]">高雄婚紗禮服推薦首選｜禮服租借、婚紗照拍攝、婚紗攝影師好評、婚紗展熱銷款式</h3>
-                <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[12px] grow">高雄婚紗禮服推薦百選品牌！從專業婚顧服務、禮服租借、婚紗照拍攝、攝影師拍攝最受歡式、想知道更多婚紗展熱銷經...</p>
-                <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[16px] font-semibold tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white" style="font-family: 'Cormorant Garamond', serif;">
-                    <span>READ MORE</span> <i class="fas fa-chevron-right ml-2.5"></i>
+            <div class="group w-full max-w-[420px] rounded-[9px] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                <div class="pt-[17px] px-[17px]">
+                    <img src="images/blog/blog-post-03.png" alt="Blog Image" class="w-full h-[264px] object-cover">
+                </div>
+                <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[15px] px-[17px]">主分類一</p>
+                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[12px] mb-[16px] px-[17px] min-h-[52px]">高雄婚紗禮服推薦首選｜禮服租借、婚紗照拍攝、婚紗攝影師好評、婚紗展熱銷款式</h3>
+                <p class="text-[12px] leading-5 tracking-[0.10em] text-[#868686] px-[17px] mb-[20px]" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">高雄婚紗禮服推薦百選品牌！從專業婚顧服務、禮服租借、婚紗照拍攝、攝影師拍攝最受歡式、想知道更多婚紗展熱銷經...</p>
+                <a href="#" class="w-full h-[64px] mt-auto flex justify-center items-center text-[14px] font-normal tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white" style="font-family: 'Cormorant Garamond', serif;">
+                    <span>READ MORE</span>
+                    <svg viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[12px] ml-4 text-[#c09771] group-hover:text-white transition">
+                      <path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" />
+                    </svg>
                 </a>
             </div>
 
@@ -558,8 +751,8 @@
 
         <!-- Browse More Button -->
         <div class="flex justify-center mt-[51px]">
-            <a href="#" class="inline-flex items-center justify-center w-[122px] h-[36px] bg-transparent border border-btn-bg text-btn-bg text-[14px] tracking-[0.10em] no-underline rounded-full cursor-pointer transition-colors duration-300 hover:bg-btn-bg hover:text-white">
-                瀏覽更多 <i class="fas fa-chevron-right ml-2.5"></i>
+            <a href="#" class="inline-flex items-center justify-center w-[130px] h-[36px] bg-transparent border border-btn-bg text-btn-bg text-[14px] tracking-[0.10em] no-underline rounded-full cursor-pointer transition-colors duration-300 hover:bg-btn-bg hover:text-white">
+                瀏覽更多 <svg viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[12px] ml-2"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
             </a>
         </div>
 
@@ -568,23 +761,28 @@
     <!-- 預約諮詢 Reservation Section -->
     <section id="reservation" class="bg-white pt-[92px] pb-[126px] flex flex-col items-center">
 
-        <!-- Section Title with full-width underline -->
+        <!-- Section Title -->
         <div class="w-full">
-            <div class="main-title-wrapper flex flex-col items-center mb-[26px] relative">
-                <div class="relative inline-block">
-                    <h1 class="text-[29px] leading-none tracking-[0.15em] text-text-main-title inline">
-                        <span class="text-[35px] text-text-gold">填</span><span class="text-[29px] text-text-main-title">寫預約表單</span>
-                    </h1>
-                    <img src="images/text/section-reserve.png" alt="Reserve Now" class="hidden md:block absolute left-[calc(100%+35px)] bottom-0 h-[20px]">
+            <div class="max-w-[620px] mx-auto">
+                <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
+                    <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">填</span>
+                    <span class="tracking-[0.15em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">寫預約表單</span>
+                </div>
+                <div class="w-full flex justify-end relative">
+                    <div class="flex items-end leading-[0.6] tracking-[0.25em]">
+                        <span class="text-[24px] sm:text-[31px] font-serifEng font-[300] text-[#c9a782]">R</span>
+                        <span class="text-[11px] sm:text-[17px] font-serifEng font-[400] text-[#c9a782]">ESERVE</span>
+                        <span class="text-[24px] sm:text-[31px] font-serifEng font-[300] text-[#c9a782] ml-2">N</span>
+                        <span class="text-[11px] sm:text-[17px] font-serifEng font-[400] text-[#c9a782]">OW</span>
+                    </div>
                 </div>
             </div>
-            <!-- Full-width underline -->
-            <div class="w-full border-b border-underline mt-[17px]"></div>
+            <div class="w-full border-b border-[#c9a782]"></div>
         </div>
 
         <!-- Single line description text -->
         <div class="w-full flex justify-center px-4">
-            <p class="text-[14px] tracking-[0.10em] text-text-subtitle mt-[35px] mb-[51px] text-center max-w-[1200px]">
+            <p class="text-[14px] tracking-[0.10em] text-[#67534D] mt-[40px] mb-[40px] text-center max-w-[1200px] px-[5px]">
                 非常感謝您前來 LinHaute Bridal 挑選禮服，為了更加瞭解您的需求，請您撥冗完整填寫以下資訊，我們將盡速回覆您近期尚可預約的時段，謝謝！
             </p>
         </div>
@@ -597,7 +795,7 @@
             <fieldset class="mb-[9px] border-0 p-0">
                 <!-- 標題列：淺卡其色背景（統一顏色） -->
                 <legend class="w-full mb-0">
-                    <div class="bg-[#67534D] h-[40px] px-6 rounded-t-[9px] flex items-center justify-center">
+                    <div class="bg-[#67534D] h-[36px] px-6 rounded-t-[9px] flex items-center justify-center">
                         <span class="font-['Noto_Sans_HK'] font-normal text-[17px] tracking-[0.15em] text-white">預約聯絡</span>
                     </div>
                 </legend>
@@ -608,7 +806,7 @@
                         <li>為了提供給新人完整的服務，採取線上預約制。</li>
                         <li>只要填寫預約單，我們將在 2 日內與您連絡，若沒有連絡上您，可能是您的預約單沒有發送成功哦！</li>
                         <li>我們的人力有限，為了保障您的權益，如不克前來請提前通知，以便另外為您安排參觀時間。</li>
-                        <li>貼心提醒：預約試衣的新人請記得攜帶 bra 以及絲襪</li>
+                        <li>貼心提醒：預約試衣的新人請記得攜帶 nu bra 以及淡妝</li>
                         <li>如 2 日內未收到聯繫，請撥打：07-2372269 請珍惜每次的預約機會，感謝大家的體諒及配合。</li>
                     </ol>
                 </div>
@@ -618,13 +816,13 @@
             <fieldset class="mb-[9px] border-0 p-0">
                 <!-- 標題列：淺卡其色背景（統一顏色） -->
                 <legend class="w-full mb-0">
-                    <div class="bg-[#D6B499] h-[40px] px-6 rounded-t-[9px] flex items-center justify-center">
+                    <div class="bg-[#D6B499] h-[36px] px-6 rounded-t-[9px] flex items-center justify-center">
                         <span class="font-['Noto_Sans_HK'] font-normal text-[17px] tracking-[0.15em] text-white">基本資訊</span>
                     </div>
                 </legend>
 
                 <!-- #F9F5F1底表單區塊 -->
-                <div class="bg-[#F9F5F1] px-4 sm:px-8 md:px-12 lg:px-[120px] xl:px-[240px] pt-8 md:pt-[51px] pb-12 md:pb-[68px] rounded-b-[9px]">
+                <div class="bg-[#F9F5F1] px-4 sm:px-8 md:px-12 lg:px-[125px] xl:px-[245px] pt-8 md:pt-[51px] pb-12 md:pb-[68px] rounded-b-[9px]">
                     <!-- 兩欄 Grid 布局 -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[51px] gap-y-[18px]">
 
@@ -634,7 +832,7 @@
                             <!-- 聯絡姓名 -->
                             <div class="flex flex-col">
                                 <label for="contact-name" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
-                                    <span class="text-red-500" aria-hidden="true">*</span> 聯絡姓名
+                                    <span class="text-[#D3B599]" aria-hidden="true">*</span> 聯絡姓名
                                     <span class="sr-only">(必填)</span>
                                 </label>
                                 <input
@@ -650,7 +848,7 @@
                             <!-- E-mail -->
                             <div class="flex flex-col">
                                 <label for="contact-email" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
-                                    <span class="text-red-500" aria-hidden="true">*</span> E-mail
+                                    <span class="text-[#D3B599]" aria-hidden="true">*</span> E-mail
                                     <span class="sr-only">(必填)</span>
                                 </label>
                                 <input
@@ -666,7 +864,7 @@
                             <!-- 聯絡電話 -->
                             <div class="flex flex-col">
                                 <label for="contact-phone" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
-                                    <span class="text-red-500" aria-hidden="true">*</span> 聯絡電話
+                                    <span class="text-[#D3B599]" aria-hidden="true">*</span> 聯絡電話
                                     <span class="sr-only">(必填)</span>
                                 </label>
                                 <input
@@ -682,32 +880,29 @@
                             <!-- 方便聯絡時段 -->
                             <div class="flex flex-col">
                                 <label for="convenient-time" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
-                                    <span class="text-red-500" aria-hidden="true">*</span> 方便聯絡時段
+                                    <span class="text-[#D3B599]" aria-hidden="true">*</span> 方便聯絡時段
                                     <span class="sr-only">(必填)</span>
                                 </label>
-                                <select
-                                    id="convenient-time"
-                                    name="convenient-time"
-                                    required
-                                    aria-required="true"
-                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
-                                >
-                                    <option value="">請選擇</option>
-                                    <option value="morning">早上 (09:00-12:00)</option>
-                                    <option value="afternoon">下午 (12:00-17:00)</option>
-                                    <option value="evening">晚上 (17:00-20:00)</option>
-                                </select>
+                                <input type="hidden" id="convenient-time" name="convenient-time" required>
+                                <div class="custom-dropdown" data-target="convenient-time">
+                                    <button type="button" class="custom-dropdown-btn">請選擇</button>
+                                    <div class="custom-dropdown-list">
+                                        <div class="custom-dropdown-item" data-value="morning">早上 (09:00-12:00)</div>
+                                        <div class="custom-dropdown-item" data-value="afternoon">下午 (12:00-17:00)</div>
+                                        <div class="custom-dropdown-item" data-value="evening">晚上 (17:00-20:00)</div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
 
                         <!-- 右欄 -->
-                        <div class="flex flex-col space-y-[18px]">
+                        <div class="flex flex-col space-y-[18px] md:pl-[20px]">
 
                             <!-- 希望來店諮詢日期 -->
                             <div class="flex flex-col">
                                 <label for="consultation-date" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
-                                    <span class="text-red-500" aria-hidden="true">*</span> 希望來店諮詢日期？
+                                    <span class="text-[#D3B599]" aria-hidden="true">*</span> 希望來店諮詢日期？
                                     <span class="sr-only">(必填)</span>
                                 </label>
                                 <input
@@ -762,7 +957,7 @@
             <fieldset class="mb-[9px] border-0 p-0">
                 <!-- 標題列：淺卡其色背景（與上面統一） -->
                 <legend class="w-full mb-0">
-                    <div class="bg-[#D6B499] h-[40px] px-6 rounded-t-[9px] flex items-center justify-center">
+                    <div class="bg-[#D6B499] h-[36px] px-6 rounded-t-[9px] flex items-center justify-center">
                         <span class="font-['Noto_Sans_HK'] font-normal text-[17px] tracking-[0.15em] text-white">方案選擇</span>
                     </div>
                 </legend>
@@ -771,57 +966,56 @@
                 <div class="bg-[#F9F5F1] px-4 sm:px-8 md:px-12 lg:px-[120px] xl:px-[240px] py-8 md:py-[51px] rounded-b-[9px]">
                     <div class="w-full">
                 <!-- 婚紗拍攝方案 與 婚宴方案推薦 (Checkboxes) -->
-                <div class="mb-[22px]">
+                <div class="mb-[22px] pb-[22px] border-b border-[#D3B599]">
                     <p class="text-[14px] tracking-[0.10em] text-text-main-title mb-[14px]">
                         婚紗拍攝方案 與 婚宴方案推薦
                     </p>
-                    <div class="flex flex-col gap-[14px]" role="group" aria-labelledby="wedding-photo-plans">
+                    <div class="flex flex-col gap-[5px]" role="group" data-single-select="wedding-photo-plans">
                         <label class="flex items-center cursor-pointer group">
                             <input
                                 type="checkbox"
                                 name="wedding-photo-plans"
                                 value="package-51800"
                                 checked
-                                class="w-[15px] h-[15px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
+                                class="w-[10px] h-[10px] border border-[#D6B499] rounded-[2px] accent-[#D6B499] cursor-pointer"
                             >
-                            <span class="ml-[8px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">婚紗拍攝 3 套方案與婚宴當日禮服 3 套方案 $51,800</span>
+                            <span class="ml-[8px] text-[14px] font-normal tracking-[0.10em] text-[#868686] group-hover:text-text-main-title transition-colors duration-300">婚紗拍攝 3 套方案與婚宴當日禮服 3 套方案 $51,800</span>
                         </label>
                         <label class="flex items-center cursor-pointer group">
                             <input
                                 type="checkbox"
                                 name="wedding-photo-plans"
                                 value="package-35800"
-                                checked
-                                class="w-[15px] h-[15px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
+                                class="w-[10px] h-[10px] border border-[#D6B499] rounded-[2px] accent-[#D6B499] cursor-pointer"
                             >
-                            <span class="ml-[8px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">婚紗拍攝 3 套方案 $35,800 up</span>
+                            <span class="ml-[8px] text-[14px] font-normal tracking-[0.10em] text-[#868686] group-hover:text-text-main-title transition-colors duration-300">婚紗拍攝 3 套方案 $35,800 up</span>
                         </label>
                     </div>
                 </div>
 
                 <!-- 租賃禮服方案 (Checkboxes) -->
-                <div class="mb-[22px]">
+                <div class="mb-[22px] pb-[22px] border-b border-[#D3B599]">
                     <p class="text-[14px] tracking-[0.10em] text-text-main-title mb-[14px]">
                         租賃禮服方案
                     </p>
-                    <div class="flex flex-col gap-[14px]" role="group" aria-labelledby="rental-plans">
+                    <div class="flex flex-col gap-[5px]" role="group" data-single-select="rental-plans">
                         <label class="flex items-center cursor-pointer group">
                             <input
                                 type="checkbox"
                                 name="rental-plans"
                                 value="white-dress-8000"
-                                class="w-[15px] h-[15px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
+                                class="w-[10px] h-[10px] border border-[#D6B499] rounded-[2px] accent-[#D6B499] cursor-pointer"
                             >
-                            <span class="ml-[8px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">單租 1 套白紗 $8,000 up</span>
+                            <span class="ml-[8px] text-[14px] font-normal tracking-[0.10em] text-[#868686] group-hover:text-text-main-title transition-colors duration-300">單租 1 套白紗 $8,000 up</span>
                         </label>
                         <label class="flex items-center cursor-pointer group">
                             <input
                                 type="checkbox"
                                 name="rental-plans"
                                 value="evening-dress-6000"
-                                class="w-[15px] h-[15px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
+                                class="w-[10px] h-[10px] border border-[#D6B499] rounded-[2px] accent-[#D6B499] cursor-pointer"
                             >
-                            <span class="ml-[8px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">單租 1 套 晚宴禮服 $6,000 up</span>
+                            <span class="ml-[8px] text-[14px] font-normal tracking-[0.10em] text-[#868686] group-hover:text-text-main-title transition-colors duration-300">單租 1 套 晚宴禮服 $6,000 up</span>
                         </label>
                     </div>
                 </div>
@@ -831,17 +1025,15 @@
                     <label for="how-know" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[8px] block">
                         是經由什麼方式得知 LIN 禮服館呢？
                     </label>
-                    <select
-                        id="how-know"
-                        name="how-know"
-                        class="w-full max-w-[330px] h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300"
-                        onchange="toggleReferralInput(this)"
-                    >
-                        <option value="">請選擇</option>
-                        <option value="facebook">LIN 粉絲團照片很吸引妳</option>
-                        <option value="friend">親友介紹</option>
-                        <option value="photographer">攝影師或造型師轉介紹</option>
-                    </select>
+                    <input type="hidden" id="how-know" name="how-know">
+                    <div class="custom-dropdown" data-target="how-know">
+                        <button type="button" class="custom-dropdown-btn">請選擇</button>
+                        <div class="custom-dropdown-list">
+                            <div class="custom-dropdown-item" data-value="facebook">LIN 粉絲團照片很吸引妳</div>
+                            <div class="custom-dropdown-item" data-value="friend">親友介紹</div>
+                            <div class="custom-dropdown-item" data-value="photographer">攝影師或造型師轉介紹</div>
+                        </div>
+                    </div>
                     <!-- 親友介紹額外輸入框 -->
                     <div id="referral-input" class="hidden mt-[9px]">
                         <input
@@ -861,24 +1053,26 @@
                     <textarea
                         id="remarks"
                         name="remarks"
-                        class="w-full max-w-[855px] h-[84px] px-4 py-3 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300 resize-none"
+                        class="w-full max-w-[855px] h-[69px] px-4 py-3 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300 resize-none"
                     ></textarea>
                 </div>
 
                     <!-- Buttons (移至方案選擇區塊內) -->
-                    <div class="flex justify-center gap-4 mt-8">
+                    <div class="flex justify-center gap-4 mt-[52px]">
                         <button
                             type="button"
                             onclick="document.getElementById('reservation-form').reset()"
-                            class="inline-flex items-center justify-center w-[124px] h-[41px] bg-white text-[#C09771] text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-[#F5F5F5] focus:outline-none focus:ring-2 focus:ring-[#C09771] focus:ring-offset-2"
+                            class="inline-flex items-center justify-center gap-2 w-[124px] h-[38px] bg-white text-[#C09771] text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-[#F5F5F5] focus:outline-none focus:ring-2 focus:ring-[#C09771] focus:ring-offset-2"
                         >
+                            <img src="images/icon/returns_bronze.svg" alt="" class="w-[20px] h-auto">
                             重新填寫
                         </button>
                         <button
                             type="submit"
-                            class="inline-flex items-center justify-center w-[124px] h-[41px] bg-[#F9F5F1] border border-[#C09771] text-[#C09771] text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-[#C09771] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#C09771] focus:ring-offset-2"
+                            class="group inline-flex items-center justify-center gap-2 w-[130px] h-[38px] bg-[#F9F5F1] border border-[#C09771] text-[#C09771] text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-[#C09771] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#C09771] focus:ring-offset-2"
                         >
                             確認送出
+                            <img src="images/icon/chevron.png" alt="" class="w-[16px] h-auto transition-all duration-300 group-hover:brightness-0 group-hover:invert">
                         </button>
                     </div>
 
@@ -910,8 +1104,8 @@
     <!-- Footer Section (Scaled by 120/136 ratio = 0.882353) -->
     <footer class="w-full bg-footer-bg relative">
         <!-- White divider lines - 20px from top and bottom (scaled from 23px) -->
-        <div class="absolute top-[20px] left-0 right-0 h-[1px] bg-white z-10"></div>
-        <div class="absolute bottom-[20px] left-0 right-0 h-[1px] bg-white z-10"></div>
+        <div class="absolute top-[20px] left-0 right-0 h-px bg-white z-10" style="transform: scaleY(0.9); transform-origin: top;"></div>
+        <div class="absolute bottom-[20px] left-0 right-0 h-px bg-white z-10" style="transform: scaleY(0.9); transform-origin: bottom;"></div>
 
         <!-- Main footer content area with proper container alignment -->
         <div class="container mx-auto px-4 max-w-[1200px] py-[53px]">
@@ -945,8 +1139,8 @@
 
                 <!-- Right Column: Social Media Icons & Labels (scaled text) -->
                 <div class="text-white text-center lg:text-right flex flex-col items-center lg:items-end lg:justify-self-end">
-                    <!-- Social Media Icons Row - 使用 inline-flex 并移除固定宽度 -->
-                    <div class="inline-flex gap-[25px] mb-[25px]">
+                    <!-- Social Media Icons Row -->
+                    <div class="flex gap-[25px] mb-[25px]">
                         <a href="#" target="_blank" rel="noopener noreferrer" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity duration-300" aria-label="Line">
                             <img src="images/icon/social-line.svg" alt="Line" class="w-[18px] h-[18px] object-contain">
                         </a>
@@ -965,8 +1159,8 @@
                     </div>
 
                     <!-- Text Content - 文字对齐 icons 右边界 -->
-                    <p class="font-['Noto_Sans_HK'] font-normal text-[14px] leading-[18px] text-right" style="letter-spacing: 11px;">
-                        高級定制禮服．採預約制
+                    <p class="font-['Noto_Sans_HK'] font-light text-[14px] leading-[18px] tracking-[13px] self-end">
+                        高級定制禮服．採預約<span style="letter-spacing: 0;">制</span>
                     </p>
                 </div>
 
@@ -975,7 +1169,7 @@
     </footer>
 
     <!-- Copyright Section - Separate with white background (scaled text) -->
-    <div class="w-full bg-white h-[30px] flex items-center">
+    <div class="w-full bg-[#F9F5F1] h-[30px] flex items-center">
         <div class="container mx-auto px-4 max-w-[1200px]">
             <p class="font-['Noto_Sans_HK'] font-normal text-[11px] leading-[1] tracking-[0.5px] text-footer-copyright text-center">
                 Copyright © Linhaute Bridal 2025. All Rights Reserved. Design by 漢羽網路
@@ -1019,17 +1213,89 @@
         });
     </script>
 
+    <!-- Single Select Checkbox Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('[data-single-select]').forEach(group => {
+                const checkboxes = group.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(checkbox => {
+                    checkbox.addEventListener('change', function() {
+                        if (this.checked) {
+                            checkboxes.forEach(cb => {
+                                if (cb !== this) cb.checked = false;
+                            });
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
     <!-- Form Validation Script -->
     <script>
         // Toggle referral input based on dropdown selection
-        function toggleReferralInput(select) {
+        function toggleReferralInput(value) {
             const referralInput = document.getElementById('referral-input');
-            if (select.value === 'friend') {
+            if (value === 'friend') {
                 referralInput.classList.remove('hidden');
             } else {
                 referralInput.classList.add('hidden');
             }
         }
+
+        // Custom Dropdown functionality
+        document.querySelectorAll('.custom-dropdown').forEach(dropdown => {
+            const btn = dropdown.querySelector('.custom-dropdown-btn');
+            const list = dropdown.querySelector('.custom-dropdown-list');
+            const items = dropdown.querySelectorAll('.custom-dropdown-item');
+            const targetId = dropdown.dataset.target;
+            const hiddenInput = document.getElementById(targetId);
+
+            // Toggle dropdown
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Close other dropdowns
+                document.querySelectorAll('.custom-dropdown.open').forEach(d => {
+                    if (d !== dropdown) d.classList.remove('open');
+                });
+                dropdown.classList.toggle('open');
+            });
+
+            // Select item
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    const value = item.dataset.value;
+                    const text = item.textContent;
+
+                    // Update button text
+                    btn.textContent = text;
+
+                    // Update hidden input
+                    hiddenInput.value = value;
+
+                    // Update selected state
+                    items.forEach(i => i.classList.remove('selected'));
+                    item.classList.add('selected');
+
+                    // Close dropdown
+                    dropdown.classList.remove('open');
+
+                    // Trigger referral input toggle if this is the how-know dropdown
+                    if (targetId === 'how-know') {
+                        toggleReferralInput(value);
+                    }
+                });
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.custom-dropdown')) {
+                document.querySelectorAll('.custom-dropdown.open').forEach(d => {
+                    d.classList.remove('open');
+                });
+            }
+        });
 
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('reservation-form');

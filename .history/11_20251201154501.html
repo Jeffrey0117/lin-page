@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'text-main-title': '#5C4535',
+              'text-subtitle': '#8E8174',
+              'text-gold': '#BA8A63',
+              'btn-bg': '#C29164',
+              'underline': '#D6B499',
+              'card-bg': '#F9F5F1',
+              'footer-bg': '#D3B599',
+              'footer-copyright': '#C09771',
+            }
+          }
+        }
+      }
+    </script>
+    <title>禮服知識家 - LinHaute Bridal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .font-serifEng { font-family: 'Cormorant Garamond', serif; }
+    </style>
+</head>
+<body class="font-['Noto_Sans_HK'] font-normal">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+        <nav class="max-w-[1920px] mx-auto px-8 sm:px-10 md:px-16 lg:px-[115px]">
+            <div class="flex items-center justify-between h-[80px]">
+                <div class="flex-shrink-0 pl-2 sm:pl-0">
+                    <a href="#" class="flex items-center">
+                        <img src="images/logo/logo.svg" alt="LinHaute Bridal Logo" class="w-[200px] md:w-[280px] lg:w-[320px] xl:w-[361px] h-auto">
+                    </a>
+                </div>
+                <div class="hidden lg:flex items-center lg:space-x-1.5 xl:space-x-4 2xl:space-x-6">
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">最新活動</a>
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">品牌介紹</a>
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗禮服</a>
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗攝影</a>
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">攝影作品</a>
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">影片分享</a>
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">禮服知識家</a>
+                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">合作品牌</a>
+                </div>
+                <div class="hidden lg:block">
+                    <a href="#" class="inline-flex items-center justify-center px-6 py-2 bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">預約諮詢</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none" aria-label="Toggle menu">
+                    <span class="hamburger-line w-6 h-0.5 bg-text-main-title transition-all duration-300"></span>
+                    <span class="hamburger-line w-6 h-0.5 bg-text-main-title transition-all duration-300"></span>
+                    <span class="hamburger-line w-6 h-0.5 bg-text-main-title transition-all duration-300"></span>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">最新活動</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">品牌介紹</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">婚紗禮服</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">婚紗攝影</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">攝影作品</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">影片分享</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">禮服知識家</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">合作品牌</a>
+                <div class="pt-3">
+                    <a href="#" class="inline-flex items-center justify-center w-full py-3 bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">預約諮詢</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 禮服知識家 Blog Section -->
+    <section class="bg-white pt-[180px] flex flex-col items-center">
+      <div class="w-full">
+        <div class="tracking-[-0.01em] leading-none text-center">
+          <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">禮</span>
+          <span class="tracking-[0.1em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">服知識家</span>
+        </div>
+
+        <div class="mx-auto w-full xl:w-[30%] w-max-[581px] flex justify-end relative">
+          <div class="flex items-end leading-[0.6] tracking-[0.2em]">
+            <span class="text-[22px] sm:text-[29px] font-serifEng font-[500] text-[#c9a782]">B</span>
+            <span class="text-[11px] sm:text-[18px] font-serifEng font-[400] text-[#c9a782]">LOG</span>
+          </div>
+        </div>
+
+        <div class="mx-auto w-full xl:w-[30%] w-max-[581px] border-b border-[#c9a782]"></div>
+      </div>
+
+        <div class="mt-[50px] mb-[50px] flex-col w-[90%] lg:w-[73%] max-w-[1392px] rounded-md flex bg-[#f9f5f1] py-[39px] px-2 sm:px-8 xl:px-40">
+          <div class="flex flex-wrap xl:flex-nowrap gap-3 justify-center items-center">
+            <button data-category="all" class="filter-btn group py-[8px] w-[130px] flex items-center justify-center text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">全部</button>
+            <button data-category="category-1" class="filter-btn group py-[8px] w-[130px] flex items-center justify-center gap-2 text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">主分類一</button>
+            <button data-category="category-2" class="filter-btn group py-[8px] w-[130px] flex items-center justify-center gap-2 text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">主分類二</button>
+            <button data-category="category-3" class="filter-btn group py-[8px] w-[130px] flex items-center justify-center gap-2 text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">主分類三</button>
+          </div>
+        </div>
+        <div class="w-full max-w-[1920px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-[17px] gap-y-[67px] px-4 sm:px-8 md:px-16 lg:px-[225px] justify-items-center">
+
+            <!-- Card 1 -->
+            <div class="group w-full max-w-[385px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                <img src="images/blog/blog-post-01.png" alt="Blog Image" class="w-[361px] h-[234px] mt-[17px] mx-[12px] object-cover">
+                <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[17px] px-[12px]">主分類一</p>
+                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px] px-[12px]">高雄設計婚禮禮服推薦｜聚會場合不可少的晚禮服</h3>
+                <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[12px] grow">晚禮服是晚上20點以後穿用的正式禮服，是女士禮服中最高檔次，最具特色，充分展示個性的禮服樣式。又稱夜禮服、晚...</p>
+                <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[16px] font-semibold tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white" style="font-family: 'Cormorant Garamond', serif;">
+                    <span>READ MORE</span> <i class="fas fa-chevron-right ml-2.5"></i>
+                </a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="group w-full max-w-[385px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                <img src="images/blog/blog-post-02.png" alt="Blog Image" class="w-[361px] h-[234px] mt-[17px] mx-[12px] object-cover">
+                <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[17px] px-[12px]">主分類二</p>
+                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px] px-[12px]">禮服挑選不藏私技巧大公開｜從認識禮服到婚紗挑選一次完整解析</h3>
+                <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[12px] grow">婚紗風格怎麼挑？看看身邊的朋友的婚紗照，總幻想著自己穿婚紗照該是什麼樣子。希望自己喜歡，又想要適合自己與另...</p>
+                <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[16px] font-semibold tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white" style="font-family: 'Cormorant Garamond', serif;">
+                    <span>READ MORE</span> <i class="fas fa-chevron-right ml-2.5"></i>
+                </a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="group w-full max-w-[385px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                <img src="images/blog/blog-post-03.png" alt="Blog Image" class="w-[361px] h-[234px] mt-[17px] mx-[12px] object-cover">
+                <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[17px] px-[12px]">主分類一</p>
+                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px] px-[12px]">高雄婚紗禮服推薦首選｜禮服租借、婚紗照拍攝、婚紗攝影師好評、婚紗展熱銷款式</h3>
+                <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[12px] grow">高雄婚紗禮服推薦百選品牌！從專業婚顧服務、禮服租借、婚紗照拍攝、攝影師拍攝最受歡式、想知道更多婚紗展熱銷經...</p>
+                <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[16px] font-semibold tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white" style="font-family: 'Cormorant Garamond', serif;">
+                    <span>READ MORE</span> <i class="fas fa-chevron-right ml-2.5"></i>
+                </a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="group w-full max-w-[385px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                <img src="images/blog/04.png" alt="Blog Image" class="w-[361px] h-[234px] mt-[17px] mx-[12px] object-cover">
+                <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[17px] px-[12px]">主分類二</p>
+                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px] px-[12px]">手工禮服與婚宴場地的搭配訣竅｜教妳挑出完美的宴客禮服婚紗</h3>
+                <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[12px] grow">婚紗風格怎麼挑？看著身邊的朋友的婚紗照，總幻想著自己的婚紗照該是什麼樣子。希望自己喜歡，又想要適合自己與另...</p>
+                <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[16px] font-semibold tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white" style="font-family: 'Cormorant Garamond', serif;">
+                    <span>READ MORE</span> <i class="fas fa-chevron-right ml-2.5"></i>
+                </a>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="group w-full max-w-[385px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                <img src="images/blog/05.png" alt="Blog Image" class="w-[361px] h-[234px] mt-[17px] mx-[12px] object-cover">
+                <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[17px] px-[12px]">主分類三</p>
+                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px] px-[12px]">高雄婚紗禮服推薦首選｜禮服租借技巧</h3>
+                <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[12px] grow">結婚是說起來很甜蜜的事情，但開始籌備後，才知道事前準備事項、功課清單越列越長，藏在細節裡的魔鬼多到不行！</p>
+                <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[16px] font-semibold tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white" style="font-family: 'Cormorant Garamond', serif;">
+                    <span>READ MORE</span> <i class="fas fa-chevron-right ml-2.5"></i>
+                </a>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="group w-full max-w-[385px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                <img src="images/blog/06.png" alt="Blog Image" class="w-[361px] h-[234px] mt-[17px] mx-[12px] object-cover">
+                <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[17px] px-[12px]">主分類一</p>
+                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px] px-[12px]">手工禮服是什麼？跟常見的婚紗禮服有什麼不同嗎？教你選擇最適合妳的禮服！</h3>
+                <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[12px] grow">每個人對婚紗的概念不一樣，我們尊重每一個人對婚紗的追求不同於常見的婚紗禮服，一件手工訂製獨一無二的單款禮服...</p>
+                <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[16px] font-semibold tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white" style="font-family: 'Cormorant Garamond', serif;">
+                    <span>READ MORE</span> <i class="fas fa-chevron-right ml-2.5"></i>
+                </a>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="group w-full max-w-[385px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                <img src="images/blog/07.png" alt="Blog Image" class="w-[361px] h-[234px] mt-[17px] mx-[12px] object-cover">
+                <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[17px] px-[12px]">主分類二</p>
+                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px] px-[12px]">手工禮服是什麼？跟常見的婚紗禮服有什麼不同嗎？教你選擇最適合妳的禮服！</h3>
+                <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[12px] grow">婚紗風格怎麼挑？看著身邊的朋友的婚紗照，總幻想著自己的婚紗照該是什麼樣子。希望自己喜歡，又想要適合自己與另...</p>
+                <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[16px] font-semibold tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white" style="font-family: 'Cormorant Garamond', serif;">
+                    <span>READ MORE</span> <i class="fas fa-chevron-right ml-2.5"></i>
+                </a>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="group w-full max-w-[385px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                <img src="images/blog/08.png" alt="Blog Image" class="w-[361px] h-[234px] mt-[17px] mx-[12px] object-cover">
+                <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[17px] px-[12px]">主分類一</p>
+                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px] px-[12px]">高雄絕美時裝小禮服推薦｜教你成為全場注目焦點</h3>
+                <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[12px] grow">在婚禮上，我們新娘並不是一定要一直穿著婚紗，除了婚紗，新娘們當然也少不了各種各樣的小禮服了，小禮物穿起來簡...</p>
+                <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[16px] font-semibold tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white" style="font-family: 'Cormorant Garamond', serif;">
+                    <span>READ MORE</span> <i class="fas fa-chevron-right ml-2.5"></i>
+                </a>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="group w-full max-w-[385px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+                <img src="images/blog/09.png" alt="Blog Image" class="w-[361px] h-[234px] mt-[17px] mx-[12px] object-cover">
+                <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[17px] px-[12px]">主分類二</p>
+                <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px] px-[12px]">禮服款式介紹</h3>
+                <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[12px] grow">每個人對婚紗的概念不一樣，我們尊重每一個人對婚紗的追求不同於常見的婚紗禮服，一件手工訂製獨一無二的單款禮服...</p>
+                <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[16px] font-semibold tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white" style="font-family: 'Cormorant Garamond', serif;">
+                    <span>READ MORE</span> <i class="fas fa-chevron-right ml-2.5"></i>
+                </a>
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="w-full bg-footer-bg relative mt-[120px]">
+        <div class="absolute top-[20px] left-0 right-0 h-[1px] bg-white z-10"></div>
+        <div class="absolute bottom-[20px] left-0 right-0 h-[1px] bg-white z-10"></div>
+        <div class="container mx-auto px-4 max-w-[1200px] py-[53px]">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <div class="text-white text-center lg:text-left lg:justify-self-start">
+                    <p class="font-['Noto_Sans_HK'] font-light text-[13.5px] leading-[12px] mb-[12px]" style="letter-spacing: 1.5px;">服務時間｜10:00-18:00</p>
+                    <p class="font-['Noto_Sans_HK'] font-light text-[13.5px] leading-[12px] mb-[12px]" style="letter-spacing: 1.5px;">固定公休｜每週三</p>
+                    <p class="font-['Noto_Sans_HK'] font-light text-[13.5px] leading-[12px] mb-[12px]" style="letter-spacing: 1.5px;">聯絡電話｜07-2372269</p>
+                    <p class="font-['Noto_Sans_HK'] font-light text-[13.5px] leading-[12px]" style="letter-spacing: 1.5px;">門市地址｜高雄市林森一路189號8樓 <a href="https://maps.google.com" target="_blank" class="inline text-[12px] font-['Noto_Sans_HK'] font-light leading-[12px] text-white hover:opacity-80 transition-opacity duration-300 underline ml-1" style="letter-spacing: 1.5px;">立即導航</a></p>
+                </div>
+                <div class="flex items-center justify-center py-[15px] lg:justify-self-center">
+                    <img src="images/logo/logo-white.svg" alt="Lin Haute Bridal Logo" class="w-[195px] h-[139px] object-contain">
+                </div>
+                <div class="text-white text-center lg:text-right flex flex-col items-center lg:items-end lg:justify-self-end">
+                    <div class="inline-flex gap-[25px] mb-[25px]">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity duration-300" aria-label="Line"><img src="images/icon/social-line.svg" alt="Line" class="w-[18px] h-[18px] object-contain"></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity duration-300" aria-label="Instagram"><img src="images/icon/social-instagram.svg" alt="Instagram" class="w-[18px] h-[18px] object-contain"></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity duration-300" aria-label="Facebook"><img src="images/icon/social-facebook.svg" alt="Facebook" class="w-[18px] h-[18px] object-contain"></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity duration-300" aria-label="YouTube"><img src="images/icon/social-youtube.svg" alt="YouTube" class="w-[18px] h-[18px] object-contain"></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity duration-300" aria-label="Email"><img src="images/icon/social-email.svg" alt="Email" class="w-[18px] h-[18px] object-contain"></a>
+                    </div>
+                    <p class="font-['Noto_Sans_HK'] font-normal text-[14px] leading-[18px] text-right" style="letter-spacing: 11px;">高級定制禮服．採預約制</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="w-full bg-white h-[30px] flex items-center">
+        <div class="container mx-auto px-4 max-w-[1200px]">
+            <p class="font-['Noto_Sans_HK'] font-normal text-[11px] leading-[1] tracking-[0.5px] text-footer-copyright text-center">Copyright © Linhaute Bridal 2025. All Rights Reserved. Design by 漢羽網路</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerLines = menuBtn.querySelectorAll('.hamburger-line');
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+                    hamburgerLines[1].style.opacity = '0';
+                    hamburgerLines[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+                } else {
+                    hamburgerLines[0].style.transform = 'none';
+                    hamburgerLines[1].style.opacity = '1';
+                    hamburgerLines[2].style.transform = 'none';
+                }
+            });
+        });
+        $(document).ready(function () {
+            $(".filter-btn").click(function () {
+                const category = $(this).data("category");
+                if (category === "all") {
+                    $(".card").fadeIn(200);
+                } else {
+                    $(".card").fadeOut(200);
+                    $("." + category).delay(200).fadeIn(200);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
