@@ -38,7 +38,29 @@
         .font-serifEng {
             font-family: 'Cormorant Garamond', serif;
         }
-    </style>
+    
+        /* Nav link hover effect */
+        .nav-link {
+            position: relative;
+            z-index: 1;
+        }
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 40px;
+            height: 36px;
+            background-color: #F9F5F1;
+            border-radius: 50%;
+            z-index: -1;
+            transition: transform 0.3s ease;
+        }
+        .nav-link:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+</style>
 </head>
 <body class="font-['Noto_Sans_HK'] font-normal">
 
