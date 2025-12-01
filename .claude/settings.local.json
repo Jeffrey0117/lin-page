@@ -20,7 +20,8 @@
       "mcp__chrome-devtools__click",
       "Bash(dir:*)",
       "Bash(gemini:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git push)"
     ],
     "deny": [],
     "ask": []
