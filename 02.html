@@ -215,36 +215,37 @@
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
         <nav class="max-w-[1920px] mx-auto px-8 sm:px-10 md:px-16 lg:px-[115px]">
-            <div class="flex items-center justify-between h-[80px]">
+            <div class="flex items-center h-[80px]">
 
                 <!-- Logo -->
-                <div class="flex-shrink-0 pl-2 sm:pl-0">
+                <div class="flex-shrink-0 pl-2 sm:pl-0 ml-[5px]">
                     <a href="#" class="flex items-center">
-                        <img src="images/logo/logo.svg" alt="LinHaute Bridal Logo" class="w-[200px] md:w-[280px] lg:w-[320px] xl:w-[361px] h-auto">
+                        <img src="images/logo/logo.svg" alt="LinHaute Bridal Logo" class="w-[180px] sm:w-[180px] md:w-[190px] lg:w-[260px] xl:w-[300px] h-auto">
                     </a>
                 </div>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center lg:space-x-1.5 xl:space-x-4 2xl:space-x-6">
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">最新活動</a>
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">品牌介紹</a>
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗禮服</a>
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗攝影</a>
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">攝影作品</a>
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">影片分享</a>
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">禮服知識家</a>
-                    <a href="#" class="text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">合作品牌</a>
+                <div class="hidden lg:flex items-center gap-[45px] xl:gap-[50px] ml-[30px] xl:ml-[50px]">
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">最新活動</a>
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">品牌介紹</a>
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">預約須知</a>
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗禮服</a>
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">攝影作品</a>
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">影片分享</a>
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">禮服知識家</a>
+                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">合作品牌</a>
                 </div>
 
-                <!-- CTA Button (Desktop) -->
-                <div class="hidden lg:block">
-                    <a href="#" class="inline-flex items-center justify-center px-6 py-2 bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">
-                        預約諮詢
+                <!-- CTA Button (Desktop & Tablet) -->
+                <div class="hidden md:block ml-auto">
+                    <a href="#" class="inline-flex items-center justify-center gap-2 px-5 md:px-7 py-1.5 bg-btn-bg text-white text-[13px] md:text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">
+                        <img src="images/icon/reserve-button_icon.svg" alt="" class="w-[10px] h-auto">
+                        預約試穿
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none" aria-label="Toggle menu">
+                <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-12 h-12 space-y-1.5 focus:outline-none ml-auto" aria-label="Toggle menu">
                     <span class="hamburger-line w-6 h-0.5 bg-text-main-title transition-all duration-300"></span>
                     <span class="hamburger-line w-6 h-0.5 bg-text-main-title transition-all duration-300"></span>
                     <span class="hamburger-line w-6 h-0.5 bg-text-main-title transition-all duration-300"></span>
@@ -254,19 +255,20 @@
         </nav>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100">
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100">
             <div class="px-4 py-4 space-y-3">
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">最新活動</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">品牌介紹</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">婚紗禮服</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">婚紗攝影</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">攝影作品</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">影片分享</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">禮服知識家</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-2">合作品牌</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">最新活動</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">品牌介紹</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">預約須知</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">婚紗禮服</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">攝影作品</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">影片分享</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">禮服知識家</a>
+                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">合作品牌</a>
                 <div class="pt-3">
-                    <a href="#" class="inline-flex items-center justify-center w-full py-3 bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">
-                        預約諮詢
+                    <a href="#" class="inline-flex items-center justify-center gap-2 w-full py-3 bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">
+                        <img src="images/icon/reserve-button_icon.svg" alt="" class="w-[10px] h-auto">
+                        預約試穿
                     </a>
                 </div>
             </div>
@@ -462,23 +464,28 @@
     <!-- 預約諮詢 Reservation Section -->
     <section id="reservation" class="bg-white pt-[92px] pb-[126px] flex flex-col items-center">
 
-        <!-- Section Title with full-width underline -->
+        <!-- Section Title -->
         <div class="w-full">
-            <div class="main-title-wrapper flex flex-col items-center mb-[26px] relative">
-                <div class="relative inline-block">
-                    <h1 class="text-[29px] leading-none tracking-[0.15em] text-text-main-title inline">
-                        <span class="text-[35px] text-text-gold">填</span><span class="text-[29px] text-text-main-title">寫預約表單</span>
-                    </h1>
-                    <img src="images/text/section-reserve.png" alt="Reserve Now" class="hidden md:block absolute left-[calc(100%+35px)] bottom-0 h-[20px]">
+            <div class="max-w-[620px] mx-auto">
+                <div class="tracking-[0.05em] leading-none text-center mb-2 sm:mb-[-4px]">
+                    <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">填</span>
+                    <span class="tracking-[0.15em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">寫預約表單</span>
+                </div>
+                <div class="w-full flex justify-end relative">
+                    <div class="flex items-end leading-[0.6] tracking-[0.25em]">
+                        <span class="text-[24px] sm:text-[31px] font-serifEng font-[300] text-[#c9a782]">R</span>
+                        <span class="text-[11px] sm:text-[17px] font-serifEng font-[400] text-[#c9a782]">ESERVE</span>
+                        <span class="text-[24px] sm:text-[31px] font-serifEng font-[300] text-[#c9a782] ml-2">N</span>
+                        <span class="text-[11px] sm:text-[17px] font-serifEng font-[400] text-[#c9a782]">OW</span>
+                    </div>
                 </div>
             </div>
-            <!-- Full-width underline -->
-            <div class="w-full border-b border-underline mt-[17px]"></div>
+            <div class="w-full border-b border-[#c9a782]"></div>
         </div>
 
         <!-- Single line description text -->
         <div class="w-full flex justify-center px-4">
-            <p class="text-[14px] tracking-[0.10em] text-text-subtitle mt-[35px] mb-[51px] text-center max-w-[1200px]">
+            <p class="text-[14px] tracking-[0.10em] text-[#67534D] mt-[40px] mb-[40px] text-center max-w-[1200px] px-[5px]">
                 非常感謝您前來 LinHaute Bridal 挑選禮服，為了更加瞭解您的需求，請您撥冗完整填寫以下資訊，我們將盡速回覆您近期尚可預約的時段，謝謝！
             </p>
         </div>
@@ -491,7 +498,7 @@
             <fieldset class="mb-[9px] border-0 p-0">
                 <!-- 標題列：淺卡其色背景（統一顏色） -->
                 <legend class="w-full mb-0">
-                    <div class="bg-[#67534D] h-[40px] px-6 rounded-t-[9px] flex items-center justify-center">
+                    <div class="bg-[#67534D] h-[36px] px-6 rounded-t-[9px] flex items-center justify-center">
                         <span class="font-['Noto_Sans_HK'] font-normal text-[17px] tracking-[0.15em] text-white">預約聯絡</span>
                     </div>
                 </legend>
@@ -502,7 +509,7 @@
                         <li>為了提供給新人完整的服務，採取線上預約制。</li>
                         <li>只要填寫預約單，我們將在 2 日內與您連絡，若沒有連絡上您，可能是您的預約單沒有發送成功哦！</li>
                         <li>我們的人力有限，為了保障您的權益，如不克前來請提前通知，以便另外為您安排參觀時間。</li>
-                        <li>貼心提醒：預約試衣的新人請記得攜帶 bra 以及絲襪</li>
+                        <li>貼心提醒：預約試衣的新人請記得攜帶 nu bra 以及淡妝</li>
                         <li>如 2 日內未收到聯繫，請撥打：07-2372269 請珍惜每次的預約機會，感謝大家的體諒及配合。</li>
                     </ol>
                 </div>
@@ -512,13 +519,13 @@
             <fieldset class="mb-[9px] border-0 p-0">
                 <!-- 標題列：淺卡其色背景（統一顏色） -->
                 <legend class="w-full mb-0">
-                    <div class="bg-[#D6B499] h-[40px] px-6 rounded-t-[9px] flex items-center justify-center">
+                    <div class="bg-[#D6B499] h-[36px] px-6 rounded-t-[9px] flex items-center justify-center">
                         <span class="font-['Noto_Sans_HK'] font-normal text-[17px] tracking-[0.15em] text-white">基本資訊</span>
                     </div>
                 </legend>
 
                 <!-- #F9F5F1底表單區塊 -->
-                <div class="bg-[#F9F5F1] px-4 sm:px-8 md:px-12 lg:px-[120px] xl:px-[240px] pt-8 md:pt-[51px] pb-12 md:pb-[68px] rounded-b-[9px]">
+                <div class="bg-[#F9F5F1] px-4 sm:px-8 md:px-12 lg:px-[125px] xl:px-[245px] pt-8 md:pt-[51px] pb-12 md:pb-[68px] rounded-b-[9px]">
                     <!-- 兩欄 Grid 布局 -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[51px] gap-y-[18px]">
 
@@ -528,7 +535,7 @@
                             <!-- 聯絡姓名 -->
                             <div class="flex flex-col">
                                 <label for="contact-name" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
-                                    <span class="text-red-500" aria-hidden="true">*</span> 聯絡姓名
+                                    <span class="text-[#D3B599]" aria-hidden="true">*</span> 聯絡姓名
                                     <span class="sr-only">(必填)</span>
                                 </label>
                                 <input
@@ -544,7 +551,7 @@
                             <!-- E-mail -->
                             <div class="flex flex-col">
                                 <label for="contact-email" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
-                                    <span class="text-red-500" aria-hidden="true">*</span> E-mail
+                                    <span class="text-[#D3B599]" aria-hidden="true">*</span> E-mail
                                     <span class="sr-only">(必填)</span>
                                 </label>
                                 <input
@@ -560,7 +567,7 @@
                             <!-- 聯絡電話 -->
                             <div class="flex flex-col">
                                 <label for="contact-phone" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
-                                    <span class="text-red-500" aria-hidden="true">*</span> 聯絡電話
+                                    <span class="text-[#D3B599]" aria-hidden="true">*</span> 聯絡電話
                                     <span class="sr-only">(必填)</span>
                                 </label>
                                 <input
@@ -576,32 +583,29 @@
                             <!-- 方便聯絡時段 -->
                             <div class="flex flex-col">
                                 <label for="convenient-time" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
-                                    <span class="text-red-500" aria-hidden="true">*</span> 方便聯絡時段
+                                    <span class="text-[#D3B599]" aria-hidden="true">*</span> 方便聯絡時段
                                     <span class="sr-only">(必填)</span>
                                 </label>
-                                <select
-                                    id="convenient-time"
-                                    name="convenient-time"
-                                    required
-                                    aria-required="true"
-                                    class="h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
-                                >
-                                    <option value="">請選擇</option>
-                                    <option value="morning">早上 (09:00-12:00)</option>
-                                    <option value="afternoon">下午 (12:00-17:00)</option>
-                                    <option value="evening">晚上 (17:00-20:00)</option>
-                                </select>
+                                <input type="hidden" id="convenient-time" name="convenient-time" required>
+                                <div class="custom-dropdown" data-target="convenient-time">
+                                    <button type="button" class="custom-dropdown-btn">請選擇</button>
+                                    <div class="custom-dropdown-list">
+                                        <div class="custom-dropdown-item" data-value="morning">早上 (09:00-12:00)</div>
+                                        <div class="custom-dropdown-item" data-value="afternoon">下午 (12:00-17:00)</div>
+                                        <div class="custom-dropdown-item" data-value="evening">晚上 (17:00-20:00)</div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
 
                         <!-- 右欄 -->
-                        <div class="flex flex-col space-y-[18px]">
+                        <div class="flex flex-col space-y-[18px] md:pl-[20px]">
 
                             <!-- 希望來店諮詢日期 -->
                             <div class="flex flex-col">
                                 <label for="consultation-date" class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px]">
-                                    <span class="text-red-500" aria-hidden="true">*</span> 希望來店諮詢日期？
+                                    <span class="text-[#D3B599]" aria-hidden="true">*</span> 希望來店諮詢日期？
                                     <span class="sr-only">(必填)</span>
                                 </label>
                                 <input
@@ -656,7 +660,7 @@
             <fieldset class="mb-[9px] border-0 p-0">
                 <!-- 標題列：淺卡其色背景（與上面統一） -->
                 <legend class="w-full mb-0">
-                    <div class="bg-[#D6B499] h-[40px] px-6 rounded-t-[9px] flex items-center justify-center">
+                    <div class="bg-[#D6B499] h-[36px] px-6 rounded-t-[9px] flex items-center justify-center">
                         <span class="font-['Noto_Sans_HK'] font-normal text-[17px] tracking-[0.15em] text-white">方案選擇</span>
                     </div>
                 </legend>
@@ -665,57 +669,56 @@
                 <div class="bg-[#F9F5F1] px-4 sm:px-8 md:px-12 lg:px-[120px] xl:px-[240px] py-8 md:py-[51px] rounded-b-[9px]">
                     <div class="w-full">
                 <!-- 婚紗拍攝方案 與 婚宴方案推薦 (Checkboxes) -->
-                <div class="mb-[22px]">
+                <div class="mb-[22px] pb-[22px] border-b border-[#D3B599]">
                     <p class="text-[14px] tracking-[0.10em] text-text-main-title mb-[14px]">
                         婚紗拍攝方案 與 婚宴方案推薦
                     </p>
-                    <div class="flex flex-col gap-[14px]" role="group" aria-labelledby="wedding-photo-plans">
+                    <div class="flex flex-col gap-[5px]" role="group" data-single-select="wedding-photo-plans">
                         <label class="flex items-center cursor-pointer group">
                             <input
                                 type="checkbox"
                                 name="wedding-photo-plans"
                                 value="package-51800"
                                 checked
-                                class="w-[15px] h-[15px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
+                                class="w-[10px] h-[10px] border border-[#D6B499] rounded-[2px] accent-[#D6B499] cursor-pointer"
                             >
-                            <span class="ml-[8px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">婚紗拍攝 3 套方案與婚宴當日禮服 3 套方案 $51,800</span>
+                            <span class="ml-[8px] text-[14px] font-normal tracking-[0.10em] text-[#868686] group-hover:text-text-main-title transition-colors duration-300">婚紗拍攝 3 套方案與婚宴當日禮服 3 套方案 $51,800</span>
                         </label>
                         <label class="flex items-center cursor-pointer group">
                             <input
                                 type="checkbox"
                                 name="wedding-photo-plans"
                                 value="package-35800"
-                                checked
-                                class="w-[15px] h-[15px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
+                                class="w-[10px] h-[10px] border border-[#D6B499] rounded-[2px] accent-[#D6B499] cursor-pointer"
                             >
-                            <span class="ml-[8px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">婚紗拍攝 3 套方案 $35,800 up</span>
+                            <span class="ml-[8px] text-[14px] font-normal tracking-[0.10em] text-[#868686] group-hover:text-text-main-title transition-colors duration-300">婚紗拍攝 3 套方案 $35,800 up</span>
                         </label>
                     </div>
                 </div>
 
                 <!-- 租賃禮服方案 (Checkboxes) -->
-                <div class="mb-[22px]">
+                <div class="mb-[22px] pb-[22px] border-b border-[#D3B599]">
                     <p class="text-[14px] tracking-[0.10em] text-text-main-title mb-[14px]">
                         租賃禮服方案
                     </p>
-                    <div class="flex flex-col gap-[14px]" role="group" aria-labelledby="rental-plans">
+                    <div class="flex flex-col gap-[5px]" role="group" data-single-select="rental-plans">
                         <label class="flex items-center cursor-pointer group">
                             <input
                                 type="checkbox"
                                 name="rental-plans"
                                 value="white-dress-8000"
-                                class="w-[15px] h-[15px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
+                                class="w-[10px] h-[10px] border border-[#D6B499] rounded-[2px] accent-[#D6B499] cursor-pointer"
                             >
-                            <span class="ml-[8px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">單租 1 套白紗 $8,000 up</span>
+                            <span class="ml-[8px] text-[14px] font-normal tracking-[0.10em] text-[#868686] group-hover:text-text-main-title transition-colors duration-300">單租 1 套白紗 $8,000 up</span>
                         </label>
                         <label class="flex items-center cursor-pointer group">
                             <input
                                 type="checkbox"
                                 name="rental-plans"
                                 value="evening-dress-6000"
-                                class="w-[15px] h-[15px] border border-[#D6B499] rounded-[3px] text-btn-bg focus:ring-btn-bg cursor-pointer"
+                                class="w-[10px] h-[10px] border border-[#D6B499] rounded-[2px] accent-[#D6B499] cursor-pointer"
                             >
-                            <span class="ml-[8px] text-[14px] tracking-[0.10em] text-text-subtitle group-hover:text-text-main-title transition-colors duration-300">單租 1 套 晚宴禮服 $6,000 up</span>
+                            <span class="ml-[8px] text-[14px] font-normal tracking-[0.10em] text-[#868686] group-hover:text-text-main-title transition-colors duration-300">單租 1 套 晚宴禮服 $6,000 up</span>
                         </label>
                     </div>
                 </div>
@@ -725,17 +728,15 @@
                     <label for="how-know" class="text-[14px] tracking-[0.10em] text-text-main-title mb-[8px] block">
                         是經由什麼方式得知 LIN 禮服館呢？
                     </label>
-                    <select
-                        id="how-know"
-                        name="how-know"
-                        class="w-full max-w-[330px] h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300"
-                        onchange="toggleReferralInput(this)"
-                    >
-                        <option value="">請選擇</option>
-                        <option value="facebook">LIN 粉絲團照片很吸引妳</option>
-                        <option value="friend">親友介紹</option>
-                        <option value="photographer">攝影師或造型師轉介紹</option>
-                    </select>
+                    <input type="hidden" id="how-know" name="how-know">
+                    <div class="custom-dropdown" data-target="how-know">
+                        <button type="button" class="custom-dropdown-btn">請選擇</button>
+                        <div class="custom-dropdown-list">
+                            <div class="custom-dropdown-item" data-value="facebook">LIN 粉絲團照片很吸引妳</div>
+                            <div class="custom-dropdown-item" data-value="friend">親友介紹</div>
+                            <div class="custom-dropdown-item" data-value="photographer">攝影師或造型師轉介紹</div>
+                        </div>
+                    </div>
                     <!-- 親友介紹額外輸入框 -->
                     <div id="referral-input" class="hidden mt-[9px]">
                         <input
@@ -755,24 +756,26 @@
                     <textarea
                         id="remarks"
                         name="remarks"
-                        class="w-full max-w-[855px] h-[84px] px-4 py-3 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300 resize-none"
+                        class="w-full max-w-[855px] h-[69px] px-4 py-3 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white focus:outline-none focus:ring-0 transition-all duration-300 resize-none"
                     ></textarea>
                 </div>
 
                     <!-- Buttons (移至方案選擇區塊內) -->
-                    <div class="flex justify-center gap-4 mt-8">
+                    <div class="flex justify-center gap-4 mt-[52px]">
                         <button
                             type="button"
                             onclick="document.getElementById('reservation-form').reset()"
-                            class="inline-flex items-center justify-center w-[124px] h-[41px] bg-white text-[#C09771] text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-[#F5F5F5] focus:outline-none focus:ring-2 focus:ring-[#C09771] focus:ring-offset-2"
+                            class="inline-flex items-center justify-center gap-2 w-[124px] h-[38px] bg-white text-[#C09771] text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-[#F5F5F5] focus:outline-none focus:ring-2 focus:ring-[#C09771] focus:ring-offset-2"
                         >
+                            <img src="images/icon/returns_bronze.svg" alt="" class="w-[20px] h-auto">
                             重新填寫
                         </button>
                         <button
                             type="submit"
-                            class="inline-flex items-center justify-center w-[124px] h-[41px] bg-[#F9F5F1] border border-[#C09771] text-[#C09771] text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-[#C09771] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#C09771] focus:ring-offset-2"
+                            class="group inline-flex items-center justify-center gap-2 w-[130px] h-[38px] bg-[#F9F5F1] border border-[#C09771] text-[#C09771] text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-[#C09771] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#C09771] focus:ring-offset-2"
                         >
                             確認送出
+                            <img src="images/icon/chevron.png" alt="" class="w-[16px] h-auto transition-all duration-300 group-hover:brightness-0 group-hover:invert">
                         </button>
                     </div>
 
@@ -804,8 +807,8 @@
     <!-- Footer Section (Scaled by 120/136 ratio = 0.882353) -->
     <footer class="w-full bg-footer-bg relative">
         <!-- White divider lines - 20px from top and bottom (scaled from 23px) -->
-        <div class="absolute top-[20px] left-0 right-0 h-[1px] bg-white z-10"></div>
-        <div class="absolute bottom-[20px] left-0 right-0 h-[1px] bg-white z-10"></div>
+        <div class="absolute top-[20px] left-0 right-0 h-px bg-white z-10" style="transform: scaleY(0.9); transform-origin: top;"></div>
+        <div class="absolute bottom-[20px] left-0 right-0 h-px bg-white z-10" style="transform: scaleY(0.9); transform-origin: bottom;"></div>
 
         <!-- Main footer content area with proper container alignment -->
         <div class="container mx-auto px-4 max-w-[1200px] py-[53px]">
@@ -839,8 +842,8 @@
 
                 <!-- Right Column: Social Media Icons & Labels (scaled text) -->
                 <div class="text-white text-center lg:text-right flex flex-col items-center lg:items-end lg:justify-self-end">
-                    <!-- Social Media Icons Row - 使用 inline-flex 并移除固定宽度 -->
-                    <div class="inline-flex gap-[25px] mb-[25px]">
+                    <!-- Social Media Icons Row -->
+                    <div class="flex gap-[25px] mb-[25px]">
                         <a href="#" target="_blank" rel="noopener noreferrer" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity duration-300" aria-label="Line">
                             <img src="images/icon/social-line.svg" alt="Line" class="w-[18px] h-[18px] object-contain">
                         </a>
@@ -859,8 +862,8 @@
                     </div>
 
                     <!-- Text Content - 文字对齐 icons 右边界 -->
-                    <p class="font-['Noto_Sans_HK'] font-normal text-[14px] leading-[18px] text-right" style="letter-spacing: 11px;">
-                        高級定制禮服．採預約制
+                    <p class="font-['Noto_Sans_HK'] font-light text-[14px] leading-[18px] tracking-[13px] self-end">
+                        高級定制禮服．採預約<span style="letter-spacing: 0;">制</span>
                     </p>
                 </div>
 
@@ -869,7 +872,7 @@
     </footer>
 
     <!-- Copyright Section - Separate with white background (scaled text) -->
-    <div class="w-full bg-white h-[30px] flex items-center">
+    <div class="w-full bg-[#F9F5F1] h-[30px] flex items-center">
         <div class="container mx-auto px-4 max-w-[1200px]">
             <p class="font-['Noto_Sans_HK'] font-normal text-[11px] leading-[1] tracking-[0.5px] text-footer-copyright text-center">
                 Copyright © Linhaute Bridal 2025. All Rights Reserved. Design by 漢羽網路
@@ -913,17 +916,89 @@
         });
     </script>
 
+    <!-- Single Select Checkbox Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('[data-single-select]').forEach(group => {
+                const checkboxes = group.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(checkbox => {
+                    checkbox.addEventListener('change', function() {
+                        if (this.checked) {
+                            checkboxes.forEach(cb => {
+                                if (cb !== this) cb.checked = false;
+                            });
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
     <!-- Form Validation Script -->
     <script>
         // Toggle referral input based on dropdown selection
-        function toggleReferralInput(select) {
+        function toggleReferralInput(value) {
             const referralInput = document.getElementById('referral-input');
-            if (select.value === 'friend') {
+            if (value === 'friend') {
                 referralInput.classList.remove('hidden');
             } else {
                 referralInput.classList.add('hidden');
             }
         }
+
+        // Custom Dropdown functionality
+        document.querySelectorAll('.custom-dropdown').forEach(dropdown => {
+            const btn = dropdown.querySelector('.custom-dropdown-btn');
+            const list = dropdown.querySelector('.custom-dropdown-list');
+            const items = dropdown.querySelectorAll('.custom-dropdown-item');
+            const targetId = dropdown.dataset.target;
+            const hiddenInput = document.getElementById(targetId);
+
+            // Toggle dropdown
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Close other dropdowns
+                document.querySelectorAll('.custom-dropdown.open').forEach(d => {
+                    if (d !== dropdown) d.classList.remove('open');
+                });
+                dropdown.classList.toggle('open');
+            });
+
+            // Select item
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    const value = item.dataset.value;
+                    const text = item.textContent;
+
+                    // Update button text
+                    btn.textContent = text;
+
+                    // Update hidden input
+                    hiddenInput.value = value;
+
+                    // Update selected state
+                    items.forEach(i => i.classList.remove('selected'));
+                    item.classList.add('selected');
+
+                    // Close dropdown
+                    dropdown.classList.remove('open');
+
+                    // Trigger referral input toggle if this is the how-know dropdown
+                    if (targetId === 'how-know') {
+                        toggleReferralInput(value);
+                    }
+                });
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.custom-dropdown')) {
+                document.querySelectorAll('.custom-dropdown.open').forEach(d => {
+                    d.classList.remove('open');
+                });
+            }
+        });
 
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('reservation-form');
