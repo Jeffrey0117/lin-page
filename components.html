@@ -90,17 +90,18 @@
             display: inline-block;
         }
 
-        /* Custom checkbox styling */
+        /* Custom checkbox styling - 10px size matching actual implementation */
         input[type="checkbox"] {
             -webkit-appearance: none;
             appearance: none;
-            width: 15px;
-            height: 15px;
+            width: 10px;
+            height: 10px;
             border: 1px solid #D6B499;
-            border-radius: 3px;
+            border-radius: 2px;
             background-color: white;
             cursor: pointer;
             position: relative;
+            accent-color: #D6B499;
         }
         input[type="checkbox"]:checked {
             background-color: #C29164;
@@ -109,39 +110,13 @@
         input[type="checkbox"]:checked::after {
             content: '';
             position: absolute;
-            left: 4px;
-            top: 2px;
-            width: 4px;
-            height: 7px;
+            left: 2px;
+            top: 0px;
+            width: 3px;
+            height: 6px;
             border: solid white;
-            border-width: 0 2px 2px 0;
+            border-width: 0 1.5px 1.5px 0;
             transform: rotate(45deg);
-        }
-
-        /* Custom radio styling */
-        input[type="radio"] {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 15px;
-            height: 15px;
-            border: 1px solid #D6B499;
-            border-radius: 50%;
-            background-color: white;
-            cursor: pointer;
-            position: relative;
-        }
-        input[type="radio"]:checked {
-            border-color: #C29164;
-        }
-        input[type="radio"]:checked::after {
-            content: '';
-            position: absolute;
-            left: 3px;
-            top: 3px;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background-color: #C29164;
         }
     </style>
 </head>
@@ -454,15 +429,24 @@ hover:bg-btn-bg hover:text-white</div>
             </div>
 
             <div class="component-box">
-                <h3 class="text-lg font-medium mb-4">表單按鈕</h3>
+                <h3 class="text-lg font-medium mb-4">表單按鈕 Form Buttons</h3>
                 <div class="flex flex-wrap gap-4 items-center mb-4">
-                    <button class="w-[155px] h-[38px] bg-white border border-[#D6B499] text-[#67534D] text-[14px] tracking-[0.10em] rounded-[5px] hover:bg-card-bg transition-colors">
+                    <button class="inline-flex items-center justify-center gap-2 w-[124px] h-[38px] bg-white text-[#C09771] text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-[#F5F5F5]">
+                        <img src="images/icon/returns_bronze.svg" alt="" class="w-[20px] h-auto">
                         重新填寫
                     </button>
-                    <button class="w-[155px] h-[38px] bg-btn-bg text-white text-[14px] tracking-[0.10em] rounded-[5px] hover:bg-text-gold transition-colors">
+                    <button class="group inline-flex items-center justify-center gap-2 w-[130px] h-[38px] bg-[#F9F5F1] border border-[#C09771] text-[#C09771] text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-[#C09771] hover:text-white">
                         確認送出
+                        <img src="images/icon/chevron.png" alt="" class="w-[16px] h-auto transition-all duration-300 group-hover:brightness-0 group-hover:invert">
                     </button>
                 </div>
+                <div class="code-block">/* 重新填寫 */
+bg-white text-[#C09771] rounded-full w-[124px] h-[38px]
+hover:bg-[#F5F5F5]
+
+/* 確認送出 */
+bg-[#F9F5F1] border border-[#C09771] text-[#C09771] rounded-full
+hover:bg-[#C09771] hover:text-white</div>
             </div>
 
             <div class="component-box">
@@ -549,75 +533,98 @@ hover:bg-btn-bg hover:text-white</div>
             <p class="component-desc">輸入框、下拉選單、核取方塊等表單元件</p>
 
             <div class="component-box">
-                <h3 class="text-lg font-medium mb-4">文字輸入框 Text Input</h3>
-                <div class="max-w-[400px] mb-4">
+                <h3 class="text-lg font-medium mb-4">文字輸入框 Text Input (底線樣式)</h3>
+                <div class="max-w-[400px] mb-4 bg-white p-4">
                     <label class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px] block">
                         <span class="text-[#D3B599]">*</span> 姓名
                     </label>
                     <input
                         type="text"
                         placeholder="請輸入姓名"
-                        class="w-full h-[37px] px-4 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300"
+                        class="w-full h-[37px] px-4 border-0 border-b border-[#D3B599] bg-white text-[14px] tracking-[0.10em] text-text-main-title placeholder-[#868686] focus:outline-none focus:border-b-[#C29164] transition-colors duration-300"
                     >
                 </div>
-                <div class="code-block">h-[37px] px-4 border border-[#D6B499] rounded-[5px]
+                <div class="code-block">/* 輸入框樣式 - 只有底線 */
+h-[37px] px-4
+border: none; border-bottom: 1px solid #D3B599;
 text-[14px] tracking-[0.10em]
-focus:border-btn-bg focus:ring-1 focus:ring-btn-bg</div>
+placeholder-color: #868686
+focus: border-bottom-color: #C29164</div>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">自訂下拉選單 Custom Dropdown</h3>
+                <div class="max-w-[330px] mb-4 bg-white p-4">
+                    <label class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px] block">
+                        <span class="text-[#D3B599]">*</span> 方便聯絡時段
+                    </label>
+                    <div class="relative w-full">
+                        <button type="button" class="w-full h-[37px] px-4 pr-8 bg-white border-0 border-b border-[#D3B599] text-left text-[14px] font-light tracking-[0.10em] text-[#868686] cursor-pointer relative">
+                            請選擇
+                            <span class="absolute right-2 top-1/2 -translate-y-1/2 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-[#D3B599]"></span>
+                        </button>
+                        <div class="absolute top-full left-0 right-0 bg-white shadow-lg z-10 mt-1 hidden">
+                            <div class="px-4 py-2.5 text-[14px] font-light tracking-[0.10em] text-[#868686] cursor-pointer hover:bg-[#C09771] hover:text-white">早上 (09:00-12:00)</div>
+                            <div class="px-4 py-2.5 text-[14px] font-light tracking-[0.10em] text-[#868686] cursor-pointer hover:bg-[#C09771] hover:text-white">下午 (12:00-17:00)</div>
+                            <div class="px-4 py-2.5 text-[14px] font-light tracking-[0.10em] text-[#868686] cursor-pointer hover:bg-[#C09771] hover:text-white">晚上 (17:00-20:00)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-block">/* Custom Dropdown 結構 */
+.custom-dropdown { position: relative; max-width: 330px; }
+.custom-dropdown-btn {
+  h-[37px] border-bottom: 1px solid #D3B599;
+  font-weight: 300; color: #868686;
+}
+.custom-dropdown-item:hover {
+  background: #C09771; color: white;
+}</div>
+            </div>
+
+            <div class="component-box">
+                <h3 class="text-lg font-medium mb-4">方案選擇 Checkbox (單選行為)</h3>
+                <p class="text-sm text-gray-500 mb-4">使用 checkbox + JavaScript 實現單選效果，用 data-single-select 屬性標記群組</p>
+                <div class="bg-card-bg p-4 rounded-lg mb-4">
+                    <p class="text-[14px] tracking-[0.10em] text-text-main-title mb-[14px]">婚紗拍攝方案</p>
+                    <div class="flex flex-col gap-[5px]">
+                        <label class="flex items-center cursor-pointer group">
+                            <input type="checkbox" checked class="w-[10px] h-[10px] border border-[#D6B499] rounded-[2px] accent-[#D6B499] cursor-pointer">
+                            <span class="ml-[8px] text-[14px] font-normal tracking-[0.10em] text-[#868686] group-hover:text-text-main-title transition-colors">婚紗拍攝 3 套方案 $51,800</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer group">
+                            <input type="checkbox" class="w-[10px] h-[10px] border border-[#D6B499] rounded-[2px] accent-[#D6B499] cursor-pointer">
+                            <span class="ml-[8px] text-[14px] font-normal tracking-[0.10em] text-[#868686] group-hover:text-text-main-title transition-colors">婚紗拍攝 3 套方案 $35,800 up</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="code-block">/* Checkbox 樣式 */
+w-[10px] h-[10px] border border-[#D6B499] rounded-[2px]
+accent-[#D6B499]
+
+/* Label 文字 */
+ml-[8px] text-[14px] text-[#868686]
+group-hover:text-text-main-title
+
+/* 單選行為 JS */
+data-single-select="group-name"</div>
             </div>
 
             <div class="component-box">
                 <h3 class="text-lg font-medium mb-4">文字區域 Textarea</h3>
-                <div class="max-w-[400px] mb-4">
+                <div class="max-w-[500px] mb-4 bg-card-bg p-4 rounded-lg">
                     <label class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px] block">
                         備註說明
                     </label>
                     <textarea
-                        rows="4"
+                        rows="3"
                         placeholder="請輸入備註內容..."
-                        class="w-full px-4 py-3 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-text-subtitle bg-white focus:outline-none focus:border-btn-bg focus:ring-1 focus:ring-btn-bg transition-colors duration-300 resize-none"
+                        class="w-full h-[69px] px-4 py-3 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title placeholder-[#868686] bg-white focus:outline-none focus:border-[#C29164] transition-colors duration-300 resize-none"
                     ></textarea>
                 </div>
-            </div>
-
-            <div class="component-box">
-                <h3 class="text-lg font-medium mb-4">核取方塊 Checkbox</h3>
-                <div class="flex flex-col gap-3 mb-4">
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox" checked>
-                        <span class="text-[14px] text-[#67534D]">白紗 & 晚禮服租借</span>
-                    </label>
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox">
-                        <span class="text-[14px] text-[#67534D]">婚紗攝影</span>
-                    </label>
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox">
-                        <span class="text-[14px] text-[#67534D]">婚宴當天</span>
-                    </label>
-                </div>
-                <div class="code-block">/* Checkbox 樣式 (CSS) */
-width: 15px; height: 15px;
-border: 1px solid #D6B499;
-border-radius: 3px;
-checked: background-color: #C29164;</div>
-            </div>
-
-            <div class="component-box">
-                <h3 class="text-lg font-medium mb-4">單選按鈕 Radio</h3>
-                <div class="flex flex-col gap-3 mb-4">
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="time" checked>
-                        <span class="text-[14px] text-[#67534D]">早上 (09:00-12:00)</span>
-                    </label>
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="time">
-                        <span class="text-[14px] text-[#67534D]">下午 (12:00-17:00)</span>
-                    </label>
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="time">
-                        <span class="text-[14px] text-[#67534D]">晚上 (17:00-20:00)</span>
-                    </label>
-                </div>
+                <div class="code-block">/* Textarea 樣式 - 有完整邊框 */
+h-[69px] px-4 py-3
+border border-[#D6B499] rounded-[5px]
+resize-none</div>
             </div>
 
             <div class="component-box">
