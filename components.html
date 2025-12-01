@@ -141,10 +141,22 @@
             border-radius: 2px;
             background-color: white;
             cursor: pointer;
+            position: relative;
         }
         input[type="checkbox"]:checked {
             background-color: #C29164;
             border-color: #C29164;
+        }
+        input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 2px;
+            top: 0px;
+            width: 3px;
+            height: 6px;
+            border: solid white;
+            border-width: 0 1.5px 1.5px 0;
+            transform: rotate(45deg);
         }
 
         /* Custom dropdown from index.html */
