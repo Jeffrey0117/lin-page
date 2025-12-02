@@ -16,6 +16,8 @@
               'btn-bg': '#C29164',
               'underline': '#D6B499',
               'card-bg': '#F9F5F1',
+              'footer-bg': '#D3B599',
+              'footer-copyright': '#C09771',
             }
           }
         }
@@ -24,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@200;500&display=swap" rel="stylesheet">
     <style>
         .font-serifEng { font-family: 'Cormorant Garamond', serif; }
 
@@ -43,10 +45,7 @@
             user-select: none;
         }
         .sidebar-header:hover { background: #f5f5f5; }
-        .sidebar-header .arrow {
-            transition: transform 0.2s;
-            font-size: 10px;
-        }
+        .sidebar-header .arrow { transition: transform 0.2s; font-size: 10px; }
         .sidebar-header.collapsed .arrow { transform: rotate(-90deg); }
         .sidebar-items { padding: 4px 0; }
         .sidebar-items.hidden { display: none; }
@@ -131,14 +130,36 @@
             color: #444;
         }
 
-        /* Custom form styles from index.html */
+        /* Nav link hover effect */
+        .nav-link {
+            position: relative;
+            z-index: 1;
+        }
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 40px;
+            height: 36px;
+            background-color: #F9F5F1;
+            border-radius: 50%;
+            z-index: -1;
+            transition: transform 0.3s ease;
+        }
+        .nav-link:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Custom checkbox */
         input[type="checkbox"] {
             -webkit-appearance: none;
             appearance: none;
-            width: 10px;
-            height: 10px;
+            width: 15px;
+            height: 15px;
             border: 1px solid #D6B499;
-            border-radius: 2px;
+            border-radius: 3px;
             background-color: white;
             cursor: pointer;
             position: relative;
@@ -150,40 +171,14 @@
         input[type="checkbox"]:checked::after {
             content: '';
             position: absolute;
-            left: 2px;
-            top: 0px;
-            width: 3px;
-            height: 6px;
+            left: 4px;
+            top: 2px;
+            width: 4px;
+            height: 7px;
             border: solid white;
-            border-width: 0 1.5px 1.5px 0;
+            border-width: 0 2px 2px 0;
             transform: rotate(45deg);
         }
-
-        /* Custom dropdown from index.html */
-        .custom-dropdown { position: relative; width: 100%; max-width: 330px; }
-        .custom-dropdown-btn {
-            width: 100%; height: 37px; padding: 0 30px 0 16px;
-            background: #fff; border: none; border-bottom: 1px solid #D3B599;
-            text-align: left; font-size: 14px; letter-spacing: 0.10em;
-            color: #67534D; cursor: pointer; position: relative;
-        }
-        .custom-dropdown-btn::after {
-            content: ''; position: absolute; right: 8px; top: 50%;
-            transform: translateY(-50%);
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 6px solid #D3B599;
-        }
-        .custom-dropdown-list {
-            position: absolute; top: 100%; left: 0; right: 0;
-            background: white; border: 1px solid #D3B599; border-top: none;
-            z-index: 100;
-        }
-        .custom-dropdown-item {
-            padding: 10px 16px; font-size: 14px; font-weight: 300;
-            letter-spacing: 0.10em; color: #868686; cursor: pointer;
-        }
-        .custom-dropdown-item:hover { background: #C09771; color: white; }
     </style>
 </head>
 <body class="font-['Noto_Sans_HK'] font-normal bg-white">
@@ -193,17 +188,30 @@
         <aside class="sidebar bg-white border-r border-gray-200 overflow-y-auto flex-shrink-0">
             <div class="p-4 border-b border-gray-200">
                 <h1 class="text-lg font-semibold text-gray-800">LinHaute Bridal</h1>
-                <p class="text-xs text-gray-500 mt-1">元件庫 v1.0</p>
+                <p class="text-xs text-gray-500 mt-1">元件庫 v2.0</p>
+            </div>
+
+            <!-- 全域元件 -->
+            <div class="sidebar-section">
+                <div class="sidebar-header" onclick="toggleSection(this)">
+                    <span>🌐 全域元件</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="sidebar-items">
+                    <div class="sidebar-item active" onclick="showSection('global-header', this)">Header 導航列</div>
+                    <div class="sidebar-item" onclick="showSection('global-footer', this)">Footer 頁尾</div>
+                    <div class="sidebar-item" onclick="showSection('global-title', this)">頁面標題區塊</div>
+                </div>
             </div>
 
             <!-- Colors -->
             <div class="sidebar-section">
-                <div class="sidebar-header" onclick="toggleSection(this)">
+                <div class="sidebar-header collapsed" onclick="toggleSection(this)">
                     <span>🎨 色彩系統</span>
                     <span class="arrow">▼</span>
                 </div>
-                <div class="sidebar-items">
-                    <div class="sidebar-item active" onclick="showSection('colors-primary', this)">主要色彩</div>
+                <div class="sidebar-items hidden">
+                    <div class="sidebar-item" onclick="showSection('colors-primary', this)">主要色彩</div>
                     <div class="sidebar-item" onclick="showSection('colors-text', this)">文字色彩</div>
                     <div class="sidebar-item" onclick="showSection('colors-bg', this)">背景色彩</div>
                 </div>
@@ -211,68 +219,68 @@
 
             <!-- Typography -->
             <div class="sidebar-section">
-                <div class="sidebar-header" onclick="toggleSection(this)">
+                <div class="sidebar-header collapsed" onclick="toggleSection(this)">
                     <span>📝 字體系統</span>
                     <span class="arrow">▼</span>
                 </div>
-                <div class="sidebar-items">
+                <div class="sidebar-items hidden">
                     <div class="sidebar-item" onclick="showSection('typo-family', this)">字體家族</div>
                     <div class="sidebar-item" onclick="showSection('typo-size', this)">字體大小</div>
                 </div>
             </div>
 
-            <!-- Section Title -->
-            <div class="sidebar-section">
-                <div class="sidebar-header" onclick="toggleSection(this)">
-                    <span>📌 區塊標題</span>
-                    <span class="arrow">▼</span>
-                </div>
-                <div class="sidebar-items">
-                    <div class="sidebar-item" onclick="showSection('title-standard', this)">標準樣式</div>
-                    <div class="sidebar-item" onclick="showSection('title-variants', this)">各區塊變體</div>
-                </div>
-            </div>
-
             <!-- Buttons -->
             <div class="sidebar-section">
-                <div class="sidebar-header" onclick="toggleSection(this)">
+                <div class="sidebar-header collapsed" onclick="toggleSection(this)">
                     <span>🔘 按鈕</span>
                     <span class="arrow">▼</span>
                 </div>
-                <div class="sidebar-items">
+                <div class="sidebar-items hidden">
                     <div class="sidebar-item" onclick="showSection('btn-cta', this)">CTA 按鈕</div>
                     <div class="sidebar-item" onclick="showSection('btn-browse', this)">瀏覽更多按鈕</div>
-                    <div class="sidebar-item" onclick="showSection('btn-form', this)">表單按鈕</div>
+                    <div class="sidebar-item" onclick="showSection('btn-filter', this)">篩選按鈕</div>
                     <div class="sidebar-item" onclick="showSection('btn-arrow', this)">圓形箭頭按鈕</div>
-                    <div class="sidebar-item" onclick="showSection('btn-card', this)">卡片連結按鈕</div>
                 </div>
             </div>
 
             <!-- Cards -->
             <div class="sidebar-section">
-                <div class="sidebar-header" onclick="toggleSection(this)">
+                <div class="sidebar-header collapsed" onclick="toggleSection(this)">
                     <span>🃏 卡片</span>
                     <span class="arrow">▼</span>
                 </div>
-                <div class="sidebar-items">
+                <div class="sidebar-items hidden">
                     <div class="sidebar-item" onclick="showSection('card-service', this)">服務卡片</div>
                     <div class="sidebar-item" onclick="showSection('card-blog', this)">文章卡片</div>
                     <div class="sidebar-item" onclick="showSection('card-photo', this)">照片卡片</div>
+                    <div class="sidebar-item" onclick="showSection('card-photographer', this)">攝影師卡片</div>
+                    <div class="sidebar-item" onclick="showSection('card-video', this)">影片卡片</div>
+                    <div class="sidebar-item" onclick="showSection('card-partner', this)">合作品牌卡片</div>
                 </div>
             </div>
 
             <!-- Forms -->
             <div class="sidebar-section">
-                <div class="sidebar-header" onclick="toggleSection(this)">
+                <div class="sidebar-header collapsed" onclick="toggleSection(this)">
                     <span>📋 表單元件</span>
                     <span class="arrow">▼</span>
                 </div>
-                <div class="sidebar-items">
+                <div class="sidebar-items hidden">
                     <div class="sidebar-item" onclick="showSection('form-input', this)">文字輸入框</div>
-                    <div class="sidebar-item" onclick="showSection('form-dropdown', this)">自訂下拉選單</div>
                     <div class="sidebar-item" onclick="showSection('form-checkbox', this)">核取方塊</div>
-                    <div class="sidebar-item" onclick="showSection('form-textarea', this)">文字區域</div>
                     <div class="sidebar-item" onclick="showSection('form-fieldset', this)">表單區塊標題</div>
+                </div>
+            </div>
+
+            <!-- Other -->
+            <div class="sidebar-section">
+                <div class="sidebar-header collapsed" onclick="toggleSection(this)">
+                    <span>🔗 其他元件</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="sidebar-items hidden">
+                    <div class="sidebar-item" onclick="showSection('other-social', this)">社群媒體圖標</div>
+                    <div class="sidebar-item" onclick="showSection('other-divider', this)">分隔線</div>
                 </div>
             </div>
         </aside>
@@ -280,8 +288,236 @@
         <!-- Main Content -->
         <main class="flex-1 overflow-y-auto bg-gray-50">
 
-            <!-- Colors - Primary -->
-            <section id="colors-primary" class="component-section active">
+            <!-- ==================== 全域元件 ==================== -->
+
+            <!-- Header 導航列 -->
+            <section id="global-header" class="component-section active">
+                <h2>Header 導航列</h2>
+                <p>固定於頁面頂部的導航列，包含 Logo、導航連結、下拉選單及預約按鈕</p>
+
+                <div class="component-box">
+                    <h3>完整 Header</h3>
+                    <div class="component-preview bg-white p-0 overflow-hidden">
+                        <header class="relative bg-white shadow-sm">
+                            <nav class="max-w-[1200px] mx-auto px-8">
+                                <div class="flex items-center h-[80px]">
+                                    <!-- Logo -->
+                                    <div class="flex-shrink-0">
+                                        <a href="index.html" class="flex items-center">
+                                            <img src="images/logo/logo.svg" alt="LinHaute Bridal Logo" class="w-[200px] h-auto">
+                                        </a>
+                                    </div>
+                                    <!-- Desktop Navigation -->
+                                    <div class="hidden lg:flex items-center gap-[40px] ml-[40px]">
+                                        <!-- 帶下拉的導航項目 -->
+                                        <div class="nav-dropdown relative group">
+                                            <a href="news.html" class="nav-link text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300">最新活動</a>
+                                            <!-- Dropdown Menu -->
+                                            <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                                <div class="bg-white rounded-[9px] shadow-[0_0_12px_rgba(0,0,0,0.1)] w-[220px] h-[84px] flex flex-col justify-center">
+                                                    <a href="news.html" class="group/item flex items-center gap-3 py-[6px] text-[#5C4535] text-[14px] tracking-[0.08em] hover:text-[#C09771] transition-colors duration-300">
+                                                        <span class="w-[32px] border-t border-[#C09771] opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex-shrink-0"></span>
+                                                        <span>命定禮服方案</span>
+                                                    </a>
+                                                    <a href="news.html" class="group/item flex items-center gap-3 py-[6px] text-[#5C4535] text-[14px] tracking-[0.08em] hover:text-[#C09771] transition-colors duration-300">
+                                                        <span class="w-[32px] border-t border-[#C09771] opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex-shrink-0"></span>
+                                                        <span>1白3晚宴客優惠方案</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="about.html" class="nav-link text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300">品牌介紹</a>
+                                        <a href="faq.html" class="nav-link text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300">預約須知</a>
+                                    </div>
+                                    <!-- CTA Button -->
+                                    <div class="ml-auto">
+                                        <a href="#" class="inline-flex items-center justify-center gap-2 px-[22px] py-1.5 bg-[#D3B599] text-white text-[14px] tracking-[0.10em] rounded-full hover:bg-[#C09771] transition-colors duration-300">
+                                            <img src="images/icon/reserve-button_icon.svg" alt="" class="w-[10px] h-auto">
+                                            預約試穿
+                                        </a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </header>
+                    </div>
+                    <table class="prop-table">
+                        <tr><th>屬性</th><th>值</th></tr>
+                        <tr><td>高度</td><td>h-[80px]</td></tr>
+                        <tr><td>背景</td><td>bg-white shadow-sm</td></tr>
+                        <tr><td>定位</td><td>fixed top-0 left-0 right-0 z-50</td></tr>
+                        <tr><td>Logo 寬度</td><td>w-[180px] ~ w-[300px] (響應式)</td></tr>
+                        <tr><td>導航間距</td><td>gap-[45px] xl:gap-[50px]</td></tr>
+                    </table>
+                </div>
+
+                <div class="component-box">
+                    <h3>Dropdown 選單項目</h3>
+                    <div class="component-preview bg-white">
+                        <div class="bg-white rounded-[9px] shadow-[0_0_12px_rgba(0,0,0,0.1)] w-[220px] p-4">
+                            <a href="#" class="group/item flex items-center gap-3 py-[6px] text-[#5C4535] text-[14px] tracking-[0.08em] hover:text-[#C09771] transition-colors duration-300">
+                                <span class="w-[32px] border-t border-[#C09771] opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex-shrink-0"></span>
+                                <span>選單項目文字</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="code-block">/* Dropdown 容器 */
+bg-white rounded-[9px] shadow-[0_0_12px_rgba(0,0,0,0.1)]
+
+/* 選單項目 */
+group/item flex items-center gap-3 py-[6px]
+text-[#5C4535] text-[14px] tracking-[0.08em]
+hover:text-[#C09771]
+
+/* 左側線條 (hover 顯示) */
+w-[32px] border-t border-[#C09771]
+opacity-0 group-hover/item:opacity-100</div>
+                </div>
+            </section>
+
+            <!-- Footer 頁尾 -->
+            <section id="global-footer" class="component-section">
+                <h2>Footer 頁尾</h2>
+                <p>頁面底部包含聯絡資訊、Logo、社群連結</p>
+
+                <div class="component-preview p-0 overflow-hidden">
+                    <footer class="w-full bg-footer-bg relative">
+                        <!-- White divider lines -->
+                        <div class="absolute top-[20px] left-0 right-0 h-px bg-white z-10"></div>
+                        <div class="absolute bottom-[20px] left-0 right-0 h-px bg-white z-10"></div>
+
+                        <div class="container mx-auto px-4 max-w-[1200px] py-[53px]">
+                            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                                <!-- Left: Contact -->
+                                <div class="text-white text-center lg:text-left">
+                                    <p class="text-[13.5px] leading-[12px] mb-[12px]" style="letter-spacing: 1.5px;">服務時間｜10:00-18:00</p>
+                                    <p class="text-[13.5px] leading-[12px] mb-[12px]" style="letter-spacing: 1.5px;">固定公休｜每週三</p>
+                                    <p class="text-[13.5px] leading-[12px] mb-[12px]" style="letter-spacing: 1.5px;">聯絡電話｜07-2372269</p>
+                                    <p class="text-[13.5px] leading-[12px]" style="letter-spacing: 1.5px;">門市地址｜高雄市林森一路189號8樓</p>
+                                </div>
+                                <!-- Center: Logo -->
+                                <div class="flex items-center justify-center py-[15px]">
+                                    <img src="images/logo/logo-white.svg" alt="Logo" class="w-[195px] h-[139px] object-contain">
+                                </div>
+                                <!-- Right: Social -->
+                                <div class="text-white text-center lg:text-right flex flex-col items-center lg:items-end">
+                                    <div class="flex gap-[25px] mb-[25px]">
+                                        <a href="#" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity">
+                                            <img src="images/icon/social-line.svg" alt="Line" class="w-[18px] h-[18px]">
+                                        </a>
+                                        <a href="#" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity">
+                                            <img src="images/icon/social-instagram.svg" alt="Instagram" class="w-[18px] h-[18px]">
+                                        </a>
+                                        <a href="#" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity">
+                                            <img src="images/icon/social-facebook.svg" alt="Facebook" class="w-[18px] h-[18px]">
+                                        </a>
+                                    </div>
+                                    <p class="text-[14px] leading-[18px] tracking-[13px]">高級定制禮服．採預約制</p>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- Copyright -->
+                    <div class="w-full bg-[#F9F5F1] h-[30px] flex items-center">
+                        <p class="w-full text-[11px] text-footer-copyright text-center">
+                            Copyright © Linhaute Bridal 2025. All Rights Reserved. Design by <a href="#" class="underline">鴻羽網路</a>
+                        </p>
+                    </div>
+                </div>
+                <table class="prop-table">
+                    <tr><th>屬性</th><th>值</th></tr>
+                    <tr><td>背景色</td><td>bg-footer-bg (#D3B599)</td></tr>
+                    <tr><td>內距</td><td>py-[53px]</td></tr>
+                    <tr><td>白線位置</td><td>top-[20px], bottom-[20px]</td></tr>
+                    <tr><td>Logo 尺寸</td><td>w-[195px] h-[139px]</td></tr>
+                    <tr><td>社群圖標</td><td>w-[37px] h-[37px] rounded-full border</td></tr>
+                    <tr><td>Copyright 高度</td><td>h-[30px] bg-[#F9F5F1]</td></tr>
+                </table>
+            </section>
+
+            <!-- 頁面標題區塊 -->
+            <section id="global-title" class="component-section">
+                <h2>頁面標題區塊</h2>
+                <p>統一的頁面標題樣式，包含中文標題、英文副標題及底線</p>
+
+                <div class="component-box">
+                    <h3>標準樣式 (統一格式)</h3>
+                    <div class="component-preview bg-white">
+                        <div class="flex flex-col items-center mb-0 relative px-4">
+                            <div class="w-full max-w-[496px]">
+                                <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
+                                    <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">品</span>
+                                    <span class="tracking-[0.15em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">牌介紹</span>
+                                </div>
+                            </div>
+                            <div class="w-full max-w-[496px] flex justify-end pr-2 md:pr-0">
+                                <div class="flex items-end leading-[0.6] tracking-[0.25em]">
+                                    <span class="text-[24px] sm:text-[31px] font-serifEng font-[500] text-[#c9a782]">A</span>
+                                    <span class="text-[11px] sm:text-[18px] font-serifEng font-[200] text-[#c9a782]">BOUTS</span>
+                                </div>
+                            </div>
+                            <div class="w-full max-w-[496px] border-b border-[#c9a782]"></div>
+                        </div>
+                    </div>
+                    <table class="prop-table">
+                        <tr><th>元素</th><th>樣式</th></tr>
+                        <tr><td>容器最大寬度</td><td>max-w-[496px]</td></tr>
+                        <tr><td>首字 (金色)</td><td>text-[25px] sm:text-[32px] text-[#C09771]</td></tr>
+                        <tr><td>標題文字</td><td>text-[19px] sm:text-[26px] text-[#67534D] tracking-[0.15em]</td></tr>
+                        <tr><td>英文首字母</td><td>text-[24px] sm:text-[31px] font-serifEng font-[500] text-[#c9a782]</td></tr>
+                        <tr><td>英文其餘</td><td>text-[11px] sm:text-[18px] font-serifEng font-[200] text-[#c9a782]</td></tr>
+                        <tr><td>底線</td><td>border-b border-[#c9a782]</td></tr>
+                        <tr><td>與 Header 間距</td><td>section: !mt-[200px]</td></tr>
+                        <tr><td>與下方內容間距</td><td>pt-[50px]</td></tr>
+                    </table>
+                </div>
+
+                <div class="component-box">
+                    <h3>各頁面標題對照表</h3>
+                    <div class="component-preview bg-white">
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                            <div class="text-center p-4 bg-gray-50 rounded">
+                                <p class="text-sm text-gray-500 mb-2">品牌介紹</p>
+                                <p class="text-[#C09771]">品</p><p class="text-[#67534D] text-sm">牌介紹</p>
+                                <p class="font-serifEng text-[#c9a782] text-xs mt-1">ABOUTS</p>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 rounded">
+                                <p class="text-sm text-gray-500 mb-2">婚紗禮服</p>
+                                <p class="text-[#C09771]">婚</p><p class="text-[#67534D] text-sm">紗禮服</p>
+                                <p class="font-serifEng text-[#c9a782] text-xs mt-1">BRIDAL</p>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 rounded">
+                                <p class="text-sm text-gray-500 mb-2">婚禮實穿</p>
+                                <p class="text-[#C09771]">婚</p><p class="text-[#67534D] text-sm">禮實穿</p>
+                                <p class="font-serifEng text-[#c9a782] text-xs mt-1">WEDDING</p>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 rounded">
+                                <p class="text-sm text-gray-500 mb-2">攝影作品</p>
+                                <p class="text-[#C09771]">攝</p><p class="text-[#67534D] text-sm">影作品</p>
+                                <p class="font-serifEng text-[#c9a782] text-xs mt-1">PORTFOLIO</p>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 rounded">
+                                <p class="text-sm text-gray-500 mb-2">影片分享</p>
+                                <p class="text-[#C09771]">影</p><p class="text-[#67534D] text-sm">片分享</p>
+                                <p class="font-serifEng text-[#c9a782] text-xs mt-1">VIDEO</p>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 rounded">
+                                <p class="text-sm text-gray-500 mb-2">禮服知識家</p>
+                                <p class="text-[#C09771]">禮</p><p class="text-[#67534D] text-sm">服知識家</p>
+                                <p class="font-serifEng text-[#c9a782] text-xs mt-1">BLOG</p>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 rounded">
+                                <p class="text-sm text-gray-500 mb-2">合作品牌</p>
+                                <p class="text-[#C09771]">合</p><p class="text-[#67534D] text-sm">作品牌</p>
+                                <p class="font-serifEng text-[#c9a782] text-xs mt-1">PARTNER</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== 色彩系統 ==================== -->
+
+            <section id="colors-primary" class="component-section">
                 <h2>主要色彩 Primary Colors</h2>
                 <p>品牌核心色彩，用於按鈕、連結和強調元素</p>
                 <div class="component-preview">
@@ -303,19 +539,18 @@
                         </div>
                         <div class="text-center">
                             <div class="color-swatch" style="background:#D6B499"></div>
-                            <p class="text-xs mt-2 font-medium">underline / 邊框</p>
+                            <p class="text-xs mt-2 font-medium">underline/邊框</p>
                             <p class="text-xs text-gray-500">#D6B499</p>
                         </div>
                         <div class="text-center">
                             <div class="color-swatch" style="background:#D3B599"></div>
-                            <p class="text-xs mt-2 font-medium">表單邊框</p>
+                            <p class="text-xs mt-2 font-medium">footer-bg</p>
                             <p class="text-xs text-gray-500">#D3B599</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Colors - Text -->
             <section id="colors-text" class="component-section">
                 <h2>文字色彩 Text Colors</h2>
                 <p>用於標題、內文、說明文字</p>
@@ -332,11 +567,6 @@
                             <p class="text-xs text-gray-500">#67534D</p>
                         </div>
                         <div class="text-center">
-                            <div class="color-swatch" style="background:#8E8174"></div>
-                            <p class="text-xs mt-2 font-medium">text-subtitle</p>
-                            <p class="text-xs text-gray-500">#8E8174</p>
-                        </div>
-                        <div class="text-center">
                             <div class="color-swatch" style="background:#868686"></div>
                             <p class="text-xs mt-2 font-medium">內文灰/placeholder</p>
                             <p class="text-xs text-gray-500">#868686</p>
@@ -345,7 +575,6 @@
                 </div>
             </section>
 
-            <!-- Colors - Background -->
             <section id="colors-bg" class="component-section">
                 <h2>背景色彩 Background Colors</h2>
                 <p>用於區塊、卡片、Footer 等背景</p>
@@ -357,9 +586,9 @@
                             <p class="text-xs text-gray-500">#F9F5F1</p>
                         </div>
                         <div class="text-center">
-                            <div class="color-swatch" style="background:#D3B599"></div>
-                            <p class="text-xs mt-2 font-medium">footer-bg</p>
-                            <p class="text-xs text-gray-500">#D3B599</p>
+                            <div class="color-swatch" style="background:#f0e7df"></div>
+                            <p class="text-xs mt-2 font-medium">內容區塊背景</p>
+                            <p class="text-xs text-gray-500">#f0e7df</p>
                         </div>
                         <div class="text-center">
                             <div class="color-swatch border" style="background:#ffffff"></div>
@@ -370,7 +599,8 @@
                 </div>
             </section>
 
-            <!-- Typography - Family -->
+            <!-- ==================== 字體系統 ==================== -->
+
             <section id="typo-family" class="component-section">
                 <h2>字體家族 Font Families</h2>
                 <p>全站使用的字體</p>
@@ -392,7 +622,6 @@ class="font-serifEng"</div>
                 </div>
             </section>
 
-            <!-- Typography - Size -->
             <section id="typo-size" class="component-section">
                 <h2>字體大小 Font Sizes</h2>
                 <p>各元素的文字大小規範</p>
@@ -401,229 +630,98 @@ class="font-serifEng"</div>
                         <tr><th>用途</th><th>大小</th><th>Class</th></tr>
                         <tr><td>區塊標題首字</td><td>32px (桌面) / 25px (手機)</td><td>text-[25px] sm:text-[32px]</td></tr>
                         <tr><td>區塊標題</td><td>26px (桌面) / 19px (手機)</td><td>text-[19px] sm:text-[26px]</td></tr>
-                        <tr><td>副標題</td><td>20px</td><td>text-[20px]</td></tr>
-                        <tr><td>卡片標題</td><td>17px</td><td>text-[17px]</td></tr>
+                        <tr><td>卡片標題</td><td>17px - 18px</td><td>text-[17px] md:text-[18px]</td></tr>
                         <tr><td>內文/按鈕</td><td>14px</td><td>text-[14px]</td></tr>
                         <tr><td>說明文字</td><td>12px</td><td>text-[12px]</td></tr>
+                        <tr><td>Copyright</td><td>11px</td><td>text-[11px]</td></tr>
                     </table>
                 </div>
             </section>
 
-            <!-- Section Title - Standard -->
-            <section id="title-standard" class="component-section">
-                <h2>區塊標題 - 標準樣式</h2>
-                <p>各區塊的中英文標題組合</p>
-                <div class="component-preview bg-white">
-                    <div class="w-full max-w-[496px] mx-auto">
-                        <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
-                            <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">品</span>
-                            <span class="tracking-[0.15em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">牌介紹</span>
-                        </div>
-                        <div class="w-full flex justify-end relative">
-                            <div class="flex items-end leading-[0.6] tracking-[0.25em]">
-                                <span class="text-[24px] sm:text-[31px] font-serifEng font-[300] text-[#c9a782]">A</span>
-                                <span class="text-[11px] sm:text-[18px] font-serifEng font-[400] text-[#c9a782]">BOUTS</span>
-                            </div>
-                        </div>
-                        <div class="w-full border-b border-[#c9a782] mt-1"></div>
-                    </div>
-                </div>
-                <table class="prop-table">
-                    <tr><th>元素</th><th>樣式</th></tr>
-                    <tr><td>首字 (金色)</td><td>text-[32px] text-[#C09771]</td></tr>
-                    <tr><td>標題文字</td><td>text-[26px] text-[#67534D] tracking-[0.15em]</td></tr>
-                    <tr><td>英文首字母</td><td>text-[31px] font-serifEng font-[300] text-[#c9a782]</td></tr>
-                    <tr><td>英文其餘</td><td>text-[18px] font-serifEng font-[400] text-[#c9a782]</td></tr>
-                    <tr><td>底線</td><td>border-b border-[#c9a782]</td></tr>
-                </table>
-            </section>
+            <!-- ==================== 按鈕 ==================== -->
 
-            <!-- Section Title - Variants -->
-            <section id="title-variants" class="component-section">
-                <h2>區塊標題 - 各區塊變體</h2>
-                <p>不同區塊使用的標題</p>
-                <div class="component-preview bg-white">
-                    <div class="grid grid-cols-2 gap-8">
-                        <div class="text-center">
-                            <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
-                                <span class="text-[20px] text-[#C09771]">服</span>
-                                <span class="tracking-[0.15em] text-[16px] text-[#67534D]">務項目</span>
-                            </div>
-                            <div class="flex justify-end leading-[0.6] tracking-[0.25em]">
-                                <span class="text-[18px] font-serifEng font-[300] text-[#c9a782]">S</span>
-                                <span class="text-[10px] font-serifEng text-[#c9a782]">ERVICE</span>
-                            </div>
-                            <div class="border-b border-[#c9a782]"></div>
-                        </div>
-                        <div class="text-center">
-                            <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
-                                <span class="text-[20px] text-[#C09771]">婚</span>
-                                <span class="tracking-[0.15em] text-[16px] text-[#67534D]">紗禮服</span>
-                            </div>
-                            <div class="flex justify-end leading-[0.6] tracking-[0.25em]">
-                                <span class="text-[18px] font-serifEng font-[300] text-[#c9a782]">B</span>
-                                <span class="text-[10px] font-serifEng text-[#c9a782]">RIDAL</span>
-                            </div>
-                            <div class="border-b border-[#c9a782]"></div>
-                        </div>
-                        <div class="text-center">
-                            <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
-                                <span class="text-[20px] text-[#C09771]">婚</span>
-                                <span class="tracking-[0.15em] text-[16px] text-[#67534D]">禮實穿</span>
-                            </div>
-                            <div class="flex justify-end leading-[0.6] tracking-[0.25em]">
-                                <span class="text-[18px] font-serifEng font-[300] text-[#c9a782]">W</span>
-                                <span class="text-[10px] font-serifEng text-[#c9a782]">EDDING</span>
-                            </div>
-                            <div class="border-b border-[#c9a782]"></div>
-                        </div>
-                        <div class="text-center">
-                            <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
-                                <span class="text-[20px] text-[#C09771]">禮</span>
-                                <span class="tracking-[0.15em] text-[16px] text-[#67534D]">服知識家</span>
-                            </div>
-                            <div class="flex justify-end leading-[0.6] tracking-[0.25em]">
-                                <span class="text-[18px] font-serifEng font-[300] text-[#c9a782]">B</span>
-                                <span class="text-[10px] font-serifEng text-[#c9a782]">LOG</span>
-                            </div>
-                            <div class="border-b border-[#c9a782]"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Button - CTA -->
             <section id="btn-cta" class="component-section">
                 <h2>CTA 按鈕</h2>
                 <p>Header 預約試穿按鈕</p>
                 <div class="component-preview">
-                    <a href="#" class="inline-flex items-center justify-center gap-2 px-5 md:px-7 py-1.5 bg-btn-bg text-white text-[13px] md:text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">
+                    <a href="#" class="inline-flex items-center justify-center gap-2 px-[22px] py-1.5 bg-[#D3B599] text-white text-[14px] tracking-[0.10em] rounded-full hover:bg-[#C09771] transition-colors duration-300">
                         <img src="images/icon/reserve-button_icon.svg" alt="" class="w-[10px] h-auto">
                         預約試穿
                     </a>
                 </div>
-                <div class="code-block">&lt;a class="inline-flex items-center justify-center gap-2 px-5 md:px-7 py-1.5
-   bg-btn-bg text-white text-[13px] md:text-[14px] tracking-[0.10em]
-   rounded-full hover:bg-text-gold transition-colors duration-300"&gt;
-    &lt;img src="images/icon/reserve-button_icon.svg" class="w-[10px] h-auto"&gt;
-    預約試穿
-&lt;/a&gt;</div>
+                <div class="code-block">inline-flex items-center justify-center gap-2
+px-[22px] py-1.5 rounded-full
+bg-[#D3B599] text-white text-[14px] tracking-[0.10em]
+hover:bg-[#C09771] transition-colors duration-300</div>
             </section>
 
-            <!-- Button - Browse -->
             <section id="btn-browse" class="component-section">
                 <h2>瀏覽更多按鈕</h2>
-                <p>各區塊的瀏覽更多按鈕變體</p>
-
+                <p>各區塊的瀏覽更多按鈕</p>
                 <div class="component-box">
                     <h3>白色背景版本</h3>
                     <div class="component-preview bg-[#F9F5F1]">
-                        <a href="#" class="inline-flex items-center justify-center w-[135px] h-[36px] bg-white text-btn-bg border-0 text-[14px] tracking-[0.10em] no-underline rounded-full cursor-pointer transition-colors duration-300 hover:bg-btn-bg hover:text-white">
+                        <a href="#" class="inline-flex items-center justify-center w-[135px] h-[36px] bg-white text-btn-bg text-[14px] tracking-[0.10em] rounded-full hover:bg-btn-bg hover:text-white transition-colors duration-300">
                             瀏覽更多 <svg viewBox="0 0 9 15" fill="none" class="w-[8px] h-[12px] ml-4"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
                         </a>
                     </div>
-                    <div class="code-block">bg-white text-btn-bg rounded-full w-[135px] h-[36px]
-hover:bg-btn-bg hover:text-white</div>
                 </div>
-
                 <div class="component-box">
                     <h3>透明邊框版本</h3>
                     <div class="component-preview">
-                        <a href="#" class="inline-flex items-center justify-center w-[130px] h-[36px] bg-transparent border border-btn-bg text-btn-bg text-[14px] tracking-[0.10em] no-underline rounded-full cursor-pointer transition-colors duration-300 hover:bg-btn-bg hover:text-white">
+                        <a href="#" class="inline-flex items-center justify-center w-[130px] h-[36px] bg-transparent border border-btn-bg text-btn-bg text-[14px] tracking-[0.10em] rounded-full hover:bg-btn-bg hover:text-white transition-colors duration-300">
                             瀏覽更多 <svg viewBox="0 0 9 15" fill="none" class="w-[8px] h-[12px] ml-2"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
                         </a>
                     </div>
-                    <div class="code-block">bg-transparent border border-btn-bg text-btn-bg rounded-full
-hover:bg-btn-bg hover:text-white</div>
                 </div>
             </section>
 
-            <!-- Button - Form -->
-            <section id="btn-form" class="component-section">
-                <h2>表單按鈕</h2>
-                <p>表單送出與重置按鈕</p>
-                <div class="component-preview">
-                    <div class="flex gap-4">
-                        <button class="inline-flex items-center justify-center gap-2 w-[124px] h-[38px] bg-white text-[#C09771] text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-[#F5F5F5]">
-                            <img src="images/icon/returns_bronze.svg" alt="" class="w-[20px] h-auto">
-                            重新填寫
-                        </button>
-                        <button class="group inline-flex items-center justify-center gap-2 w-[130px] h-[38px] bg-[#F9F5F1] border border-[#C09771] text-[#C09771] text-[14px] tracking-[0.10em] rounded-full cursor-pointer transition-all duration-300 hover:bg-[#C09771] hover:text-white">
-                            確認送出
-                            <img src="images/icon/chevron.png" alt="" class="w-[16px] h-auto transition-all duration-300 group-hover:brightness-0 group-hover:invert">
-                        </button>
+            <section id="btn-filter" class="component-section">
+                <h2>篩選按鈕</h2>
+                <p>用於分類篩選的按鈕群組</p>
+                <div class="component-preview bg-[#f9f5f1] p-8">
+                    <div class="flex flex-wrap gap-3 justify-center">
+                        <button class="py-[8px] px-6 flex items-center justify-center text-white rounded-full text-[14px] tracking-wide bg-[#c09771]">全部</button>
+                        <button class="py-[8px] px-6 flex items-center justify-center text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">主分類一</button>
+                        <button class="py-[8px] px-6 flex items-center justify-center text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">主分類二</button>
+                        <button class="py-[8px] px-6 flex items-center justify-center text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">主分類三</button>
                     </div>
                 </div>
-                <div class="code-block">/* 重新填寫 */
-bg-white text-[#C09771] rounded-full w-[124px] h-[38px]
-hover:bg-[#F5F5F5]
+                <div class="code-block">/* 預設狀態 */
+py-[8px] px-6 rounded-full text-[14px]
+bg-white text-[#c09771]
+hover:bg-[#c09771] hover:text-white transition
 
-/* 確認送出 */
-bg-[#F9F5F1] border border-[#C09771] text-[#C09771] rounded-full
-hover:bg-[#C09771] hover:text-white
-/* icon: group-hover:brightness-0 group-hover:invert */</div>
+/* 選中狀態 */
+bg-[#c09771] text-white</div>
             </section>
 
-            <!-- Button - Arrow -->
             <section id="btn-arrow" class="component-section">
                 <h2>圓形箭頭按鈕</h2>
                 <p>輪播控制按鈕</p>
                 <div class="component-preview">
                     <div class="flex gap-4">
-                        <button class="w-[38px] h-[38px] bg-[#c09771] border-0 cursor-pointer rounded-full transition-all duration-300 flex items-center justify-center hover:bg-text-gold">
+                        <button class="w-[38px] h-[38px] bg-[#c09771] rounded-full flex items-center justify-center hover:bg-text-gold transition">
                             <img src="images/icon/chevron.png" alt="上一張" style="width: 16px; transform: scaleX(-1); filter: brightness(0) invert(1);">
                         </button>
-                        <button class="w-[38px] h-[38px] bg-white border-0 cursor-pointer rounded-full transition-all duration-300 flex items-center justify-center">
+                        <button class="w-[38px] h-[38px] bg-white rounded-full flex items-center justify-center">
                             <img src="images/icon/chevron.png" alt="下一張" style="width: 16px;">
                         </button>
                     </div>
                 </div>
-                <div class="code-block">/* 前一張 - 金色背景 */
-w-[38px] h-[38px] bg-[#c09771] rounded-full
-img: transform: scaleX(-1); filter: brightness(0) invert(1);
-
-/* 下一張 - 白色背景 */
-w-[38px] h-[38px] bg-white rounded-full</div>
             </section>
 
-            <!-- Button - Card -->
-            <section id="btn-card" class="component-section">
-                <h2>卡片連結按鈕</h2>
-                <p>卡片底部的連結按鈕</p>
-                <div class="component-box">
-                    <h3>服務卡片按鈕</h3>
-                    <div class="component-preview bg-card-bg">
-                        <a href="#" class="w-full max-w-[385px] h-[74px] flex justify-center items-center text-[14px] tracking-[0.10em] no-underline text-text-gold hover:bg-btn-bg hover:text-white transition-colors duration-300 rounded-b-[9px]">
-                            <span>瀏覽禮服照片</span>
-                            <svg viewBox="0 0 9 15" fill="none" class="w-[8px] h-[12px] ml-4"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
-                        </a>
-                    </div>
-                    <div class="code-block">h-[74px] text-text-gold rounded-b-[9px]
-group-hover:bg-btn-bg group-hover:text-white</div>
-                </div>
-                <div class="component-box">
-                    <h3>Blog 卡片按鈕</h3>
-                    <div class="component-preview bg-card-bg">
-                        <a href="#" class="w-full max-w-[420px] h-[64px] flex justify-center items-center text-[14px] tracking-[0.10em] no-underline text-text-gold hover:bg-btn-bg hover:text-white transition-colors duration-300 rounded-b-[9px] font-serifEng">
-                            <span>READ MORE</span>
-                            <svg viewBox="0 0 9 15" fill="none" class="w-[8px] h-[12px] ml-4"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
-                        </a>
-                    </div>
-                    <div class="code-block">h-[64px] text-text-gold font-serifEng rounded-b-[9px]
-group-hover:bg-btn-bg group-hover:text-white</div>
-                </div>
-            </section>
+            <!-- ==================== 卡片 ==================== -->
 
-            <!-- Card - Service -->
             <section id="card-service" class="component-section">
                 <h2>服務卡片</h2>
                 <p>服務項目區塊使用的卡片</p>
                 <div class="component-preview">
-                    <div class="group w-full max-w-[385px] h-auto rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col items-center text-center transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white mx-auto">
-                        <div class="w-[188px] h-[188px] mt-[21px] bg-gray-200 rounded flex items-center justify-center text-gray-400 text-sm">188x188</div>
+                    <div class="group w-full max-w-[385px] rounded-[9px] flex flex-col items-center text-center transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white mx-auto">
+                        <div class="w-[188px] h-[188px] mt-[21px] bg-gray-200 rounded flex items-center justify-center text-gray-400">188x188</div>
                         <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[21px] mb-[26px]">白紗 & 晚禮服租借</h3>
                         <p class="text-[14px] leading-6 tracking-[0.10em] text-text-subtitle px-[17px] grow">可自由選擇「單租」或是「包套」</p>
-                        <a href="#" class="w-full h-[74px] mt-[26px] flex justify-center items-center text-[14px] tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white">
+                        <a href="#" class="w-full h-[94px] mt-[26px] flex justify-center items-center text-[14px] tracking-[0.10em] text-text-gold rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white transition-colors duration-300">
                             <span>瀏覽禮服照片</span>
                             <svg viewBox="0 0 9 15" fill="none" class="w-[8px] h-[12px] ml-4"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
                         </a>
@@ -632,15 +730,13 @@ group-hover:bg-btn-bg group-hover:text-white</div>
                 <table class="prop-table">
                     <tr><th>屬性</th><th>值</th></tr>
                     <tr><td>最大寬度</td><td>max-w-[385px]</td></tr>
-                    <tr><td>桌面高度</td><td>md:h-[387px]</td></tr>
                     <tr><td>圓角</td><td>rounded-[9px]</td></tr>
-                    <tr><td>陰影</td><td>shadow-[0_2px_7px_rgba(0,0,0,0.08)]</td></tr>
                     <tr><td>背景</td><td>bg-card-bg → hover:bg-white</td></tr>
                     <tr><td>圖片尺寸</td><td>w-[188px] h-[188px]</td></tr>
+                    <tr><td>按鈕高度</td><td>h-[94px]</td></tr>
                 </table>
             </section>
 
-            <!-- Card - Blog -->
             <section id="card-blog" class="component-section">
                 <h2>文章卡片</h2>
                 <p>禮服知識家區塊使用的卡片</p>
@@ -652,23 +748,14 @@ group-hover:bg-btn-bg group-hover:text-white</div>
                         <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[15px] px-[17px]">主分類一</p>
                         <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[12px] mb-[16px] px-[17px] min-h-[52px]">高雄設計婚禮禮服推薦｜聚會場合不可少的晚禮服</h3>
                         <p class="text-[12px] leading-5 tracking-[0.10em] text-[#868686] px-[17px] mb-[20px]" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">晚禮服是晚上20點以後穿用的正式禮服，是女士禮服中最高檔次...</p>
-                        <a href="#" class="w-full h-[64px] mt-auto flex justify-center items-center text-[14px] tracking-[0.10em] no-underline text-text-gold transition-colors duration-300 rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white font-serifEng">
+                        <a href="#" class="w-full h-[64px] mt-auto flex justify-center items-center text-[14px] tracking-[0.10em] text-text-gold rounded-b-[9px] group-hover:bg-btn-bg group-hover:text-white transition-colors duration-300 font-serifEng">
                             <span>READ MORE</span>
                             <svg viewBox="0 0 9 15" fill="none" class="w-[8px] h-[12px] ml-4"><path d="M1.29297 14.6465L8.29297 7.64648L1.29297 0.646484" stroke="currentColor" /></svg>
                         </a>
                     </div>
                 </div>
-                <table class="prop-table">
-                    <tr><th>屬性</th><th>值</th></tr>
-                    <tr><td>最大寬度</td><td>max-w-[420px]</td></tr>
-                    <tr><td>圖片高度</td><td>h-[264px]</td></tr>
-                    <tr><td>標題最小高度</td><td>min-h-[52px]</td></tr>
-                    <tr><td>描述截斷</td><td>-webkit-line-clamp: 2</td></tr>
-                    <tr><td>按鈕高度</td><td>h-[64px]</td></tr>
-                </table>
             </section>
 
-            <!-- Card - Photo -->
             <section id="card-photo" class="component-section">
                 <h2>照片卡片</h2>
                 <p>婚禮實穿區塊的照片卡片，hover 顯示文字</p>
@@ -676,27 +763,87 @@ group-hover:bg-btn-bg group-hover:text-white</div>
                     <div class="group relative overflow-hidden w-full max-w-[400px] h-[300px] mx-auto cursor-pointer">
                         <div class="w-full h-full bg-gray-300 flex items-center justify-center transition duration-500 group-hover:brightness-110 group-hover:scale-105">照片</div>
                         <div class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"></div>
-                        <div class="tracking-[0.2em] absolute inset-0 flex items-center justify-center text-center text-sm text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500 leading-5 font-light">
+                        <div class="tracking-[0.2em] absolute inset-0 flex items-center justify-center text-center text-sm text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500 leading-5">
                             <div><span class="text-sm">AMY&PETER</span><br />高雄萊特維庭</div>
                         </div>
                     </div>
                 </div>
-                <div class="code-block">/* 容器 */
-group relative overflow-hidden
-
-/* 圖片 hover 效果 */
-group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105
-
-/* 白色遮罩 */
-absolute inset-0 bg-white backdrop-blur-[2px]
-opacity-0 group-hover:opacity-80
-
-/* 文字層 */
-absolute inset-0 flex items-center justify-center
-text-[#C09771] opacity-0 group-hover:opacity-100</div>
             </section>
 
-            <!-- Form - Input -->
+            <section id="card-photographer" class="component-section">
+                <h2>攝影師卡片</h2>
+                <p>攝影作品頁面的攝影師卡片</p>
+                <div class="component-preview">
+                    <div class="group w-full max-w-[420px] flex flex-col items-center mx-auto">
+                        <!-- 圖片 -->
+                        <div class="w-full aspect-square overflow-hidden bg-gray-200 opacity-100 group-hover:opacity-20 transition duration-500 flex items-center justify-center text-gray-400">
+                            1:1 正方形圖片
+                        </div>
+                        <!-- 標題 -->
+                        <h3 class="mt-4 text-center text-[17px] md:text-[18px] text-[#67534d] group-hover:text-[#c09771] tracking-wide transition duration-500">
+                            YY美學
+                        </h3>
+                        <!-- 描述文字 -->
+                        <p class="mt-3 mb-[17px] text-[#868686] text-[12px] leading-loose tracking-[0.05em] text-left">
+                            拍照不受侷限什麼風格！拍出愛與溫度是我攝影的初衷
+                        </p>
+                        <!-- 按鈕 -->
+                        <button class="mt-auto w-full py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white">
+                            <span>瀏覽作品</span>
+                            <img src="images/icon/chevron.png" class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500" />
+                        </button>
+                    </div>
+                </div>
+                <table class="prop-table">
+                    <tr><th>屬性</th><th>值</th></tr>
+                    <tr><td>最大寬度</td><td>max-w-[420px]</td></tr>
+                    <tr><td>圖片比例</td><td>aspect-square (1:1)</td></tr>
+                    <tr><td>圖片 hover</td><td>opacity-20</td></tr>
+                    <tr><td>按鈕高度</td><td>py-[25px]</td></tr>
+                    <tr><td>按鈕 hover</td><td>bg-[#c19a72] text-white</td></tr>
+                </table>
+            </section>
+
+            <section id="card-video" class="component-section">
+                <h2>影片卡片</h2>
+                <p>影片分享頁面的影片卡片</p>
+                <div class="component-preview">
+                    <div class="flex flex-col gap-3 max-w-[424px] mx-auto">
+                        <div class="w-full aspect-[424/318] overflow-hidden bg-gray-800 flex items-center justify-center text-white">
+                            YouTube iframe<br/>424 x 318
+                        </div>
+                        <div class="flex items-center gap-2 text-[18px]">
+                            <div class="relative inline-block">
+                                <span class="bg-transparent relative z-10 text-[#c09771]">訂製款</span>
+                                <div class="absolute w-7 h-7 rounded-full bg-[#f9f5f1] -z-10 -left-[0.5rem] top-1/2 -translate-y-1/2"></div>
+                            </div>
+                            <span class="text-[#67534D]">｜ 斜單肩禮服</span>
+                            <span class="text-[#67534D]">｜ 淺藍</span>
+                        </div>
+                    </div>
+                </div>
+                <table class="prop-table">
+                    <tr><th>屬性</th><th>值</th></tr>
+                    <tr><td>影片比例</td><td>aspect-[424/318]</td></tr>
+                    <tr><td>標籤背景圓</td><td>w-7 h-7 rounded-full bg-[#f9f5f1]</td></tr>
+                    <tr><td>標籤文字</td><td>text-[18px] text-[#c09771]</td></tr>
+                </table>
+            </section>
+
+            <section id="card-partner" class="component-section">
+                <h2>合作品牌卡片</h2>
+                <p>合作品牌頁面的品牌卡片</p>
+                <div class="component-preview">
+                    <div class="w-[200px] flex flex-col mx-auto">
+                        <div class="w-full aspect-square bg-gray-200 flex items-center justify-center text-gray-400">品牌圖片</div>
+                        <p class="pt-[13px] pb-2 text-center text-[#67534d] text-[18px]">品牌名稱</p>
+                        <p class="text-center text-[#868686] text-[14px]">英文名稱</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== 表單元件 ==================== -->
+
             <section id="form-input" class="component-section">
                 <h2>文字輸入框</h2>
                 <p>底線樣式的輸入框</p>
@@ -708,121 +855,108 @@ text-[#C09771] opacity-0 group-hover:opacity-100</div>
                         <input type="text" placeholder="請輸入姓名" class="w-full h-[37px] px-4 bg-white text-[14px] tracking-[0.10em] text-text-main-title" style="border:none; border-bottom: 1px solid #D3B599; outline:none;">
                     </div>
                 </div>
-                <div class="code-block">/* HTML 結構 */
-&lt;input type="text" class="h-[37px] px-4 border border-[#D6B499] rounded-[5px]
-  text-[14px] tracking-[0.10em] text-text-main-title"&gt;
-
-/* CSS 覆蓋樣式（統一為底線） */
+                <div class="code-block">/* 統一底線樣式 */
 border: none !important;
 border-bottom: 1px solid #D3B599 !important;
 border-radius: 0 !important;
 focus: border-bottom-color: #C29164;</div>
             </section>
 
-            <!-- Form - Dropdown -->
-            <section id="form-dropdown" class="component-section">
-                <h2>自訂下拉選單</h2>
-                <p>Custom Dropdown 元件</p>
-                <div class="component-preview bg-white p-8">
-                    <div class="max-w-[330px]">
-                        <label class="text-[14px] tracking-[0.10em] text-[#67534D] mb-[8px] block">
-                            <span class="text-[#D3B599]">*</span> 方便聯絡時段
-                        </label>
-                        <div class="custom-dropdown">
-                            <button type="button" class="custom-dropdown-btn">請選擇</button>
-                            <div class="custom-dropdown-list">
-                                <div class="custom-dropdown-item">早上 (09:00-12:00)</div>
-                                <div class="custom-dropdown-item">下午 (12:00-17:00)</div>
-                                <div class="custom-dropdown-item">晚上 (17:00-20:00)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="code-block">&lt;div class="custom-dropdown" data-target="field-name"&gt;
-    &lt;button type="button" class="custom-dropdown-btn"&gt;請選擇&lt;/button&gt;
-    &lt;div class="custom-dropdown-list"&gt;
-        &lt;div class="custom-dropdown-item" data-value="morning"&gt;早上&lt;/div&gt;
-        &lt;div class="custom-dropdown-item" data-value="afternoon"&gt;下午&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;input type="hidden" id="field-name" name="field-name"&gt;</div>
-            </section>
-
-            <!-- Form - Checkbox -->
             <section id="form-checkbox" class="component-section">
                 <h2>核取方塊</h2>
-                <p>方案選擇用的 Checkbox（使用 JS 實現單選行為）</p>
+                <p>方案選擇用的 Checkbox</p>
                 <div class="component-preview bg-card-bg p-8">
-                    <p class="text-[14px] tracking-[0.10em] text-text-main-title mb-[14px]">婚紗拍攝方案</p>
                     <div class="flex flex-col gap-[5px]">
                         <label class="flex items-center cursor-pointer group">
                             <input type="checkbox" checked class="cursor-pointer">
-                            <span class="ml-[8px] text-[14px] font-normal tracking-[0.10em] text-[#868686] group-hover:text-text-main-title transition-colors">婚紗拍攝 3 套方案 $51,800</span>
+                            <span class="ml-[8px] text-[14px] tracking-[0.10em] text-[#868686] group-hover:text-text-main-title transition-colors">婚紗拍攝 3 套方案 $51,800</span>
                         </label>
                         <label class="flex items-center cursor-pointer group">
                             <input type="checkbox" class="cursor-pointer">
-                            <span class="ml-[8px] text-[14px] font-normal tracking-[0.10em] text-[#868686] group-hover:text-text-main-title transition-colors">婚紗拍攝 3 套方案 $35,800 up</span>
+                            <span class="ml-[8px] text-[14px] tracking-[0.10em] text-[#868686] group-hover:text-text-main-title transition-colors">婚紗拍攝 3 套方案 $35,800 up</span>
                         </label>
                     </div>
                 </div>
-                <div class="code-block">/* Checkbox 尺寸 */
-w-[10px] h-[10px] border border-[#D6B499] rounded-[2px]
-
-/* Label 文字 */
-ml-[8px] text-[14px] text-[#868686]
-group-hover:text-text-main-title
-
-/* 單選行為：使用 data-single-select 屬性 + JS */
-&lt;div role="group" data-single-select="plan-name"&gt;</div>
             </section>
 
-            <!-- Form - Textarea -->
-            <section id="form-textarea" class="component-section">
-                <h2>文字區域</h2>
-                <p>多行文字輸入</p>
-                <div class="component-preview bg-card-bg p-8">
-                    <div class="max-w-[500px]">
-                        <label class="text-[14px] tracking-[0.10em] text-text-main-title mb-[9px] block">其他備註</label>
-                        <textarea class="w-full h-[69px] px-4 py-3 border border-[#D6B499] rounded-[5px] text-[14px] tracking-[0.10em] text-text-main-title bg-white resize-none" style="outline:none;"></textarea>
-                    </div>
-                </div>
-                <div class="code-block">w-full max-w-[855px] h-[69px] px-4 py-3
-border border-[#D6B499] rounded-[5px]
-text-[14px] tracking-[0.10em] resize-none</div>
-            </section>
-
-            <!-- Form - Fieldset -->
             <section id="form-fieldset" class="component-section">
                 <h2>表單區塊標題</h2>
                 <p>Fieldset Legend 樣式</p>
                 <div class="component-preview">
-                    <div class="max-w-[600px]">
-                        <div class="bg-[#67534D] h-[36px] px-6 rounded-t-[9px] flex items-center justify-center">
-                            <span class="font-['Noto_Sans_HK'] font-normal text-[17px] tracking-[0.15em] text-white">預約聯絡</span>
+                    <div class="max-w-[600px] space-y-4">
+                        <div>
+                            <div class="bg-[#67534D] h-[36px] px-6 rounded-t-[9px] flex items-center justify-center">
+                                <span class="text-[17px] tracking-[0.15em] text-white">預約聯絡</span>
+                            </div>
+                            <div class="bg-card-bg p-6 rounded-b-[9px]">
+                                <p class="text-[14px] text-gray-500">深色標題 - 主要表單區塊</p>
+                            </div>
                         </div>
-                        <div class="bg-card-bg p-6 rounded-b-[9px]">
-                            <p class="text-[14px] text-gray-500">表單內容區域...</p>
-                        </div>
-                    </div>
-                    <div class="max-w-[600px] mt-4">
-                        <div class="bg-[#D6B499] h-[36px] px-6 rounded-t-[9px] flex items-center justify-center">
-                            <span class="font-['Noto_Sans_HK'] font-normal text-[17px] tracking-[0.15em] text-white">基本資訊</span>
-                        </div>
-                        <div class="bg-card-bg p-6 rounded-b-[9px]">
-                            <p class="text-[14px] text-gray-500">表單內容區域...</p>
+                        <div>
+                            <div class="bg-[#D6B499] h-[36px] px-6 rounded-t-[9px] flex items-center justify-center">
+                                <span class="text-[17px] tracking-[0.15em] text-white">基本資訊</span>
+                            </div>
+                            <div class="bg-card-bg p-6 rounded-b-[9px]">
+                                <p class="text-[14px] text-gray-500">淺色標題 - 次要表單區塊</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="code-block">/* 深色標題 (預約聯絡) */
-bg-[#67534D] h-[36px] rounded-t-[9px]
-text-[17px] tracking-[0.15em] text-white
+            </section>
 
-/* 淺色標題 (基本資訊、方案選擇) */
-bg-[#D6B499] h-[36px] rounded-t-[9px]
-text-[17px] tracking-[0.15em] text-white
+            <!-- ==================== 其他元件 ==================== -->
 
-/* 內容區 */
-bg-card-bg rounded-b-[9px]</div>
+            <section id="other-social" class="component-section">
+                <h2>社群媒體圖標</h2>
+                <p>Footer 使用的社群連結</p>
+                <div class="component-preview bg-footer-bg p-8">
+                    <div class="flex gap-[25px]">
+                        <a href="#" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity">
+                            <img src="images/icon/social-line.svg" alt="Line" class="w-[18px] h-[18px]">
+                        </a>
+                        <a href="#" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity">
+                            <img src="images/icon/social-instagram.svg" alt="Instagram" class="w-[18px] h-[18px]">
+                        </a>
+                        <a href="#" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity">
+                            <img src="images/icon/social-facebook.svg" alt="Facebook" class="w-[18px] h-[18px]">
+                        </a>
+                        <a href="#" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity">
+                            <img src="images/icon/social-youtube.svg" alt="YouTube" class="w-[18px] h-[18px]">
+                        </a>
+                        <a href="#" class="w-[37px] h-[37px] rounded-full border border-white flex items-center justify-center hover:opacity-80 transition-opacity">
+                            <img src="images/icon/social-email.svg" alt="Email" class="w-[18px] h-[18px]">
+                        </a>
+                    </div>
+                </div>
+                <div class="code-block">w-[37px] h-[37px] rounded-full border border-white
+flex items-center justify-center
+hover:opacity-80 transition-opacity
+
+/* icon */
+w-[18px] h-[18px]</div>
+            </section>
+
+            <section id="other-divider" class="component-section">
+                <h2>分隔線</h2>
+                <p>各種分隔線樣式</p>
+                <div class="component-preview space-y-8">
+                    <div>
+                        <p class="text-sm text-gray-500 mb-2">標題底線</p>
+                        <div class="w-full max-w-[496px] border-b border-[#c9a782]"></div>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500 mb-2">區塊分隔線 (金色)</p>
+                        <div class="w-full border-b border-[#c9a782]"></div>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500 mb-2">分類標題分隔</p>
+                        <div class="flex items-center justify-center">
+                            <div class="w-[33%] max-w-[555px] border-t border-[#c09771]"></div>
+                            <span class="px-6 text-[#67534d] text-[20px] tracking-widest">捧花</span>
+                            <div class="w-[33%] max-w-[555px] border-t border-[#c09771]"></div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
         </main>
@@ -836,13 +970,9 @@ bg-card-bg rounded-b-[9px]</div>
         }
 
         function showSection(sectionId, item) {
-            // Remove active class from all items
             document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
-            // Add active class to clicked item
             item.classList.add('active');
-            // Hide all sections
             document.querySelectorAll('.component-section').forEach(s => s.classList.remove('active'));
-            // Show selected section
             document.getElementById(sectionId).classList.add('active');
         }
     </script>
