@@ -627,7 +627,7 @@
     </section>
 
     <!-- 預約諮詢 Reservation Section -->
-    <section id="reservation" class="bg-white pt-[0px] pb-[126px] flex flex-col items-center">
+    <section id="reservation" class="bg-white pt-[92px] pb-[126px] flex flex-col items-center">
 
         <!-- Section Title -->
         <div class="w-full">
@@ -1352,29 +1352,6 @@
                 });
             });
         });
-    </script>
-
-    <!-- FAQ Toggle Script -->
-    <script>
-    $(document).ready(function() {
-        $(".faqBtn").on("click", function () {
-            const wrapper = $(this).closest(".faq-item")
-            const content = wrapper.find(".faqContent")
-            const dot = wrapper.find(".faqDot")
-            const title = wrapper.find(".faqtitle")
-            if (content.is(":visible")) {
-                content.slideUp(250)
-            } else {
-                setTimeout(() => {
-                    content.slideDown(250)
-                }, 200)
-            }
-            dot.toggleClass("bg-[#C09771] border-[#C09771]")
-            dot.toggleClass("bg-[#67534D] border-[#67534D]")
-            title.toggleClass("-translate-y-[16px]")
-            title.toggleClass("text-[#C09771] text-[#67534D]")
-        })
-    })
     </script>
 
 </body>

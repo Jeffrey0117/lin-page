@@ -60,7 +60,91 @@
         .nav-link:hover::before {
             transform: translate(-50%, -50%) scale(1);
         }
-</style>
+
+
+        /* Custom Dropdown Styles */
+        .custom-dropdown {
+            position: relative;
+            width: 100%;
+            max-width: 330px;
+        }
+
+        .custom-dropdown-btn {
+            width: 100%;
+            height: 37px;
+            padding: 0 30px 0 16px;
+            background: #ffffff;
+            border: none;
+            border-bottom: 1px solid #D3B599;
+            border-radius: 0;
+            text-align: left;
+            font-size: 14px;
+            letter-spacing: 0.10em;
+            color: #67534D;
+            cursor: pointer;
+            position: relative;
+            transition: border-color 300ms;
+        }
+
+        .custom-dropdown-btn::after {
+            content: '';
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 8px;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.646484 1.29297L7.64648 8.29297L14.6465 1.29297' stroke='%23c09771'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+            transition: transform 200ms;
+        }
+
+        .custom-dropdown.open .custom-dropdown-btn::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .custom-dropdown-btn:focus {
+            outline: none;
+            border-bottom-color: #C29164;
+        }
+
+        .custom-dropdown-list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #D3B599;
+            border-top: none;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            z-index: 100;
+            transition: max-height 200ms, opacity 200ms;
+        }
+
+        .custom-dropdown.open .custom-dropdown-list {
+            max-height: 200px;
+            opacity: 1;
+        }
+
+        .custom-dropdown-item {
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 0.10em;
+            color: #868686;
+            cursor: pointer;
+            transition: background-color 150ms, color 150ms;
+        }
+
+        .custom-dropdown-item:hover,
+        .custom-dropdown-item.selected {
+            background-color: #C09771;
+            color: white;
+        }
+    </style>
 </head>
 <body class="font-['Noto_Sans_HK'] font-normal">
 
@@ -150,7 +234,7 @@
               >P</span
             >
             <span
-              class="text-[16px] sm:text-[18px] md:text-[20px] font-serifEng font-[400] text-[#c9a782]"
+              class="text-[14px] sm:text-[16px] md:text-[18px] font-serifEng font-[400] text-[#c9a782]"
               >ORTFOLIO</span
             >
           </div>
@@ -221,18 +305,18 @@
           </h3>
 
           <!-- 描述文字 -->
-          <p class="my-2 sm:my-3 text-[#777] text-[11px] sm:text-[12px] leading-relaxed px-2 text-center">
+          <p class="mt-2 sm:mt-3 mb-[13px] sm:mb-[17px] text-[#868686] text-[11px] sm:text-[12px] leading-loose tracking-[0.05em] text-left">
             拍照不受侷限什麼風格！拍出愛與溫度是我攝影的初衷
           </p>
 
           <!-- 按鈕：平常淺色；hover 深色 -->
           <button
-            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#f2ebe4] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.15em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white relative"
+            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white"
           >
-            <span class="pl-5">瀏覽作品</span>
+            <span>瀏覽作品</span>
             <img
               src="images/icon/chevron.png"
-              class="w-4 h-3.5 absolute right-1/2 translate-x-[55px] group-hover:brightness-0 group-hover:invert transition duration-500"
+              class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500"
             />
           </button>
         </div>
@@ -257,18 +341,18 @@
           </h3>
 
           <!-- 描述文字 -->
-          <p class="my-2 sm:my-3 text-[#777] text-[11px] sm:text-[12px] leading-relaxed px-2 text-center">
+          <p class="mt-2 sm:mt-3 mb-[13px] sm:mb-[17px] text-[#868686] text-[11px] sm:text-[12px] leading-loose tracking-[0.05em] text-left">
             善於唯美的人像拍攝手法，拍攝屬於你們自然 互動的情感。
           </p>
 
           <!-- 按鈕：平常淺色；hover 深色 -->
           <button
-            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#f2ebe4] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.15em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white relative"
+            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white"
           >
-            <span class="pl-5">瀏覽作品</span>
+            <span>瀏覽作品</span>
             <img
               src="images/icon/chevron.png"
-              class="w-4 h-3.5 absolute right-1/2 translate-x-[55px] group-hover:brightness-0 group-hover:invert transition duration-500"
+              class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500"
             />
           </button>
         </div>
@@ -293,18 +377,18 @@
           </h3>
 
           <!-- 描述文字 -->
-          <p class="my-2 sm:my-3 text-[#777] text-[11px] sm:text-[12px] leading-relaxed px-2 text-center">
+          <p class="mt-2 sm:mt-3 mb-[13px] sm:mb-[17px] text-[#868686] text-[11px] sm:text-[12px] leading-loose tracking-[0.05em] text-left">
             擅長極簡風格 | 雜誌感拍攝
           </p>
 
           <!-- 按鈕：平常淺色；hover 深色 -->
           <button
-            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#f2ebe4] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.15em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white relative"
+            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white"
           >
-            <span class="pl-5">瀏覽作品</span>
+            <span>瀏覽作品</span>
             <img
               src="images/icon/chevron.png"
-              class="w-4 h-3.5 absolute right-1/2 translate-x-[55px] group-hover:brightness-0 group-hover:invert transition duration-500"
+              class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500"
             />
           </button>
         </div>
@@ -329,18 +413,18 @@
           </h3>
 
           <!-- 描述文字 -->
-          <p class="my-2 sm:my-3 text-[#777] text-[11px] sm:text-[12px] leading-relaxed px-2 text-center">
+          <p class="mt-2 sm:mt-3 mb-[13px] sm:mb-[17px] text-[#868686] text-[11px] sm:text-[12px] leading-loose tracking-[0.05em] text-left">
             拍攝妳的韓式婚紗
           </p>
 
           <!-- 按鈕：平常淺色；hover 深色 -->
           <button
-            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#f2ebe4] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.15em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white relative"
+            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white"
           >
-            <span class="pl-5">瀏覽作品</span>
+            <span>瀏覽作品</span>
             <img
               src="images/icon/chevron.png"
-              class="w-4 h-3.5 absolute right-1/2 translate-x-[55px] group-hover:brightness-0 group-hover:invert transition duration-500"
+              class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500"
             />
           </button>
         </div>
@@ -370,18 +454,18 @@
           </h3>
 
           <!-- 描述文字 -->
-          <p class="my-2 sm:my-3 text-[#777] text-[11px] sm:text-[12px] leading-relaxed px-2 text-center">
+          <p class="mt-2 sm:mt-3 mb-[13px] sm:mb-[17px] text-[#868686] text-[11px] sm:text-[12px] leading-loose tracking-[0.05em] text-left">
             魯士攝影團隊｜客製攝影服務│擅長紀錄婚 禮、自然流露的情感
           </p>
 
           <!-- 按鈕：平常淺色；hover 深色 -->
           <button
-            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#f2ebe4] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.15em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white relative"
+            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white"
           >
-            <span class="pl-5">瀏覽作品</span>
+            <span>瀏覽作品</span>
             <img
               src="images/icon/chevron.png"
-              class="w-4 h-3.5 absolute right-1/2 translate-x-[55px] group-hover:brightness-0 group-hover:invert transition duration-500"
+              class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500"
             />
           </button>
         </div>
@@ -406,18 +490,18 @@
           </h3>
 
           <!-- 描述文字 -->
-          <p class="my-2 sm:my-3 text-[#777] text-[11px] sm:text-[12px] leading-relaxed px-2 text-center">
+          <p class="mt-2 sm:mt-3 mb-[13px] sm:mb-[17px] text-[#868686] text-[11px] sm:text-[12px] leading-loose tracking-[0.05em] text-left">
             擅長婚禮拍攝｜婚紗拍攝｜人物寫真｜全家福
           </p>
 
           <!-- 按鈕：平常淺色；hover 深色 -->
           <button
-            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#f2ebe4] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.15em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white relative"
+            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white"
           >
-            <span class="pl-5">瀏覽作品</span>
+            <span>瀏覽作品</span>
             <img
               src="images/icon/chevron.png"
-              class="w-4 h-3.5 absolute right-1/2 translate-x-[55px] group-hover:brightness-0 group-hover:invert transition duration-500"
+              class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500"
             />
           </button>
         </div>
@@ -442,19 +526,19 @@
           </h3>
 
           <!-- 描述文字 -->
-          <p class="my-2 sm:my-3 text-[#777] text-[11px] sm:text-[12px] leading-relaxed px-2 text-center">
+          <p class="mt-2 sm:mt-3 mb-[13px] sm:mb-[17px] text-[#868686] text-[11px] sm:text-[12px] leading-loose tracking-[0.05em] text-left">
             自主婚紗｜商業拍攝｜人物寫真｜婚禮紀錄｜
             證件照｜海內外婚錄｜SDE快剪快播
           </p>
 
           <!-- 按鈕：平常淺色；hover 深色 -->
           <button
-            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#f2ebe4] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.15em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white relative"
+            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white"
           >
-            <span class="pl-5">瀏覽作品</span>
+            <span>瀏覽作品</span>
             <img
               src="images/icon/chevron.png"
-              class="w-4 h-3.5 absolute right-1/2 translate-x-[55px] group-hover:brightness-0 group-hover:invert transition duration-500"
+              class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500"
             />
           </button>
         </div>
@@ -479,18 +563,18 @@
           </h3>
 
           <!-- 描述文字 -->
-          <p class="my-2 sm:my-3 text-[#777] text-[11px] sm:text-[12px] leading-relaxed px-2 text-center">
+          <p class="mt-2 sm:mt-3 mb-[13px] sm:mb-[17px] text-[#868686] text-[11px] sm:text-[12px] leading-loose tracking-[0.05em] text-left">
             擅長商業拍攝、個人寫真、動態影像、婚紗包 套方案、個人寫真方案
           </p>
 
           <!-- 按鈕：平常淺色；hover 深色 -->
           <button
-            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#f2ebe4] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.15em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white relative"
+            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white"
           >
-            <span class="pl-5">瀏覽作品</span>
+            <span>瀏覽作品</span>
             <img
               src="images/icon/chevron.png"
-              class="w-4 h-3.5 absolute right-1/2 translate-x-[55px] group-hover:brightness-0 group-hover:invert transition duration-500"
+              class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500"
             />
           </button>
         </div>
@@ -520,18 +604,18 @@
           </h3>
 
           <!-- 描述文字 -->
-          <p class="my-2 sm:my-3 text-[#777] text-[11px] sm:text-[12px] leading-relaxed px-2 text-center">
+          <p class="mt-2 sm:mt-3 mb-[13px] sm:mb-[17px] text-[#868686] text-[11px] sm:text-[12px] leading-loose tracking-[0.05em] text-left">
             擅長婚紗攝影、婚禮攝影、活動紀錄、孕婦寫 真
           </p>
 
           <!-- 按鈕：平常淺色；hover 深色 -->
           <button
-            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#f2ebe4] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.15em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white relative"
+            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white"
           >
-            <span class="pl-5">瀏覽作品</span>
+            <span>瀏覽作品</span>
             <img
               src="images/icon/chevron.png"
-              class="w-4 h-3.5 absolute right-1/2 translate-x-[55px] group-hover:brightness-0 group-hover:invert transition duration-500"
+              class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500"
             />
           </button>
         </div>
@@ -556,18 +640,18 @@
           </h3>
 
           <!-- 描述文字 -->
-          <p class="my-2 sm:my-3 text-[#777] text-[11px] sm:text-[12px] leading-relaxed px-2 text-center">
+          <p class="mt-2 sm:mt-3 mb-[13px] sm:mb-[17px] text-[#868686] text-[11px] sm:text-[12px] leading-loose tracking-[0.05em] text-left">
             擅長情感自然風格與電影感
           </p>
 
           <!-- 按鈕：平常淺色；hover 深色 -->
           <button
-            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#f2ebe4] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.15em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white relative"
+            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white"
           >
-            <span class="pl-5">瀏覽作品</span>
+            <span>瀏覽作品</span>
             <img
               src="images/icon/chevron.png"
-              class="w-4 h-3.5 absolute right-1/2 translate-x-[55px] group-hover:brightness-0 group-hover:invert transition duration-500"
+              class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500"
             />
           </button>
         </div>
@@ -592,18 +676,18 @@
           </h3>
 
           <!-- 描述文字 -->
-          <p class="my-2 sm:my-3 text-[#777] text-[11px] sm:text-[12px] leading-relaxed px-2 text-center">
+          <p class="mt-2 sm:mt-3 mb-[13px] sm:mb-[17px] text-[#868686] text-[11px] sm:text-[12px] leading-loose tracking-[0.05em] text-left">
             擅長風格婚紗、人像攝影、婚禮紀錄
           </p>
 
           <!-- 按鈕：平常淺色；hover 深色 -->
           <button
-            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#f2ebe4] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.15em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white relative"
+            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white"
           >
-            <span class="pl-5">瀏覽作品</span>
+            <span>瀏覽作品</span>
             <img
               src="images/icon/chevron.png"
-              class="w-4 h-3.5 absolute right-1/2 translate-x-[55px] group-hover:brightness-0 group-hover:invert transition duration-500"
+              class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500"
             />
           </button>
         </div>
@@ -628,18 +712,18 @@
           </h3>
 
           <!-- 描述文字 -->
-          <p class="my-2 sm:my-3 text-[#777] text-[11px] sm:text-[12px] leading-relaxed px-2 text-center">
+          <p class="mt-2 sm:mt-3 mb-[13px] sm:mb-[17px] text-[#868686] text-[11px] sm:text-[12px] leading-loose tracking-[0.05em] text-left">
             用不設限的多變視角，紀錄最美的樣子
           </p>
 
           <!-- 按鈕：平常淺色；hover 深色 -->
           <button
-            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#f2ebe4] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.15em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white relative"
+            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white"
           >
-            <span class="pl-5">瀏覽作品</span>
+            <span>瀏覽作品</span>
             <img
               src="images/icon/chevron.png"
-              class="w-4 h-3.5 absolute right-1/2 translate-x-[55px] group-hover:brightness-0 group-hover:invert transition duration-500"
+              class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500"
             />
           </button>
         </div>
@@ -668,18 +752,18 @@
           </h3>
 
           <!-- 描述文字 -->
-          <p class="my-2 sm:my-3 text-[#777] text-[11px] sm:text-[12px] leading-relaxed px-2 text-center">
+          <p class="mt-2 sm:mt-3 mb-[13px] sm:mb-[17px] text-[#868686] text-[11px] sm:text-[12px] leading-loose tracking-[0.05em] text-left">
             婚禮攝影、婚紗、親子寫真、私奔寫真
           </p>
 
           <!-- 按鈕：平常淺色；hover 深色 -->
           <button
-            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#f2ebe4] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.15em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white relative"
+            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white"
           >
-            <span class="pl-5">瀏覽作品</span>
+            <span>瀏覽作品</span>
             <img
               src="images/icon/chevron.png"
-              class="w-4 h-3.5 absolute right-1/2 translate-x-[55px] group-hover:brightness-0 group-hover:invert transition duration-500"
+              class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500"
             />
           </button>
         </div>
@@ -704,18 +788,18 @@
           </h3>
 
           <!-- 描述文字 -->
-          <p class="my-2 sm:my-3 text-[#777] text-[11px] sm:text-[12px] leading-relaxed px-2 text-center">
+          <p class="mt-2 sm:mt-3 mb-[13px] sm:mb-[17px] text-[#868686] text-[11px] sm:text-[12px] leading-loose tracking-[0.05em] text-left">
             把稍縱即逝的美好，寫成一張張有溫度的相片 婚禮、婚紗、孕期、家庭寫真
           </p>
 
           <!-- 按鈕：平常淺色；hover 深色 -->
           <button
-            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#f2ebe4] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.15em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white relative"
+            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white"
           >
-            <span class="pl-5">瀏覽作品</span>
+            <span>瀏覽作品</span>
             <img
               src="images/icon/chevron.png"
-              class="w-4 h-3.5 absolute right-1/2 translate-x-[55px] group-hover:brightness-0 group-hover:invert transition duration-500"
+              class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500"
             />
           </button>
         </div>
@@ -740,43 +824,48 @@
           </h3>
 
           <!-- 描述文字 -->
-          <p class="my-2 sm:my-3 text-[#777] text-[11px] sm:text-[12px] leading-relaxed px-2 text-center">
+          <p class="mt-2 sm:mt-3 mb-[13px] sm:mb-[17px] text-[#868686] text-[11px] sm:text-[12px] leading-loose tracking-[0.05em] text-left">
             擅長自然拍攝互動及個人故事風格拍攝。
           </p>
 
           <!-- 按鈕：平常淺色；hover 深色 -->
           <button
-            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#f2ebe4] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.15em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white relative"
+            class="mt-auto w-full py-[20px] sm:py-[25px] rounded-md bg-[#F9F5F1] text-[#c19a72] text-[13px] sm:text-[14px] tracking-[0.1em] flex items-center justify-center transition duration-500 group-hover:bg-[#c19a72] group-hover:text-white"
           >
-            <span class="pl-5">瀏覽作品</span>
+            <span>瀏覽作品</span>
             <img
               src="images/icon/chevron.png"
-              class="w-4 h-3.5 absolute right-1/2 translate-x-[55px] group-hover:brightness-0 group-hover:invert transition duration-500"
+              class="w-4 h-3.5 ml-[10px] group-hover:brightness-0 group-hover:invert transition duration-500"
             />
           </button>
         </div>
       </div>
     </section>
 
-    <section id="reservation" class="bg-white pt-[92px] pb-[126px] flex flex-col items-center">
+    <section id="reservation" class="bg-white pt-[42px] pb-[126px] flex flex-col items-center">
 
-        <!-- Section Title with full-width underline -->
+        <!-- Section Title -->
         <div class="w-full">
-            <div class="main-title-wrapper flex flex-col items-center mb-[26px] relative">
-                <div class="relative inline-block">
-                    <h1 class="text-[29px] leading-none tracking-[0.15em] text-text-main-title inline">
-                        <span class="text-[35px] text-text-gold">填</span><span class="text-[29px] text-text-main-title">寫預約表單</span>
-                    </h1>
-                    <img src="images/text/section-reserve.png" alt="Reserve Now" class="hidden md:block absolute left-[calc(100%+35px)] bottom-0 h-[20px]">
+            <div class="max-w-[620px] mx-auto">
+                <div class="tracking-[0.05em] leading-none text-center mb-2 sm:mb-[-4px]">
+                    <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">填</span>
+                    <span class="tracking-[0.15em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">寫預約表單</span>
+                </div>
+                <div class="w-full flex justify-end relative">
+                    <div class="flex items-end leading-[0.6] tracking-[0.25em]">
+                        <span class="text-[24px] sm:text-[31px] font-serifEng font-[500] text-[#c9a782]">R</span>
+                        <span class="text-[11px] sm:text-[17px] font-serifEng font-[200] text-[#c9a782]">ESERVE</span>
+                        <span class="text-[24px] sm:text-[31px] font-serifEng font-[500] text-[#c9a782] ml-2">N</span>
+                        <span class="text-[11px] sm:text-[17px] font-serifEng font-[200] text-[#c9a782]">OW</span>
+                    </div>
                 </div>
             </div>
-            <!-- Full-width underline -->
-            <div class="w-full border-b border-underline mt-[17px]"></div>
+            <div class="w-full border-b border-[#c9a782]"></div>
         </div>
 
         <!-- Single line description text -->
         <div class="w-full flex justify-center px-4">
-            <p class="text-[14px] tracking-[0.10em] text-text-subtitle mt-[35px] mb-[51px] text-center max-w-[1200px]">
+            <p class="text-[14px] tracking-[0.10em] text-[#67534D] mt-[40px] mb-[40px] text-center max-w-[1200px] px-[5px]">
                 非常感謝您前來 LinHaute Bridal 挑選禮服，為了更加瞭解您的需求，請您撥冗完整填寫以下資訊，我們將盡速回覆您近期尚可預約的時段，謝謝！
             </p>
         </div>

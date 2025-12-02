@@ -12,7 +12,7 @@ const path = require('path');
 const TARGET_FILES = ['02.html', '03.html', '04.html', '05.html', '06.html', '07.html', '08.html', '09.html', '10.html', '11.html', '12.html', '13.html'];
 
 // 有預約表單的檔案
-const FILES_WITH_RESERVATION = ['02.html', '03.html', '04.html', '05.html', '06.html', '07.html', '09.html', '13.html'];
+const FILES_WITH_RESERVATION = ['02.html', '03.html', '04.html', '05.html', '06.html', '07.html', '08.html', '09.html', '13.html'];
 
 // 區塊標記
 const MARKERS = {
