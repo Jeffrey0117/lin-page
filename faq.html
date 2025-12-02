@@ -336,10 +336,46 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center gap-[45px] xl:gap-[50px] ml-[30px] xl:ml-[50px]">
-                    <a href="news.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">最新活動</a>
+                    <!-- 最新活動 with dropdown -->
+                    <div class="nav-dropdown relative group">
+                        <a href="news.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">最新活動</a>
+                        <!-- Dropdown Menu -->
+                        <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="bg-white rounded-[9px] shadow-[0_0_12px_rgba(0,0,0,0.1)] w-[220px] h-[84px] flex flex-col justify-center">
+                                <!-- 命定禮服方案 -->
+                                <a href="news.html" class="group/item flex items-center gap-3 py-[6px] text-[#5C4535] text-[14px] tracking-[0.08em] hover:text-[#C09771] transition-colors duration-300">
+                                    <span class="w-[32px] border-t border-[#C09771] opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex-shrink-0"></span>
+                                    <span>命定禮服方案</span>
+                                </a>
+                                <!-- 1白3晚宴客優惠方案 -->
+                                <a href="news.html" class="group/item flex items-center gap-3 py-[6px] text-[#5C4535] text-[14px] tracking-[0.08em] hover:text-[#C09771] transition-colors duration-300">
+                                    <span class="w-[32px] border-t border-[#C09771] opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex-shrink-0"></span>
+                                    <span>1白3晚宴客優惠方案</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     <a href="about.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">品牌介紹</a>
                     <a href="faq.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">預約須知</a>
-                    <a href="dress.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗禮服</a>
+                    <!-- 婚紗禮服 with dropdown -->
+                    <div class="nav-dropdown relative group">
+                        <a href="dress.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗禮服</a>
+                        <!-- Dropdown Menu -->
+                        <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="bg-white rounded-[9px] shadow-[0_0_12px_rgba(0,0,0,0.1)] w-[150px] h-[84px] flex flex-col justify-center">
+                                <!-- 婚紗禮服 -->
+                                <a href="dress.html" class="group/item flex items-center gap-3 py-[6px] text-[#5C4535] text-[14px] tracking-[0.08em] hover:text-[#C09771] transition-colors duration-300">
+                                    <span class="w-[32px] border-t border-[#C09771] opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex-shrink-0"></span>
+                                    <span>婚紗禮服</span>
+                                </a>
+                                <!-- 婚禮實穿 -->
+                                <a href="wedding-looks.html" class="group/item flex items-center gap-3 py-[6px] text-[#5C4535] text-[14px] tracking-[0.08em] hover:text-[#C09771] transition-colors duration-300">
+                                    <span class="w-[32px] border-t border-[#C09771] opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex-shrink-0"></span>
+                                    <span>婚禮實穿</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     <a href="portfolio.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">攝影作品</a>
                     <a href="video.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">影片分享</a>
                     <a href="knowledge.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">禮服知識家</a>
