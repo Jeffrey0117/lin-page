@@ -144,19 +144,19 @@
       </div>
 
         <div class="mt-[50px] mb-[50px] flex-col w-[90%] lg:w-[73%] max-w-[1392px] rounded-md flex bg-[#f9f5f1] py-[39px] px-2 sm:px-8 xl:px-40">
-          <div class="flex flex-wrap xl:flex-nowrap gap-3 justify-center items-center">
-            <button data-category="all" class="filter-btn group py-[8px] w-[130px] flex items-center justify-center text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">全部</button>
-            <button data-category="category-1" class="filter-btn group py-[8px] w-[130px] flex items-center justify-center gap-2 text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">主分類一</button>
-            <button data-category="category-2" class="filter-btn group py-[8px] w-[130px] flex items-center justify-center gap-2 text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">主分類二</button>
-            <button data-category="category-3" class="filter-btn group py-[8px] w-[130px] flex items-center justify-center gap-2 text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">主分類三</button>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-x-2 gap-y-3 justify-items-center w-full max-w-[300px] sm:max-w-[560px] mx-auto">
+            <button data-category="all" class="filter-btn group py-[8px] w-full max-w-[130px] flex items-center justify-center text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">全部</button>
+            <button data-category="category-1" class="filter-btn group py-[8px] w-full max-w-[130px] flex items-center justify-center gap-2 text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">主分類一</button>
+            <button data-category="category-2" class="filter-btn group py-[8px] w-full max-w-[130px] flex items-center justify-center gap-2 text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">主分類二</button>
+            <button data-category="category-3" class="filter-btn group py-[8px] w-full max-w-[130px] flex items-center justify-center gap-2 text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">主分類三</button>
           </div>
         </div>
         <div class="w-full max-w-[1920px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-[17px] gap-y-[67px] px-4 sm:px-8 md:px-16 lg:px-[210px] justify-items-center">
 
             <!-- Card 1 -->
-            <div class="group w-full max-w-[420px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+            <div class="group w-full max-w-[420px] rounded-[9px] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
                 <div class="pt-[17px] px-[17px]">
-                    <img src="images/blog/blog-post-01.png" alt="Blog Image" class="w-full h-[264px] object-cover">
+                    <img src="images/blog/blog-post-01.png" alt="Blog Image" class="w-full h-[264px] object-cover object-top">
                 </div>
                 <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[15px] px-[17px]">主分類一</p>
                 <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[12px] mb-[16px] px-[17px] min-h-[52px]">高雄設計婚禮禮服推薦｜聚會場合不可少的晚禮服</h3>
@@ -170,9 +170,9 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="group w-full max-w-[420px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+            <div class="group w-full max-w-[420px] rounded-[9px] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
                 <div class="pt-[17px] px-[17px]">
-                    <img src="images/blog/blog-post-02.png" alt="Blog Image" class="w-full h-[264px] object-cover">
+                    <img src="images/blog/blog-post-02.png" alt="Blog Image" class="w-full h-[264px] object-cover object-top">
                 </div>
                 <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[15px] px-[17px]">主分類二</p>
                 <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[12px] mb-[16px] px-[17px] min-h-[52px]">禮服挑選不藏私技巧大公開｜從認識禮服到婚紗挑選一次完整解析</h3>
@@ -186,9 +186,9 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="group w-full max-w-[420px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+            <div class="group w-full max-w-[420px] rounded-[9px] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
                 <div class="pt-[17px] px-[17px]">
-                    <img src="images/blog/blog-post-03.png" alt="Blog Image" class="w-full h-[264px] object-cover">
+                    <img src="images/blog/blog-post-03.png" alt="Blog Image" class="w-full h-[264px] object-cover object-top">
                 </div>
                 <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[15px] px-[17px]">主分類一</p>
                 <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[12px] mb-[16px] px-[17px] min-h-[52px]">高雄婚紗禮服推薦首選｜禮服租借、婚紗照拍攝、婚紗攝影師好評、婚紗展熱銷款式</h3>
@@ -202,9 +202,9 @@
             </div>
 
             <!-- Card 4 -->
-            <div class="group w-full max-w-[420px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+            <div class="group w-full max-w-[420px] rounded-[9px] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
                 <div class="pt-[17px] px-[17px]">
-                    <img src="images/blog/04.png" alt="Blog Image" class="w-full h-[264px] object-cover">
+                    <img src="images/blog/04.png" alt="Blog Image" class="w-full h-[264px] object-cover object-top">
                 </div>
                 <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[15px] px-[17px]">主分類二</p>
                 <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[12px] mb-[16px] px-[17px] min-h-[52px]">手工禮服與婚宴場地的搭配訣竅｜教妳挑出完美的宴客禮服婚紗</h3>
@@ -218,9 +218,9 @@
             </div>
 
             <!-- Card 5 -->
-            <div class="group w-full max-w-[420px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+            <div class="group w-full max-w-[420px] rounded-[9px] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
                 <div class="pt-[17px] px-[17px]">
-                    <img src="images/blog/05.png" alt="Blog Image" class="w-full h-[264px] object-cover">
+                    <img src="images/blog/05.png" alt="Blog Image" class="w-full h-[264px] object-cover object-top">
                 </div>
                 <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[15px] px-[17px]">主分類三</p>
                 <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[12px] mb-[16px] px-[17px] min-h-[52px]">高雄婚紗禮服推薦首選｜禮服租借技巧</h3>
@@ -234,9 +234,9 @@
             </div>
 
             <!-- Card 6 -->
-            <div class="group w-full max-w-[420px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+            <div class="group w-full max-w-[420px] rounded-[9px] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
                 <div class="pt-[17px] px-[17px]">
-                    <img src="images/blog/06.png" alt="Blog Image" class="w-full h-[264px] object-cover">
+                    <img src="images/blog/06.png" alt="Blog Image" class="w-full h-[264px] object-cover object-top">
                 </div>
                 <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[15px] px-[17px]">主分類一</p>
                 <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[12px] mb-[16px] px-[17px] min-h-[52px]">手工禮服是什麼？跟常見的婚紗禮服有什麼不同嗎？教你選擇最適合妳的禮服！</h3>
@@ -250,9 +250,9 @@
             </div>
 
             <!-- Card 7 -->
-            <div class="group w-full max-w-[420px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+            <div class="group w-full max-w-[420px] rounded-[9px] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
                 <div class="pt-[17px] px-[17px]">
-                    <img src="images/blog/07.png" alt="Blog Image" class="w-full h-[264px] object-cover">
+                    <img src="images/blog/07.png" alt="Blog Image" class="w-full h-[264px] object-cover object-top">
                 </div>
                 <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[15px] px-[17px]">主分類二</p>
                 <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[12px] mb-[16px] px-[17px] min-h-[52px]">手工禮服是什麼？跟常見的婚紗禮服有什麼不同嗎？教你選擇最適合妳的禮服！</h3>
@@ -266,9 +266,9 @@
             </div>
 
             <!-- Card 8 -->
-            <div class="group w-full max-w-[420px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+            <div class="group w-full max-w-[420px] rounded-[9px] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
                 <div class="pt-[17px] px-[17px]">
-                    <img src="images/blog/08.png" alt="Blog Image" class="w-full h-[264px] object-cover">
+                    <img src="images/blog/08.png" alt="Blog Image" class="w-full h-[264px] object-cover object-top">
                 </div>
                 <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[15px] px-[17px]">主分類一</p>
                 <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[12px] mb-[16px] px-[17px] min-h-[52px]">高雄絕美時裝小禮服推薦｜教你成為全場注目焦點</h3>
@@ -282,9 +282,9 @@
             </div>
 
             <!-- Card 9 -->
-            <div class="group w-full max-w-[420px] rounded-[9px] shadow-[0_2px_7px_rgba(0,0,0,0.08)] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
+            <div class="group w-full max-w-[420px] rounded-[9px] flex flex-col transition-colors duration-300 overflow-hidden bg-card-bg hover:bg-white">
                 <div class="pt-[17px] px-[17px]">
-                    <img src="images/blog/09.png" alt="Blog Image" class="w-full h-[264px] object-cover">
+                    <img src="images/blog/09.png" alt="Blog Image" class="w-full h-[264px] object-cover object-top">
                 </div>
                 <p class="text-[14px] tracking-[0.10em] text-text-gold mt-[15px] px-[17px]">主分類二</p>
                 <h3 class="text-[17px] tracking-[0.10em] text-text-main-title mt-[12px] mb-[16px] px-[17px] min-h-[52px]">禮服款式介紹</h3>
@@ -305,7 +305,7 @@
 
 
     <!-- Footer Section (Scaled by 120/136 ratio = 0.882353) -->
-    <footer class="w-full bg-footer-bg relative">
+    <footer class="w-full bg-footer-bg relative mt-[130px]">
         <!-- White divider lines - 20px from top and bottom (scaled from 23px) -->
         <div class="absolute top-[20px] left-0 right-0 h-px bg-white z-10" style="transform: scaleY(0.9); transform-origin: top;"></div>
         <div class="absolute bottom-[20px] left-0 right-0 h-px bg-white z-10" style="transform: scaleY(0.9); transform-origin: bottom;"></div>
