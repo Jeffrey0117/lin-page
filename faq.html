@@ -1117,6 +1117,30 @@
         });
     </script>
 
+    <!-- FAQ Accordion Script -->
+    <script>
+        $(document).ready(function() {
+            // FAQ accordion functionality
+            $('.faqBtn').click(function() {
+                // Get the parent faq-item
+                var faqItem = $(this).closest('.faq-item');
+
+                // Toggle the faqContent elements within this item
+                faqItem.find('.faqContent').toggleClass('hidden');
+
+                // Toggle the Q button style (active state)
+                var faqDot = faqItem.find('.faqDot');
+                if (faqItem.find('.faqContent').first().hasClass('hidden')) {
+                    // Collapsed state
+                    faqDot.removeClass('bg-[#c09771] border-[#c09771]').addClass('bg-[#67534D] border-[#67534D]');
+                } else {
+                    // Expanded state
+                    faqDot.removeClass('bg-[#67534D] border-[#67534D]').addClass('bg-[#c09771] border-[#c09771]');
+                }
+            });
+        });
+    </script>
+
     <!-- Single Select Checkbox Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
