@@ -27,7 +27,7 @@
         }
       }
     </script>
-    <title>Service Section Component</title>
+    <title>最新活動 - LinHaute Bridal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400&display=swap" rel="stylesheet">
@@ -35,6 +35,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@200;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* Custom Font for English Serif */
+        .font-serifEng { font-family: 'Cormorant Garamond', serif; }
+
         /* Custom Form Styles for Reservation Form */
 
         /* Custom checkbox styling */
@@ -231,9 +234,6 @@
             transform: translate(-50%, -50%) scale(1);
         }
 
-
-        .font-serifEng { font-family: 'Cormorant Garamond', serif; }
-
         /* Custom Dropdown Styles */
         .custom-dropdown {
             position: relative;
@@ -316,7 +316,7 @@
             background-color: #C09771;
             color: white;
         }
-    </style>
+</style>
 </head>
 <body class="font-['Noto_Sans_HK'] font-normal">
 
@@ -327,21 +327,21 @@
 
                 <!-- Logo -->
                 <div class="flex-shrink-0 pl-2 sm:pl-0 ml-[5px]">
-                    <a href="#" class="flex items-center">
+                    <a href="index.html" class="flex items-center">
                         <img src="images/logo/logo.svg" alt="LinHaute Bridal Logo" class="w-[180px] sm:w-[180px] md:w-[190px] lg:w-[260px] xl:w-[300px] h-auto">
                     </a>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center gap-[45px] xl:gap-[50px] ml-[30px] xl:ml-[50px]">
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">最新活動</a>
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">品牌介紹</a>
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">預約須知</a>
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗禮服</a>
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">攝影作品</a>
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">影片分享</a>
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">禮服知識家</a>
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">合作品牌</a>
+                    <a href="news.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">最新活動</a>
+                    <a href="about.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">品牌介紹</a>
+                    <a href="faq.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">預約須知</a>
+                    <a href="dress.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗禮服</a>
+                    <a href="portfolio.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">攝影作品</a>
+                    <a href="video.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">影片分享</a>
+                    <a href="knowledge.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">禮服知識家</a>
+                    <a href="partner.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">合作品牌</a>
                 </div>
 
                 <!-- CTA Button (Desktop & Tablet) -->
@@ -365,14 +365,14 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100">
             <div class="px-4 py-4 space-y-3">
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">最新活動</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">品牌介紹</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">預約須知</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">婚紗禮服</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">攝影作品</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">影片分享</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">禮服知識家</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">合作品牌</a>
+                <a href="news.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">最新活動</a>
+                <a href="about.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">品牌介紹</a>
+                <a href="faq.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">預約須知</a>
+                <a href="dress.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">婚紗禮服</a>
+                <a href="portfolio.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">攝影作品</a>
+                <a href="video.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">影片分享</a>
+                <a href="knowledge.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">禮服知識家</a>
+                <a href="partner.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">合作品牌</a>
                 <div class="pt-3">
                     <a href="#" class="inline-flex items-center justify-center gap-2 w-full py-3 bg-[#D3B599] text-white text-[14px] tracking-[0.10em] rounded-full hover:bg-[#C09771] transition-colors duration-300">
                         <img src="images/icon/reserve-button_icon.svg" alt="" class="w-[10px] h-auto">
@@ -383,228 +383,142 @@
         </div>
     </header>
 
-    <section class="bg-[#ffffff] !mt-[200px]">
-      <!-- Header Title -->
+    <!-- Spacer for fixed header -->
+    <div class="h-[80px]"></div>
 
-      <div class="flex flex-col items-center mb-0 relative px-4">
-        <div class="w-full max-w-[496px]">
-            <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
-                <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">品</span>
-                <span class="tracking-[0.15em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">牌介紹</span>
-            </div>
+    <!-- Mobile banner (< 768px) -->
+    <section class="md:hidden w-full h-[60vh] sm:h-[70vh] bg-cover bg-top bg-no-repeat relative flex items-center" style="background-image: url('images/banner/banner_mobile.jpg');">
+        <!-- Banner for Brand Introduction -->
+        <div class="absolute right-4 sm:right-8 top-1/2 transform -translate-y-1/2 z-10 flex flex-col items-center">
+            <img src="images/logo/logo-white.svg" alt="LinHaute Bridal" class="w-[120px] h-auto sm:w-[151px]">
+            <!-- Hero Navigation -->
+            <nav class="flex items-center mt-[20px] sm:mt-[30px]">
+                <a href="#" class="text-[#c09771] text-[12px] sm:text-[14px] tracking-[0.10em] hover:opacity-80 transition-opacity duration-300">PREV</a>
+                <span class="w-[30px] sm:w-[40px] h-[1px] bg-white mx-[10px] sm:mx-[15px]"></span>
+                <a href="#" class="text-white text-[12px] sm:text-[14px] tracking-[0.10em] hover:opacity-80 transition-opacity duration-300">NEXT</a>
+            </nav>
         </div>
-        <div class="w-screen relative left-1/2 -translate-x-1/2 md:w-full md:max-w-[496px] md:left-0 md:translate-x-0 flex justify-end pr-2 md:pr-0">
-            <div class="flex items-end leading-[0.6] tracking-[0.25em]">
-                <span class="text-[24px] sm:text-[31px] font-serifEng font-[500] text-[#c9a782]">A</span>
-                <span class="text-[11px] sm:text-[18px] font-serifEng font-[200] text-[#c9a782]">BOUTS</span>
-            </div>
+    </section>
+
+    <!-- Desktop banner (≥ 768px) -->
+    <section class="hidden md:flex w-full h-[880px] bg-cover bg-top bg-no-repeat relative items-center" style="background-image: url('images/banner/banner_windows.png');">
+        <!-- Banner for Brand Introduction -->
+        <div class="absolute right-[219px] top-1/2 transform -translate-y-1/2 z-10 flex flex-col items-center">
+            <img src="images/logo/logo-white.svg" alt="LinHaute Bridal" class="w-[151px] h-[108px]">
+            <!-- Hero Navigation -->
+            <nav class="flex items-center mt-[30px]">
+                <a href="#" class="text-[#c09771] text-[14px] tracking-[0.10em] hover:opacity-80 transition-opacity duration-300">PREV</a>
+                <span class="w-[40px] h-[1px] bg-white mx-[15px]"></span>
+                <a href="#" class="text-white text-[14px] tracking-[0.10em] hover:opacity-80 transition-opacity duration-300">NEXT</a>
+            </nav>
         </div>
-        <div class="w-screen relative left-1/2 -translate-x-1/2 md:w-full md:left-0 md:translate-x-0 md:max-w-[496px] border-b border-[#c9a782]"></div>
+    </section>
+
+    
+    <section class="bg-[#ffffff] pt-[60px] md:pt-[125px]">
+      <!-- Header Title -->
+      <div class="flex flex-col items-center mb-[30px] md:mb-[51px] relative px-4">
+          <div class="w-full max-w-[496px]">
+              <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
+                  <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">最</span>
+                  <span class="tracking-[0.15em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">新活動</span>
+              </div>
+          </div>
+          <div class="w-screen relative left-1/2 -translate-x-1/2 md:w-full md:max-w-[496px] md:left-0 md:translate-x-0 flex justify-end pr-2 md:pr-0">
+              <div class="flex items-end leading-[0.6] tracking-[0.25em]">
+                  <span class="text-[24px] sm:text-[31px] font-serifEng font-[500] text-[#c9a782]">N</span>
+                  <span class="text-[11px] sm:text-[18px] font-serifEng font-[200] text-[#c9a782]">EWS</span>
+              </div>
+          </div>
+          <div class="w-screen relative left-1/2 -translate-x-1/2 md:w-full md:left-0 md:translate-x-0 md:max-w-[496px] border-b border-[#c9a782]"></div>
       </div>
 
       <!-- Main Container -->
       <!-- border-[2px] border-[#0f12c5] -->
-
-      <!-- class="max-w-[1200px] mx-auto border-[2px] border-[#0f12c5] flex
-      justify-center" -->
-      <div class="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[4rem] py-8 md:py-12 items-center">
-        <!-- 左側文字區塊 -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14">
-          <div>
-            <!-- 中文段落 -->
-            <div class="py-[3.65rem] mt-[20px]">
-              <p class="text-[12px] text-[#868686] font-normal leading-[22px] tracking-[0.083em] font-['Noto_Sans_TC']">
-                團隊配合眾多婚紗設計師，以資深的國際婚紗代工經驗，將心中理想的婚紗胚型透過
-                精湛工藝，一針一線縫製而成，我們認為附加在每一件定製禮服的價值，不單是展現
-                新娘的美麗樣貌，更希望透過設計，傳遞一份真實的溫度感。
-              </p>
-
-              <!-- 英文段落 -->
-              <p class="mt-6 text-[14px] text-[#868686] font-medium leading-[22px] font-['Cormorant_Garamond'] max-w-[530px]">
-                Wedding Gown is never a piece of clothes to a girl. "Made to order","Haute Couture" is always the most beautiful dream of a girl.<br />Lin Haute Bridal provides a full range of French romantic sheer yoke and lace wedding gown. We emphasis the practicality side of "slim cut". Not only good looking when you look at it, but more importantly, good looking when you wear it !
-              </p>
-            </div>
-            <!-- 底線 -->
-            <div class="border-t-[1px] border-[#C09771] w-full mt-[20px]"></div>
-          </div>
-
-          <!-- 右側圖片 -->
-          <div class="flex justify-center lg:justify-end">
-            <img
-              src="images/about/hero-dress.jpg"
-              alt="Wedding Dress Illustration"
-              class="w-full max-w-[560px] rounded-sm"
-            />
-          </div>
-        </div>
-      </div>
-
       <div
-        class="max-w-[1200px] mx-6 md:mx-10 xl:mx-auto bg-[#F9F5F1] rounded-xl p-8 md:p-16 shadow-sm flex justify-center relative z-10"
+        class="w-[calc(100%-32px)] md:w-full max-w-[1200px] mx-auto mt-6 md:mt-12 bg-[#F9F5F1] rounded-xl pt-[40px] md:pt-[78px] pb-[40px] md:pb-[80px] px-4 sm:px-8 md:px-16 lg:px-[228px] shadow-sm"
       >
         <!-- 內容區 -->
-        <!-- border border-[#ae5c0a] -->
-        <div class="mx-auto">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <!-- 左側大圖 -->
+        <div class="w-full">
+          <!-- 標題 & 小圖示 -->
+          <div class="flex flex-col justify-between items-start">
+            <div>
+              <p class="text-[#c09a79] text-[14px] font-normal tracking-[0.2em]">
+                #限時優惠 NT$16,000
+              </p>
+              <h2
+                class="mt-[11px] mb-[4px] text-[#5b4634] text-[21px] tracking-widest font-normal"
+              >
+                命定禮服方案
+              </h2>
+            </div>
             <div class="w-full">
-              <img
-                src="images/about/hero-hanger.jpg"
-                alt="Wedding Hanger"
-                class="w-full rounded-sm object-cover bg-white p-[0.15rem]"
-              />
-            </div>
-
-            <!-- 右側文字區塊 -->
-            <div class="space-y-10 mt-[15px] ml-[10px]">
-              <!-- 區塊 1 -->
-              <div class="flex gap-4 items-start">
-                <div class="w-[30px] border-t border-[#c8b6a6] h-0 mt-3"></div>
-                <div class="space-y-2">
-                  <div
-                    class="text-[#67534D] text-[18px] font-normal tracking-[0.1em]"
-                  >
-                    婚紗，從來就不只是一件「衣服」而已
-                  </div>
-                  <p
-                    class="text-[#868686] leading-[1.8] text-[12px] tracking-[0.08em] text-justify max-w-[500px]"
-                  >
-                    「手工訂製」Made to order、「高級訂製」Haute Couture，是女孩一生最想成為的美麗夢想，請來親身感受，高級手工定製禮服的觸感。
-                  </p>
-                </div>
-              </div>
-
-              <!-- 區塊 2 -->
-              <div class="flex gap-4 items-start">
-                <div class="w-[30px] border-t border-[#c8b6a6] h-0 mt-3"></div>
-                <div class="space-y-2">
-                  <div
-                    class="text-[#67534D] text-[18px] font-normal tracking-[0.1em]"
-                  >
-                    高級定製 Haute Couture
-                  </div>
-                  <p
-                    class="text-[#868686] leading-[1.8] text-[12px] tracking-[0.08em] text-justify max-w-[500px]"
-                  >
-                    不僅僅在於珍貴布料或縫製技術，對「Lin Haute Bridal 高級定製禮服」而言，高級定製更是一種：將婚紗的各種想像具體實現化。
-                  </p>
-                </div>
-              </div>
-
-              <!-- 區塊 3 -->
-              <div class="flex gap-4 items-start">
-                <div class="w-[30px] border-t border-[#c8b6a6] h-0 mt-3"></div>
-                <div class="space-y-2 w-200">
-                  <div
-                    class="text-[#67534D] text-[18px] font-normal tracking-[0.1em]"
-                  >
-                    手工訂製 Made to Order
-                  </div>
-                  <p
-                    class="text-[#868686] leading-[1.8] text-[12px] tracking-[0.08em] text-justify max-w-[500px]"
-                  >
-                    每一件「婚紗」就如同每一位穿上 Lin Haute的新娘，分寸之間，都是獨一無二的美好體現。
-                  </p>
+              <div
+                class="w-full border-t border-[#c9a782] flex items-center translate-y-[19px]"
+              ></div>
+              <div class="flex text-[#c09a79]">
+                <div class="flex space-x-2 ml-auto z-10 pl-[18px]">
+                  <a
+                    href="#"
+                    class="bg-[#F9F5F1] border border-[#c09a79] rounded-full w-[37px] h-[37px] flex items-center justify-center hover:bg-[#c09a79] hover:text-white transition"
+                    ><img
+                      src="images/icon/news-icon-link.png"
+                      alt=""
+                      class="w-[17px] h-auto"
+                  /></a>
+                  <a
+                    href="#"
+                    class="bg-[#F9F5F1] border border-[#c09a79] rounded-full w-[37px] h-[37px] flex items-center justify-center hover:bg-[#c09a79] hover:text-white transition"
+                    ><img src="images/icon/news-icon-arrow.png" alt="" class="w-[11px] h-auto"
+                  /></a>
                 </div>
               </div>
             </div>
+            <!-- Icons -- border-[2px] border-[#c50f52]-->
           </div>
+
+          <!-- 文字敘述 -->
+          <p class="text-[#D3B599] text-[18px] font-normal mt-[8px] tracking-[0.1em]">每一件禮服，都是一段故事的開端。</p>
+
+          <div
+            class="text-[#868686] mt-[11px] leading-relaxed text-[12px] font-normal tracking-widest"
+          >
+            <p>在這個方案中，妳將擁有：</p>
+            <p>1 套白紗，承載純潔與幸福的象徵</p>
+            <p>2 套晚禮服，演繹華麗與自信的身影</p>
+            <p class="text-[#D3B599]">
+              特別禮遇：其中 1 套由 經典款 升級為
+              精緻蕾絲款，在細節間展現優雅與浪漫
+            </p>
+          </div>
+
+          <!-- 優惠價格 -->
+          <div class="pt-[26px]">
+            <h3 class="text-[#D3B599] text-[18px] font-normal tracking-widest mb-2">優惠價格</h3>
+            <p class="text-[#868686] text-[12px] font-normal tracking-widest">
+              原價 NT$20,000<br />
+              限時優惠 NT$16,000<br />
+              讓妳的每一次轉身，都成為命定時刻的最佳注解。
+            </p>
+          </div>
+
+          <!-- 圖片 -->
+          <div class="pt-[26px]">
+            <img src="images/blog/blog-post-03.png" class="w-full shadow" alt="活動圖片" />
+          </div>
+
+          <!-- Button -->
         </div>
       </div>
-      <div class="hidden md:block relative h-[200px] md:h-[280px] lg:h-[350px] overflow-x-hidden -mt-[120px] md:-mt-[180px] lg:-mt-[220px]">
-        <div class="absolute bottom-0 left-0 w-full flex">
-          <img
-            src="images/about/bg-pattern.png"
-            class="w-[85vw] h-auto"
-          /><img
-            src="images/about/bg-pattern.png"
-            class="w-[85vw] h-auto"
-          />
-        </div>
+      <div class="flex items-center justify-center h-32">
+        <a href="#reservation" class="inline-flex items-center justify-center gap-2 px-[18px] md:px-[22px] py-1.5 bg-[#D3B599] text-white text-[13px] md:text-[14px] tracking-[0.10em] rounded-full hover:bg-[#C09771] transition-colors duration-300">
+            <img src="images/icon/reserve-button_icon.svg" alt="" class="w-[10px] h-auto">
+            立即預約
+        </a>
       </div>
     </section>
 
-    <section class="bg-[#ffffff]">
-      <!-- Header Title -->
-
-      <div class="flex flex-col items-center mb-[30px] md:mb-[51px] pt-16 md:pt-[120px] relative px-4">
-        <div class="w-full max-w-[496px]">
-            <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
-                <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">門</span>
-                <span class="tracking-[0.15em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">市環境</span>
-            </div>
-        </div>
-        <div class="w-screen relative left-1/2 -translate-x-1/2 md:w-full md:max-w-[496px] md:left-0 md:translate-x-0 flex justify-end pr-2 md:pr-0">
-            <div class="flex items-end leading-[0.6] tracking-[0.25em]">
-                <span class="text-[24px] sm:text-[31px] font-serifEng font-[500] text-[#c9a782]">S</span>
-                <span class="text-[11px] sm:text-[18px] font-serifEng font-[200] text-[#c9a782]">TORE</span>
-            </div>
-        </div>
-        <div class="w-screen relative left-1/2 -translate-x-1/2 md:w-full md:left-0 md:translate-x-0 md:max-w-[496px] border-b border-[#c9a782]"></div>
-      </div>
-
-      <!-- 手機版：2列 grid，桌面版：保持原本複雜布局 -->
-      <div class="my-8 md:my-10 mx-4 md:mx-10 xl:mx-auto max-w-[1200px] overflow-hidden">
-        <!-- 手機版 2 列 grid -->
-        <div class="grid grid-cols-2 gap-1 md:hidden">
-          <div class="overflow-hidden"><img src="images/about/gallery-01.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-02.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-03.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-04.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-05.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-06.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-07.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-08.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-09.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-10.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-11.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-12.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-13.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-14.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-15.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-16.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-17.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden"><img src="images/about/gallery-18.png" class="w-full h-full object-cover" /></div>
-          <div class="overflow-hidden rounded col-span-2"><img src="images/about/gallery-19.png" class="w-full h-full object-cover" /></div>
-        </div>
-        <!-- 桌面版布局 -->
-        <div class="hidden md:flex md:flex-col gap-[0.4rem]">
-          <div class="flex justify-center gap-[0.4rem]">
-            <div class="w-[20%] overflow-hidden"><img src="images/about/gallery-01.png" class="w-full h-full object-cover" /></div>
-            <div class="w-[36.5%] overflow-hidden"><img src="images/about/gallery-02.png" class="w-full h-full object-cover" /></div>
-            <div class="w-[20%] overflow-hidden"><img src="images/about/gallery-03.png" class="w-full h-full object-cover" /></div>
-            <div class="w-[20%] overflow-hidden"><img src="images/about/gallery-04.png" class="w-full h-full object-cover" /></div>
-          </div>
-          <div class="flex justify-center gap-[0.4rem]">
-            <div class="w-[38.5%] overflow-hidden"><img src="images/about/gallery-05.png" class="w-full h-full object-cover" /></div>
-            <div class="w-[38.5%] overflow-hidden"><img src="images/about/gallery-06.png" class="w-full h-full object-cover" /></div>
-            <div class="w-[20%] overflow-hidden"><img src="images/about/gallery-07.png" class="w-full h-full object-cover" /></div>
-          </div>
-          <div class="flex justify-center gap-[0.4rem]">
-            <div class="w-[38.5%] overflow-hidden"><img src="images/about/gallery-08.png" class="w-full h-full object-cover" /></div>
-            <div class="w-[20%] overflow-hidden"><img src="images/about/gallery-09.png" class="w-full h-full object-cover" /></div>
-            <div class="w-[38.5%] overflow-hidden"><img src="images/about/gallery-10.png" class="w-full h-full object-cover" /></div>
-          </div>
-          <div class="flex justify-center gap-[0.4rem]">
-            <div class="w-[20%] overflow-hidden"><img src="images/about/gallery-11.png" class="w-full h-full object-cover" /></div>
-            <div class="w-[38.5%] overflow-hidden"><img src="images/about/gallery-12.png" class="w-full h-full object-cover" /></div>
-            <div class="w-[38.5%] overflow-hidden"><img src="images/about/gallery-13.png" class="w-full h-full object-cover" /></div>
-          </div>
-          <div class="flex justify-center gap-[0.4rem]">
-            <div class="w-[38.5%] overflow-hidden"><img src="images/about/gallery-14.png" class="w-full h-full object-cover" /></div>
-            <div class="w-[38.5%] overflow-hidden"><img src="images/about/gallery-15.png" class="w-full h-full object-cover" /></div>
-            <div class="w-[20%] overflow-hidden"><img src="images/about/gallery-16.png" class="w-full h-full object-cover" /></div>
-          </div>
-          <div class="flex justify-center gap-[0.4rem]">
-            <div class="w-[20%] overflow-hidden"><img src="images/about/gallery-17.png" class="w-full h-full object-cover" /></div>
-            <div class="w-[38.5%] overflow-hidden"><img src="images/about/gallery-18.png" class="w-full h-full object-cover" /></div>
-            <div class="w-[38.5%] overflow-hidden"><img src="images/about/gallery-19.png" class="w-full h-full object-cover" /></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-white pt-[90px] pb-[117px] flex flex-col items-center">
+    <section class="bg-white pt-[55px] pb-[87px] flex flex-col items-center">
 
         <div class="w-full max-w-[496px]">
             <div class="tracking-[0.05em] leading-none text-center mb-[-4px]">
@@ -1072,7 +986,7 @@
     <div class="w-full bg-[#F9F5F1] h-[30px] flex items-center">
         <div class="container mx-auto px-4 max-w-[1200px]">
             <p class="font-['Noto_Sans_HK'] font-normal text-[11px] leading-[1] tracking-[0.5px] text-footer-copyright text-center">
-                Copyright © Linhaute Bridal 2025. All Rights Reserved. Design by 漢羽網路
+                Copyright © Linhaute Bridal 2025. All Rights Reserved. Design by <a href="https://www.home-u.com.tw/" target="_blank" class="underline text-footer-copyright hover:opacity-80 transition-opacity duration-300">鴻羽網路</a>
             </p>
         </div>
     </div>

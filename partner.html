@@ -15,11 +15,6 @@
               'btn-bg': '#C29164',
               'underline': '#D6B499',
               'card-bg': '#F9F5F1',
-              'blog-title': '#5A4631',
-              'blog-text': '#6B645E',
-              'blog-gold': '#C8A37C',
-              'blog-line': '#CBB59A',
-              'blog-gold-hover': '#B69272',
               'footer-bg': '#D3B599',
               'footer-copyright': '#C09771',
             }
@@ -27,187 +22,14 @@
         }
       }
     </script>
-    <title>Service Section Component</title>
+    <title>合作品牌 - LinHaute Bridal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@200;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        /* Custom Form Styles for Reservation Form */
-
-        /* Custom checkbox styling */
-        input[type="checkbox"] {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            width: 15px;
-            height: 15px;
-            border: 1px solid #D6B499;
-            border-radius: 3px;
-            background-color: white;
-            cursor: pointer;
-            position: relative;
-            transition: all 0.2s ease;
-        }
-
-        input[type="checkbox"]:checked {
-            background-color: #C29164;
-            border-color: #C29164;
-        }
-
-        input[type="checkbox"]:checked::after {
-            content: '';
-            position: absolute;
-            left: 4px;
-            top: 2px;
-            width: 4px;
-            height: 7px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-        }
-
-        input[type="checkbox"]:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(194, 145, 100, 0.2);
-        }
-
-        /* Custom radio button styling */
-        input[type="radio"] {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            width: 15px;
-            height: 15px;
-            border: 1px solid #D6B499;
-            border-radius: 50%;
-            background-color: white;
-            cursor: pointer;
-            position: relative;
-            transition: all 0.2s ease;
-        }
-
-        input[type="radio"]:checked {
-            border-color: #C29164;
-        }
-
-        input[type="radio"]:checked::after {
-            content: '';
-            position: absolute;
-            left: 3px;
-            top: 3px;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background-color: #C29164;
-        }
-
-        input[type="radio"]:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(194, 145, 100, 0.2);
-        }
-
-        /* Form validation error styles */
-        .form-error {
-            border-color: #EF4444 !important;
-        }
-
-        .error-message {
-            color: #EF4444;
-            font-size: 12px;
-            margin-top: 4px;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Success overlay styles */
-        .success-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .success-overlay.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .success-modal {
-            background: white;
-            padding: 40px;
-            border-radius: 9px;
-            text-align: center;
-            max-width: 400px;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-
-        .success-overlay.show .success-modal {
-            transform: scale(1);
-        }
-
-        /* Date input styling */
-        input[type="date"]::-webkit-calendar-picker-indicator {
-            filter: invert(60%) sepia(20%) saturate(500%) hue-rotate(350deg);
-            cursor: pointer;
-        }
-
-        /* Number input spinner removal */
-        input[type="number"]::-webkit-inner-spin-button,
-        input[type="number"]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        input[type="number"] {
-            -moz-appearance: textfield;
-        }
-
-        /* Unified Input Field Styles for Basic Information Section */
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="date"],
-        select,
-        textarea {
-            border-color: #D6B499 !important;
-            transition-property: border-color, box-shadow;
-            transition-duration: 300ms;
-        }
-
-        input[type="text"]::placeholder,
-        input[type="email"]::placeholder,
-        input[type="tel"]::placeholder,
-        input[type="date"]::placeholder,
-        textarea::placeholder {
-            color: #868686;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        input[type="tel"]:focus,
-        input[type="date"]:focus,
-        select:focus,
-        textarea:focus {
-            border-color: #C29164;
-            box-shadow: 0 0 0 3px rgba(194, 145, 100, 0.2);
-        }
+        .font-serifEng { font-family: 'Cormorant Garamond', serif; }
     
         /* Nav link hover effect */
         .nav-link {
@@ -231,9 +53,6 @@
             transform: translate(-50%, -50%) scale(1);
         }
 
-
-        .font-serifEng { font-family: 'Cormorant Garamond', serif; }
-    
 
         /* Custom Dropdown Styles */
         .custom-dropdown {
@@ -317,6 +136,74 @@
             background-color: #C09771;
             color: white;
         }
+
+        /* Success Overlay - Hidden by default */
+        .success-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .success-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .success-modal {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        /* Custom Checkbox Styling */
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border: 1px solid #D6B499;
+            border-radius: 3px;
+            background-color: white;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: #C29164;
+            border-color: #C29164;
+        }
+
+        input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 2px;
+            width: 4px;
+            height: 7px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        input[type="checkbox"]:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(194, 145, 100, 0.2);
+        }
     </style>
 </head>
 <body class="font-['Noto_Sans_HK'] font-normal">
@@ -328,21 +215,21 @@
 
                 <!-- Logo -->
                 <div class="flex-shrink-0 pl-2 sm:pl-0 ml-[5px]">
-                    <a href="#" class="flex items-center">
+                    <a href="index.html" class="flex items-center">
                         <img src="images/logo/logo.svg" alt="LinHaute Bridal Logo" class="w-[180px] sm:w-[180px] md:w-[190px] lg:w-[260px] xl:w-[300px] h-auto">
                     </a>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center gap-[45px] xl:gap-[50px] ml-[30px] xl:ml-[50px]">
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">最新活動</a>
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">品牌介紹</a>
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">預約須知</a>
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗禮服</a>
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">攝影作品</a>
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">影片分享</a>
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">禮服知識家</a>
-                    <a href="#" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">合作品牌</a>
+                    <a href="news.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">最新活動</a>
+                    <a href="about.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">品牌介紹</a>
+                    <a href="faq.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">預約須知</a>
+                    <a href="dress.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">婚紗禮服</a>
+                    <a href="portfolio.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">攝影作品</a>
+                    <a href="video.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">影片分享</a>
+                    <a href="knowledge.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">禮服知識家</a>
+                    <a href="partner.html" class="nav-link text-[13px] xl:text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 whitespace-nowrap">合作品牌</a>
                 </div>
 
                 <!-- CTA Button (Desktop & Tablet) -->
@@ -366,14 +253,14 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100">
             <div class="px-4 py-4 space-y-3">
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">最新活動</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">品牌介紹</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">預約須知</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">婚紗禮服</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">攝影作品</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">影片分享</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">禮服知識家</a>
-                <a href="#" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">合作品牌</a>
+                <a href="news.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">最新活動</a>
+                <a href="about.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">品牌介紹</a>
+                <a href="faq.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">預約須知</a>
+                <a href="dress.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">婚紗禮服</a>
+                <a href="portfolio.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">攝影作品</a>
+                <a href="video.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">影片分享</a>
+                <a href="knowledge.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">禮服知識家</a>
+                <a href="partner.html" class="block text-[14px] tracking-[0.10em] text-text-main-title hover:text-text-gold transition-colors duration-300 py-3">合作品牌</a>
                 <div class="pt-3">
                     <a href="#" class="inline-flex items-center justify-center gap-2 w-full py-3 bg-[#D3B599] text-white text-[14px] tracking-[0.10em] rounded-full hover:bg-[#C09771] transition-colors duration-300">
                         <img src="images/icon/reserve-button_icon.svg" alt="" class="w-[10px] h-auto">
@@ -383,539 +270,111 @@
             </div>
         </div>
     </header>
+
+    <!-- Main Content Section -->
     <section class="bg-[#ffffff] pt-[180px]">
       <!-- ------------------------開頭標題------------------------ -->
       <div class="w-full">
         <div class="tracking-[-0.01em] leading-none text-center">
-          <span class="text-[25px] sm:text-[35px] text-[#C09771] font-[500]"
-            >婚</span
-          >
-          <span
-            class="tracking-[0.1em] text-[19px] sm:text-[29px] text-[#67534D] font-[400]"
-            >禮實穿</span
-          >
+          <span class="text-[25px] sm:text-[32px] text-[#C09771] font-[400]">合</span>
+          <span class="tracking-[0.1em] text-[19px] sm:text-[26px] text-[#67534D] font-[400]">作品牌</span>
         </div>
 
-        <div class="mx-auto md:w-[496px] flex justify-end relative">
+        <div class="mx-auto w-full xl:w-[30%] w-max-[581px] flex justify-end relative">
           <div class="flex items-end leading-[0.6] tracking-[0.2em]">
-            <span class="text-[26px] font-serifEng font-[500] text-[#c9a782]"
-              >W</span
-            >
-            <span class="text-[18px] font-serifEng font-[400] text-[#c9a782]"
-              >EDDING</span
-            >
+            <span class="text-[22px] sm:text-[29px] font-serifEng font-[500] text-[#c9a782]">P</span>
+            <span class="text-[11px] sm:text-[18px] font-serifEng font-[400] text-[#c9a782]">ARTNER</span>
           </div>
         </div>
 
-        <div
-          class="mx-auto w-full md:w-[496px] border-b border-[#c9a782]"
-        ></div>
+        <div class="mx-auto w-full xl:w-[30%] w-max-[581px] border-b border-[#c9a782]"></div>
       </div>
       <!-- ------------------------開頭標題------------------------ -->
 
-      <!-- ------------------------內容版心（重點）------------------------ -->
-      <div class="w-full flex justify-center pt-[20px] sm:pt-[30px] lg:pt-[50px] pb-0">
-        <div
-          class="w-[95%] sm:w-[90%] lg:w-[72.5%] max-w-[1392px] rounded-xl flex flex-col md:flex-row bg-[#f0e7df]"
-        >
-          <!-- 左側圖片（含白邊框） -->
-          <div
-            class="w-full md:w-[40%] h-[310px] sm:h-[380px] md:h-[350px] lg:h-[455px] bg-[#f0e7df] rounded-t-xl md:rounded-t-none md:rounded-tl-xl md:rounded-bl-xl p-[12px] sm:p-[18px] md:p-[26px] xl:p-[46px] border border-[#dfe1f0] flex-shrink-0"
-          >
-            <div class="bg-[white] p-[3px] h-full">
-              <img
-                src="images/wedding/001.jpg"
-                class="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <!-- 右側內容區（含底圖） -->
-          <div
-            class="w-full flex-1 relative flex flex-col items-center justify-center text-center bg-[#f9f5f1] rounded-b-xl md:rounded-b-none md:rounded-tr-xl md:rounded-br-xl py-[30px] sm:py-[40px] md:py-0"
-          >
-            <img
-              src="images/wedding/bridal_bg-right.png"
-              class="rounded-tr-xl absolute top-0 right-0 w-[60px] sm:w-[100px] md:w-[200px] lg:w-[300px] pointer-events-none select-none"
-            />
-
-            <img
-              src="images/wedding/bridal_bg-left.png"
-              class="absolute bottom-0 left-0 w-[60px] sm:w-[100px] md:w-[200px] lg:w-[300px] pointer-events-none select-none"
-            />
-
-            <p
-              class="text-[#868686] text-[8px] sm:text-[10px] md:text-[11px] lg:text-[12px] leading-relaxed max-w-[95%] sm:max-w-[460px] text-left px-[12px] sm:px-[20px] md:px-[33px] tracking-[0.06em] relative z-10"
-            >
-              每一款禮服皆由設計師親自監製，從布料選擇、線條比例、層次堆疊，
-              都為了襯托出妳專屬的氣質與輪廓。
-              <br />
-              <br />
-              在LINHAUTE，妳不只是穿上一件婚紗，而是穿上屬於自己的故事。
-              邀妳親自體驗那份柔光中閃耀的優雅，感受「成為新娘」最純粹、最動
-              人的瞬間♡
-            </p>
+      <!-- ------------------------分類按鈕------------------------ -->
+      <div class="w-full flex flex-col justify-center items-center">
+        <div class="mt-[50px] mb-0 sm:mb-[10px] flex-col w-[90%] lg:w-[73%] max-w-[1392px] rounded-md flex bg-[#f9f5f1] py-[39px] px-2 sm:px-8 xl:px-40">
+          <div class="grid grid-cols-2 sm:grid-cols-3 xl:flex xl:flex-nowrap gap-3 justify-center items-center">
+            <button data-category="all" class="filter-btn group py-[8px] xl:w-[130px] flex items-center justify-center text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">全部</button>
+            <button data-category="category-1" class="filter-btn group py-[8px] xl:w-[130px] flex items-center justify-center gap-2 text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">捧花</button>
+            <button data-category="category-2" class="filter-btn group py-[8px] xl:w-[130px] flex items-center justify-center gap-2 text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">婚戒</button>
+            <button data-category="category-3" class="filter-btn group py-[8px] xl:w-[130px] flex items-center justify-center gap-2 text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">喜餅</button>
+            <button data-category="category-4" class="filter-btn group py-[8px] xl:w-[160px] flex items-center justify-center gap-2 text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">婚禮布置主持</button>
+            <button data-category="category-5" class="filter-btn group py-[8px] xl:w-[130px] flex items-center justify-center gap-2 text-[#c09771] rounded-full text-[14px] tracking-wide hover:bg-[#c09771] bg-white hover:text-white transition">婚鞋</button>
           </div>
         </div>
-      </div>
-      <!-- ------------------------內容版心------------------------ -->
-      <div class="w-full flex justify-center py-2">
-        <div
-          class="w-[90%] lg:w-[72.5%] max-w-[1392px] rounded-xl flex flex-col gap-2"
-        >
-          <!-- ---------------------------照片瀑布-第一排------------------------- -->
-          <div
-            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-1 sm:gap-2 w-full max-w-[1400px] mx-auto"
-          >
-            <!-- 卡片 -->
-            <div
-              class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden"
-            >
-              <div class="absolute + inset-0">
-                <img
-                  src="images/wedding/01.jpg"
-                  class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-                />
-              </div>
-
-              <div
-                class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"
-              ></div>
-
-              <div
-                class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-              >
-                <div>
-                  <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-                </div>
-              </div>
-            </div>
-
-            <!-- 卡片 -->
-            <div
-              class="col-span-1 sm:col-span-2 group relative aspect-[270/407] sm:aspect-[553/407] min-h-0 overflow-hidden"
-            >
-              <div class="absolute + inset-0">
-                <img
-                  src="images/wedding/02.jpg"
-                  class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-                />
-              </div>
-
-              <div
-                class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"
-              ></div>
-
-              <div
-                class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-              >
-                <div>
-                  <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-                </div>
-              </div>
-            </div>
-
-            <!-- 卡片 -->
-            <div
-              class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden"
-            >
-              <div class="absolute + inset-0">
-                <img
-                  src="images/wedding/03.jpg"
-                  class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-                />
-              </div>
-
-              <div
-                class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"
-              ></div>
-
-              <div
-                class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-              >
-                <div>
-                  <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-                </div>
-              </div>
-            </div>
-
-            <!-- 卡片 -->
-            <div
-              class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden"
-            >
-              <div class="absolute + inset-0">
-                <img
-                  src="images/wedding/04.png"
-                  class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-                />
-              </div>
-
-              <div
-                class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"
-              ></div>
-
-              <div
-                class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-              >
-                <div>
-                  <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-                </div>
-              </div>
-            </div>
-            <!-- 卡片 -->
-            <div
-              class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden"
-            >
-              <div class="absolute + inset-0">
-                <img
-                  src="images/wedding/05.png"
-                  class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-                />
-              </div>
-
-              <div
-                class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"
-              ></div>
-
-              <div
-                class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-              >
-                <div>
-                  <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-                </div>
-              </div>
-            </div>
-            <!-- 卡片 -->
-            <div
-              class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden"
-            >
-              <div class="absolute + inset-0">
-                <img
-                  src="images/wedding/06.png"
-                  class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-                />
-              </div>
-
-              <div
-                class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"
-              ></div>
-
-              <div
-                class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-              >
-                <div>
-                  <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-                </div>
-              </div>
-            </div>
-            <!-- 卡片 -->
-            <div
-              class="col-span-1 sm:col-span-2 group relative aspect-[270/407] sm:aspect-[553/407] min-h-0 overflow-hidden"
-            >
-              <div class="absolute + inset-0">
-                <img
-                  src="images/wedding/07.jpg"
-                  class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-                />
-              </div>
-
-              <div
-                class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"
-              ></div>
-
-              <div
-                class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-              >
-                <div>
-                  <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-                </div>
-              </div>
-            </div>
-            <!-- 卡片 -->
-            <div
-              class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden"
-            >
-              <div class="absolute + inset-0">
-                <img
-                  src="images/wedding/08.png"
-                  class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-                />
-              </div>
-
-              <div
-                class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"
-              ></div>
-
-              <div
-                class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-              >
-                <div>
-                  <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-                </div>
-              </div>
-            </div>
-
-            <!-- 卡片 -->
-            <div
-              class="col-span-1 sm:col-span-2 group relative aspect-[270/407] sm:aspect-[553/407] min-h-0 overflow-hidden"
-            >
-              <div class="absolute + inset-0">
-                <img
-                  src="images/wedding/09.png"
-                  class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-                />
-              </div>
-
-              <div
-                class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"
-              ></div>
-
-              <div
-                class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-              >
-                <div>
-                  <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-                </div>
-              </div>
-            </div>
-            <!-- 卡片 -->
-            <div
-              class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden"
-            >
-              <div class="absolute + inset-0">
-                <img
-                  src="images/wedding/10.png"
-                  class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-                />
-              </div>
-
-              <div
-                class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"
-              ></div>
-
-              <div
-                class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-              >
-                <div>
-                  <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-                </div>
-              </div>
-            </div>
-
-            <!-- 卡片 -->
-            <div
-              class="col-span-2 group relative aspect-[553/407] min-h-0 overflow-hidden"
-            >
-              <div class="absolute + inset-0">
-                <img
-                  src="images/wedding/11.png"
-                  class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-                />
-              </div>
-
-              <div
-                class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"
-              ></div>
-
-              <div
-                class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-              >
-                <div>
-                  <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-                </div>
-              </div>
-            </div>
+        <!-------------------------------- 捧花 -------------------------------->
+        <div class="card category-1 my-10 w-full flex items-center justify-center">
+          <div class="w-[33%] max-w-[555px] border-t border-[#c09771]"></div>
+          <span class="px-6 text-[#67534d] text-[16px] sm:text-[20px] md:text-[22px] tracking-widest whitespace-nowrap">捧花</span>
+          <div class="w-[33%] max-w-[555px] border-t border-[#c09771]"></div>
+        </div>
+        <div class="mb-12 card category-1 w-[50%] lg:w-[16%] flex flex-col">
+          <img src="images/partner/澆澆花.jpg" alt="" />
+          <p class="pt-[13px] pb-2 text-center text-[#67534d] text-[18px]">澆澆花</p>
+          <p class="text-center text-[#868686] text-[14px]">Havanlubie Wedding</p>
+        </div>
+        <!-------------------------------- 婚戒 -------------------------------->
+        <div class="card category-2 mt-[50px] mb-10 w-full flex items-center justify-center">
+          <div class="w-[33%] max-w-[555px] border-t border-[#c09771]"></div>
+          <span class="px-6 text-[#67534d] text-[16px] sm:text-[20px] md:text-[22px] tracking-widest whitespace-nowrap">婚戒</span>
+          <div class="w-[33%] max-w-[555px] border-t border-[#c09771]"></div>
+        </div>
+        <div class="mb-12 card category-2 w-[50%] lg:w-[16%] flex flex-col">
+          <img src="images/partner/festaria TOKYO.jpg" alt="" />
+          <p class="pt-[13px] pb-2 text-center text-[#67534d] text-[18px]">festaria TOKYO</p>
+        </div>
+        <!-------------------------------- 喜餅 -------------------------------->
+        <div class="card category-3 mt-[50px] mb-10 w-full flex items-center justify-center">
+          <div class="w-[33%] max-w-[555px] border-t border-[#c09771]"></div>
+          <span class="px-6 text-[#67534d] text-[16px] sm:text-[20px] md:text-[22px] tracking-widest whitespace-nowrap">喜餅</span>
+          <div class="w-[33%] max-w-[555px] border-t border-[#c09771]"></div>
+        </div>
+        <div class="mb-12 card category-3 w-[50%] lg:w-[16%] flex flex-col">
+          <img src="images/partner/法絨法式手工甜點.jpg" alt="" />
+          <p class="pt-[13px] pb-2 text-center text-[#67534d] text-[18px]">法絨法式手工甜點</p>
+          <p class="text-center text-[#868686] text-[14px]">Velvet Patisserie</p>
+        </div>
+        <!-------------------------------- 婚禮佈置主持 -------------------------------->
+        <div class="card category-4 mt-[50px] mb-10 w-full flex items-center justify-center">
+          <div class="w-[33%] max-w-[555px] border-t border-[#c09771]"></div>
+          <span class="px-6 text-[#67534d] text-[16px] sm:text-[20px] md:text-[22px] tracking-widest whitespace-nowrap">婚禮佈置主持</span>
+          <div class="w-[33%] max-w-[555px] border-t border-[#c09771]"></div>
+        </div>
+        <div class="card category-4 mb-12 w-full flex lg:flex-row flex-col justify-center items-center gap-10">
+          <div class="w-[50%] lg:w-[16%] flex flex-col">
+            <img src="images/partner/樂玩創意.jpg" alt="" />
+            <p class="pt-[13px] pb-2 text-center text-[#67534d] text-[18px]">樂玩創意</p>
+            <p class="text-center text-[#868686] text-[14px]">樂團 / 婚禮企劃&主持</p>
+          </div>
+          <div class="w-[50%] lg:w-[16%] flex flex-col">
+            <img src="images/partner/知·百年.jpg" alt="" />
+            <p class="pt-[13px] pb-2 text-center text-[#67534d] text-[18px]">知·百年</p>
+            <p class="text-center text-[#868686] text-[14px]">Forever WED</p>
+          </div>
+          <div class="w-[50%] lg:w-[16%] flex flex-col">
+            <img src="images/partner/艾美喜帖婚禮.jpg" alt="" />
+            <p class="pt-[13px] pb-2 text-center text-[#67534d] text-[18px]">艾美喜帖婚禮</p>
+            <p class="text-center text-[#868686] text-[14px]">i-beauty</p>
           </div>
         </div>
 
-        <!-- ---------------------------照片瀑布-第二排------------------------- -->
-        <!-- <div
-          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-1 sm:gap-2 w-full max-w-[1400px] mx-auto"
-        > -->
-        <!-- 卡片 -->
-        <!-- <div
-            class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden"
-          >
-            <div class="absolute + inset-0">
-              <img
-                src="images/wedding/05.png"
-                class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-              />
-            </div>
-
-            <div
-              class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"
-            ></div>
-
-            <div
-              class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-            >
-              <div>
-                <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-              </div>
-            </div>
-          </div> -->
-
-        <!-- 卡片 -->
-        <!-- <div
-            class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden"
-          >
-            <div class="absolute + inset-0">
-              <img
-                src="images/wedding/06.png"
-                class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-              />
-            </div>
-
-            <div
-              class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"
-            ></div>
-
-            <div
-              class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-            >
-              <div>
-                <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-              </div>
-            </div>
-          </div> -->
-        <!-- 卡片 -->
-        <!-- <div
-            class="col-span-1 sm:col-span-2 group relative aspect-[270/407] sm:aspect-[553/407] min-h-0 overflow-hidden"
-          >
-            <div class="absolute + inset-0">
-              <img
-                src="images/wedding/07.jpg"
-                class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-              />
-            </div>
-
-            <div
-              class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"
-            ></div>
-
-            <div
-              class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-            >
-              <div>
-                <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-              </div>
-            </div>
-          </div> -->
-        <!-- 卡片 -->
-        <!-- <div
-            class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden"
-          >
-            <div class="absolute + inset-0">
-              <img
-                src="images/wedding/08.png"
-                class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-              />
-            </div>
-
-            <div
-              class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"
-            ></div>
-
-            <div
-              class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-            >
-              <div>
-                <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- ---------------------------照片瀑布-第三排------------------------- -->
-        <!-- <div
-          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-1 sm:gap-2 w-full max-w-[1400px] mx-auto"
-        > -->
-        <!-- 卡片 -->
-        <!-- <div
-            class="col-span-1 sm:col-span-2 group relative aspect-[270/407] sm:aspect-[553/407] min-h-0 overflow-hidden"
-          >
-            <div class="absolute + inset-0">
-              <img
-                src="images/wedding/09.png"
-                class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-              />
-            </div>
-
-            <div
-              class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"
-            ></div>
-
-            <div
-              class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-            >
-              <div>
-                <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-              </div>
-            </div>
-          </div> -->
-        <!-- 卡片 -->
-        <!-- <div
-            class="col-span-1 group relative aspect-[270/407] min-h-0 overflow-hidden"
-          >
-            <div class="absolute + inset-0">
-              <img
-                src="images/wedding/10.png"
-                class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-              />
-            </div>
-
-            <div
-              class="absolute inset-0 bg-white backdrop-blur-[2px] opacity-0 group-hover:opacity-80 transition duration-500"
-            ></div>
-
-            <div
-              class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-            >
-              <div>
-                <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-              </div>
-            </div>
-          </div> -->
-
-        <!-- 卡片 -->
-        <!-- <div
-            class="col-span-1 sm:col-span-2 group relative aspect-[270/407] sm:aspect-[553/407] min-h-0 overflow-hidden"
-          >
-            <div class="absolute + inset-0">
-              <img
-                src="images/wedding/11.png"
-                class="w-full h-full object-cover transition duration-500 group-hover:brightness-110 group-hover:contrast-105 group-hover:scale-105"
-              />
-            </div>
-
-            <div
-              class="absolute inset-0 bg-white/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition duration-500"
-            ></div>
-
-            <div
-              class="tracking-[0.15em] leading-[1.8] absolute inset-0 flex items-center justify-center text-center text-xs text-[#C09771] opacity-0 group-hover:opacity-100 transition duration-500"
-            >
-              <div>
-                <span class="text-xs">AMY&PETER</span><br />高雄萊特維庭
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- ---------------------------照片瀑布-------------------------- -->
-      </div>
-      <div class="hidden md:block relative h-[120px] sm:h-[180px] md:h-[280px] lg:h-[350px] overflow-x-hidden -mt-[80px] sm:-mt-[120px] md:-mt-[210px] lg:-mt-[250px]">
-        <div class="absolute bottom-0 left-0 w-full flex">
-          <img
-            src="images/about/bg-pattern.png"
-            class="w-[85vw] sm:w-[80vw] md:w-[85vw] h-auto"
-          /><img
-            src="images/about/bg-pattern.png"
-            class="w-[85vw] sm:w-[80vw] md:w-[85vw] h-auto"
-          />
+        <!-------------------------------- 婚鞋  -------------------------------->
+        <div class="card category-5 mt-[50px] mb-10 w-full flex items-center justify-center">
+          <div class="w-[33%] max-w-[555px] border-t border-[#c09771]"></div>
+          <span class="px-6 text-[#67534d] text-[16px] sm:text-[20px] md:text-[22px] tracking-widest whitespace-nowrap">婚鞋</span>
+          <div class="w-[33%] max-w-[555px] border-t border-[#c09771]"></div>
+        </div>
+        <div class="mb-12 card category-5 w-[50%] lg:w-[16%] flex flex-col">
+          <img src="images/partner/ReSarah 時尚手作婚紗鞋.jpg" alt="" />
+          <p class="pt-[13px] pb-2 text-center text-[#67534d] text-[18px]">ReSarah 時尚手作婚紗鞋</p>
+          <p class="text-center text-[#868686] text-[14px]">Wedding Shoes</p>
         </div>
       </div>
     </section>
+
+
+
 
     <!-- 預約諮詢 Reservation Section -->
     <section id="reservation" class="bg-white pt-[92px] pb-[126px] flex flex-col items-center">
@@ -1331,7 +790,7 @@
     <div class="w-full bg-[#F9F5F1] h-[30px] flex items-center">
         <div class="container mx-auto px-4 max-w-[1200px]">
             <p class="font-['Noto_Sans_HK'] font-normal text-[11px] leading-[1] tracking-[0.5px] text-footer-copyright text-center">
-                Copyright © Linhaute Bridal 2025. All Rights Reserved. Design by 漢羽網路
+                Copyright © Linhaute Bridal 2025. All Rights Reserved. Design by <a href="https://www.home-u.com.tw/" target="_blank" class="underline text-footer-copyright hover:opacity-80 transition-opacity duration-300">鴻羽網路</a>
             </p>
         </div>
     </div>

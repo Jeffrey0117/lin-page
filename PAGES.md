@@ -1,0 +1,59 @@
+# LinHaute Bridal 網站頁面結構
+
+## 頁面對應表
+
+| 檔案名稱 | 頁面名稱 | 說明 | 導航列 |
+|---------|---------|------|--------|
+| `index.html` | 首頁 | 網站主入口，整合品牌介紹、服務項目等區塊 | - |
+| `news.html` | 最新活動 | 優惠活動詳細資訊、服務項目介紹及預約表單 | ✓ |
+| `about.html` | 品牌介紹 | 品牌故事、理念、門市環境照片 | ✓ |
+| `faq.html` | 預約須知 | 常見問題(FAQ)列表 | ✓ |
+| `dress.html` | 婚紗禮服 | 所有合作婚紗品牌總覽 | ✓ |
+| `dress-linhaute.html` | 婚紗禮服 - Linhaute | Linhaute Bridal 自家品牌款式 | - |
+| `wedding-looks.html` | 婚禮實穿 | 客戶實際穿著婚紗的婚禮現場照片 | - |
+| `portfolio.html` | 攝影作品 | 合作攝影師作品總覽 | ✓ |
+| `portfolio-detail.html` | 攝影作品 - 詳細 | 單一攝影師作品集（如 YY美學） | - |
+| `video.html` | 影片分享 | 婚紗影片作品 | ✓ |
+| `knowledge.html` | 禮服知識家 | 禮服相關知識文章列表 | ✓ |
+| `knowledge-detail.html` | 知識家文章內頁 | 單篇文章詳細內容 | - |
+| `partner.html` | 合作品牌 | 合作廠商（捧花、婚戒、喜餅等） | ✓ |
+
+## 導航列連結對應
+
+```
+最新活動 → news.html
+品牌介紹 → about.html
+預約須知 → faq.html
+婚紗禮服 → dress.html
+攝影作品 → portfolio.html
+影片分享 → video.html
+禮服知識家 → knowledge.html
+合作品牌 → partner.html
+```
+
+## 其他檔案
+
+| 檔案名稱 | 說明 |
+|---------|------|
+| `_overview.html` | 內部專案管理頁面，追蹤開發進度 |
+| `CLAUDE.md` | Claude Code 設定檔 |
+| `PAGES.md` | 本文件 - 頁面結構說明 |
+
+## 檔案命名歷史
+
+原始數字命名 → 語義化命名（2025-12 更新）
+
+| 舊檔名 | 新檔名 |
+|-------|--------|
+| 02.html | news.html |
+| 03.html | about.html |
+| 04.html | faq.html |
+| 05.html | dress.html |
+| 06.html | dress-linhaute.html |
+| 07.html | wedding-looks.html |
+| 08.html | portfolio.html |
+| 09.html | portfolio-detail.html |
+| 10.html | video.html |
+| 11.html | knowledge.html |
+| 12.html | knowledge-detail.html |
+| 13.html | partner.html |

@@ -21,7 +21,9 @@
       "Bash(dir:*)",
       "Bash(gemini:*)",
       "Bash(git commit:*)",
-      "Bash(git push)"
+      "Bash(git push)",
+      "Bash(node sync-components.js:*)",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []
