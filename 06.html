@@ -32,7 +32,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@200;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* Custom Form Styles for Reservation Form */
@@ -230,7 +230,94 @@
         .nav-link:hover::before {
             transform: translate(-50%, -50%) scale(1);
         }
-</style>
+
+
+        .font-serifEng { font-family: 'Cormorant Garamond', serif; }
+    
+
+        /* Custom Dropdown Styles */
+        .custom-dropdown {
+            position: relative;
+            width: 100%;
+            max-width: 330px;
+        }
+
+        .custom-dropdown-btn {
+            width: 100%;
+            height: 37px;
+            padding: 0 30px 0 16px;
+            background: #ffffff;
+            border: none;
+            border-bottom: 1px solid #D3B599;
+            border-radius: 0;
+            text-align: left;
+            font-size: 14px;
+            letter-spacing: 0.10em;
+            color: #67534D;
+            cursor: pointer;
+            position: relative;
+            transition: border-color 300ms;
+        }
+
+        .custom-dropdown-btn::after {
+            content: '';
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 8px;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.646484 1.29297L7.64648 8.29297L14.6465 1.29297' stroke='%23c09771'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+            transition: transform 200ms;
+        }
+
+        .custom-dropdown.open .custom-dropdown-btn::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .custom-dropdown-btn:focus {
+            outline: none;
+            border-bottom-color: #C29164;
+        }
+
+        .custom-dropdown-list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #D3B599;
+            border-top: none;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            z-index: 100;
+            transition: max-height 200ms, opacity 200ms;
+        }
+
+        .custom-dropdown.open .custom-dropdown-list {
+            max-height: 200px;
+            opacity: 1;
+        }
+
+        .custom-dropdown-item {
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 0.10em;
+            color: #868686;
+            cursor: pointer;
+            transition: background-color 150ms, color 150ms;
+        }
+
+        .custom-dropdown-item:hover,
+        .custom-dropdown-item.selected {
+            background-color: #C09771;
+            color: white;
+        }
+    </style>
 </head>
 <body class="font-['Noto_Sans_HK'] font-normal">
 
@@ -260,7 +347,7 @@
 
                 <!-- CTA Button (Desktop & Tablet) -->
                 <div class="hidden md:block ml-auto">
-                    <a href="#" class="inline-flex items-center justify-center gap-2 px-5 md:px-7 py-1.5 bg-btn-bg text-white text-[13px] md:text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">
+                    <a href="#" class="inline-flex items-center justify-center gap-2 px-[18px] md:px-[22px] py-1.5 bg-btn-bg text-white text-[13px] md:text-[14px] tracking-[0.10em] rounded-full hover:bg-text-gold transition-colors duration-300">
                         <img src="images/icon/reserve-button_icon.svg" alt="" class="w-[10px] h-auto">
                         預約試穿
                     </a>
@@ -785,10 +872,10 @@
                 </div>
                 <div class="w-full flex justify-end relative">
                     <div class="flex items-end leading-[0.6] tracking-[0.25em]">
-                        <span class="text-[24px] sm:text-[31px] font-serifEng font-[300] text-[#c9a782]">R</span>
-                        <span class="text-[11px] sm:text-[17px] font-serifEng font-[400] text-[#c9a782]">ESERVE</span>
-                        <span class="text-[24px] sm:text-[31px] font-serifEng font-[300] text-[#c9a782] ml-2">N</span>
-                        <span class="text-[11px] sm:text-[17px] font-serifEng font-[400] text-[#c9a782]">OW</span>
+                        <span class="text-[24px] sm:text-[31px] font-serifEng font-[500] text-[#c9a782]">R</span>
+                        <span class="text-[11px] sm:text-[17px] font-serifEng font-[200] text-[#c9a782]">ESERVE</span>
+                        <span class="text-[24px] sm:text-[31px] font-serifEng font-[500] text-[#c9a782] ml-2">N</span>
+                        <span class="text-[11px] sm:text-[17px] font-serifEng font-[200] text-[#c9a782]">OW</span>
                     </div>
                 </div>
             </div>
