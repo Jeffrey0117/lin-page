@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>頁面結構說明 - LinHaute Bridal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; background: #f9f5f1; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .page-link { transition: all 0.2s; }
+        .page-link:hover { background: #C09771; color: white; }
+        .nav-badge { background: #C09771; color: white; font-size: 10px; padding: 2px 6px; border-radius: 4px; }
+        .sub-page { border-left: 3px solid #e5d5c5; }
+    </style>
+</head>
+<body class="p-6 md:p-10">
+    <div class="max-w-[1000px] mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <h1 class="text-[28px] text-[#67534D] font-normal tracking-wide">LinHaute Bridal</h1>
+            <p class="text-[#C09771] text-[14px] tracking-[0.2em] mt-1">網站頁面結構</p>
+        </div>
+
+        <!-- Main Pages -->
+        <div class="card p-6 mb-6">
+            <h2 class="text-[16px] text-[#67534D] mb-4 pb-2 border-b border-[#e5d5c5]">主要頁面</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <!-- 首頁 -->
+                <a href="index.html" target="_blank" class="page-link flex items-center gap-3 p-3 rounded-lg bg-[#f9f5f1]">
+                    <span class="w-8 h-8 flex items-center justify-center bg-[#C09771] text-white rounded-full text-[12px]">首</span>
+                    <div>
+                        <div class="text-[14px] text-[#67534D] font-medium">首頁</div>
+                        <div class="text-[11px] text-[#868686]">index.html</div>
+                    </div>
+                </a>
+                <!-- 最新活動 -->
+                <a href="news.html" target="_blank" class="page-link flex items-center gap-3 p-3 rounded-lg bg-[#f9f5f1]">
+                    <span class="w-8 h-8 flex items-center justify-center bg-[#C09771] text-white rounded-full text-[12px]">活</span>
+                    <div class="flex-1">
+                        <div class="text-[14px] text-[#67534D] font-medium flex items-center gap-2">最新活動 <span class="nav-badge">NAV</span></div>
+                        <div class="text-[11px] text-[#868686]">news.html - 優惠活動、預約表單</div>
+                    </div>
+                </a>
+                <!-- 品牌介紹 -->
+                <a href="about.html" target="_blank" class="page-link flex items-center gap-3 p-3 rounded-lg bg-[#f9f5f1]">
+                    <span class="w-8 h-8 flex items-center justify-center bg-[#C09771] text-white rounded-full text-[12px]">品</span>
+                    <div class="flex-1">
+                        <div class="text-[14px] text-[#67534D] font-medium flex items-center gap-2">品牌介紹 <span class="nav-badge">NAV</span></div>
+                        <div class="text-[11px] text-[#868686]">about.html - 品牌故事、門市環境</div>
+                    </div>
+                </a>
+                <!-- 預約須知 -->
+                <a href="faq.html" target="_blank" class="page-link flex items-center gap-3 p-3 rounded-lg bg-[#f9f5f1]">
+                    <span class="w-8 h-8 flex items-center justify-center bg-[#C09771] text-white rounded-full text-[12px]">約</span>
+                    <div class="flex-1">
+                        <div class="text-[14px] text-[#67534D] font-medium flex items-center gap-2">預約須知 <span class="nav-badge">NAV</span></div>
+                        <div class="text-[11px] text-[#868686]">faq.html - 常見問題 FAQ</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- 婚紗禮服系列 -->
+        <div class="card p-6 mb-6">
+            <h2 class="text-[16px] text-[#67534D] mb-4 pb-2 border-b border-[#e5d5c5]">婚紗禮服系列</h2>
+            <div class="space-y-2">
+                <a href="dress.html" target="_blank" class="page-link flex items-center gap-3 p-3 rounded-lg bg-[#f9f5f1]">
+                    <span class="w-8 h-8 flex items-center justify-center bg-[#C09771] text-white rounded-full text-[12px]">婚</span>
+                    <div class="flex-1">
+                        <div class="text-[14px] text-[#67534D] font-medium flex items-center gap-2">婚紗禮服 <span class="nav-badge">NAV</span></div>
+                        <div class="text-[11px] text-[#868686]">dress.html - 所有合作婚紗品牌總覽</div>
+                    </div>
+                </a>
+                <div class="ml-6 space-y-2">
+                    <a href="dress-linhaute.html" target="_blank" class="page-link sub-page flex items-center gap-3 p-3 rounded-lg bg-white pl-4">
+                        <div class="flex-1">
+                            <div class="text-[13px] text-[#67534D]">└ Linhaute 品牌款式</div>
+                            <div class="text-[11px] text-[#868686]">dress-linhaute.html</div>
+                        </div>
+                    </a>
+                    <a href="wedding-looks.html" target="_blank" class="page-link sub-page flex items-center gap-3 p-3 rounded-lg bg-white pl-4">
+                        <div class="flex-1">
+                            <div class="text-[13px] text-[#67534D]">└ 婚禮實穿</div>
+                            <div class="text-[11px] text-[#868686]">wedding-looks.html - 客戶婚禮現場照片</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 攝影作品系列 -->
+        <div class="card p-6 mb-6">
+            <h2 class="text-[16px] text-[#67534D] mb-4 pb-2 border-b border-[#e5d5c5]">攝影作品系列</h2>
+            <div class="space-y-2">
+                <a href="portfolio.html" target="_blank" class="page-link flex items-center gap-3 p-3 rounded-lg bg-[#f9f5f1]">
+                    <span class="w-8 h-8 flex items-center justify-center bg-[#C09771] text-white rounded-full text-[12px]">攝</span>
+                    <div class="flex-1">
+                        <div class="text-[14px] text-[#67534D] font-medium flex items-center gap-2">攝影作品 <span class="nav-badge">NAV</span></div>
+                        <div class="text-[11px] text-[#868686]">portfolio.html - 合作攝影師作品總覽</div>
+                    </div>
+                </a>
+                <div class="ml-6">
+                    <a href="portfolio-detail.html" target="_blank" class="page-link sub-page flex items-center gap-3 p-3 rounded-lg bg-white pl-4">
+                        <div class="flex-1">
+                            <div class="text-[13px] text-[#67534D]">└ 攝影師作品集</div>
+                            <div class="text-[11px] text-[#868686]">portfolio-detail.html - 單一攝影師作品頁</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 影片分享 -->
+        <div class="card p-6 mb-6">
+            <h2 class="text-[16px] text-[#67534D] mb-4 pb-2 border-b border-[#e5d5c5]">影片分享</h2>
+            <a href="video.html" target="_blank" class="page-link flex items-center gap-3 p-3 rounded-lg bg-[#f9f5f1]">
+                <span class="w-8 h-8 flex items-center justify-center bg-[#C09771] text-white rounded-full text-[12px]">影</span>
+                <div class="flex-1">
+                    <div class="text-[14px] text-[#67534D] font-medium flex items-center gap-2">影片分享 <span class="nav-badge">NAV</span></div>
+                    <div class="text-[11px] text-[#868686]">video.html - 婚紗影片作品</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- 禮服知識家系列 -->
+        <div class="card p-6 mb-6">
+            <h2 class="text-[16px] text-[#67534D] mb-4 pb-2 border-b border-[#e5d5c5]">禮服知識家系列</h2>
+            <div class="space-y-2">
+                <a href="knowledge.html" target="_blank" class="page-link flex items-center gap-3 p-3 rounded-lg bg-[#f9f5f1]">
+                    <span class="w-8 h-8 flex items-center justify-center bg-[#C09771] text-white rounded-full text-[12px]">知</span>
+                    <div class="flex-1">
+                        <div class="text-[14px] text-[#67534D] font-medium flex items-center gap-2">禮服知識家 <span class="nav-badge">NAV</span></div>
+                        <div class="text-[11px] text-[#868686]">knowledge.html - 禮服相關知識文章列表</div>
+                    </div>
+                </a>
+                <div class="ml-6">
+                    <a href="knowledge-detail.html" target="_blank" class="page-link sub-page flex items-center gap-3 p-3 rounded-lg bg-white pl-4">
+                        <div class="flex-1">
+                            <div class="text-[13px] text-[#67534D]">└ 文章內頁</div>
+                            <div class="text-[11px] text-[#868686]">knowledge-detail.html - 單篇文章詳細內容</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 合作品牌 -->
+        <div class="card p-6 mb-6">
+            <h2 class="text-[16px] text-[#67534D] mb-4 pb-2 border-b border-[#e5d5c5]">合作品牌</h2>
+            <a href="partner.html" target="_blank" class="page-link flex items-center gap-3 p-3 rounded-lg bg-[#f9f5f1]">
+                <span class="w-8 h-8 flex items-center justify-center bg-[#C09771] text-white rounded-full text-[12px]">合</span>
+                <div class="flex-1">
+                    <div class="text-[14px] text-[#67534D] font-medium flex items-center gap-2">合作品牌 <span class="nav-badge">NAV</span></div>
+                    <div class="text-[11px] text-[#868686]">partner.html - 捧花、婚戒、喜餅等合作廠商</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- 內部工具 -->
+        <div class="card p-6 mb-6 opacity-70">
+            <h2 class="text-[16px] text-[#868686] mb-4 pb-2 border-b border-[#e5d5c5]">內部工具頁面</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <a href="_overview.html" target="_blank" class="page-link flex items-center gap-3 p-3 rounded-lg bg-gray-50">
+                    <span class="w-8 h-8 flex items-center justify-center bg-gray-400 text-white rounded-full text-[12px]">進</span>
+                    <div>
+                        <div class="text-[14px] text-[#67534D]">專案進度追蹤</div>
+                        <div class="text-[11px] text-[#868686]">_overview.html</div>
+                    </div>
+                </a>
+                <a href="_pages.html" target="_blank" class="page-link flex items-center gap-3 p-3 rounded-lg bg-gray-50">
+                    <span class="w-8 h-8 flex items-center justify-center bg-gray-400 text-white rounded-full text-[12px]">結</span>
+                    <div>
+                        <div class="text-[14px] text-[#67534D]">頁面結構說明</div>
+                        <div class="text-[11px] text-[#868686]">_pages.html (本頁)</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- 備註 -->
+        <div class="text-center text-[12px] text-[#868686] mt-8">
+            <p><span class="nav-badge">NAV</span> 表示此頁面出現在導航列中</p>
+            <p class="mt-2">備份資料夾 <code class="bg-gray-100 px-1 rounded">_backup/</code> 包含開發工具，一般不需使用</p>
+        </div>
+    </div>
+</body>
+</html>
