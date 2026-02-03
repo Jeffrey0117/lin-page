@@ -867,6 +867,45 @@
         });
     </script>
 
+    <!-- Category Filter Tab Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.card');
+
+            // Set initial active state
+            filterBtns[0].classList.add('bg-[#c09771]', 'text-white');
+            filterBtns[0].classList.remove('bg-white', 'text-[#c09771]');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.dataset.category;
+
+                    // Update button styles
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-[#c09771]', 'text-white');
+                        b.classList.add('bg-white', 'text-[#c09771]');
+                    });
+                    this.classList.add('bg-[#c09771]', 'text-white');
+                    this.classList.remove('bg-white', 'text-[#c09771]');
+
+                    // Filter cards
+                    cards.forEach(card => {
+                        if (category === 'all') {
+                            card.style.display = '';
+                        } else {
+                            if (card.classList.contains(category)) {
+                                card.style.display = '';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
     <!-- Single Select Checkbox Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
